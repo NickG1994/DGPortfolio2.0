@@ -1,0 +1,47 @@
+.form{
+    width:100%;
+}
+.field{
+    position: relative;
+    width: 100%;
+    height: auto;
+    border: none;
+    margin-bottom: 4vh;
+}
+.placeholder{
+    position: absolute;
+    z-index: 101;
+    left: 0.5rem;
+    top:0.5rem;
+    transition: all 500ms ease-in;
+}
+
+.inputField, .placeholder {
+    font-size: 1rem;
+}
+
+.inputField{
+    position: inherit;
+    z-index: 100;
+    width: calc(100% - 0.5rem);
+    padding: 0.5rem 0;
+    padding-left: 0.5rem;
+}
+
+.name {
+
+}
+
+.message{
+    height: 25vh;
+}
+
+.inputField:focus ~ .placeholder, 
+.active ~ .placeholder{
+    transform: translateY(-2rem) scale(1.2);
+    color: white;
+}
+
+.inputFocus{
+
+}

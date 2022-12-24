@@ -1,0 +1,41 @@
+.containerTransition {
+    flex: 1 1 calc(100% - 7%);
+}
+
+.animateContainer {
+    position: fixed;
+    inset: 0;
+}
+
+.blockContainer {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+    background-color: white;
+    overflow: hidden;
+    transform: all 500ms ease;
+    opacity: 1;
+}
+
+
+.block{
+    display: inline-block;
+    position: fixed;
+    flex: 1;
+    z-index: 100;
+    height: 100vh;
+    width: 100%;
+    z-index: 1000;
+}
+.block:nth-child(1) {
+    background-color: red;
+}
+
+.hideContainer {
+    transition: opacity 500ms ease;
+    opacity: 0;
+}

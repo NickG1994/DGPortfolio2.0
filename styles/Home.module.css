@@ -1,129 +1,766 @@
-.container {
-  padding: 0 2rem;
-}
+/* Desktop Styling */
+/* font styling */
 
-.main {
-  min-height: 100vh;
-  padding: 4rem 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+/*
+.mainContainer > section {
+  position: relative;
+  z-index: 1000;
 }
+*/
 
-.footer {
-  display: flex;
-  flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
-  justify-content: center;
-  align-items: center;
-}
-
-.footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
-}
-
-.title a {
-  color: #0070f3;
-  text-decoration: none;
-}
-
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
-}
-
-.title {
-  margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
-}
-
-.title,
-.description {
+.courselContentContainer > h1::after {
+  content: '</h1>';
+  position: relative;
+  font-size: 0.8rem;
+  left: 1rem;
+  margin: auto 0;
   text-align: center;
 }
 
-.description {
-  margin: 4rem 0;
-  line-height: 1.5;
-  font-size: 1.5rem;
+.mainContainer * > h2 {
+  font-size: 4rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color:var(--headerColor);
+  font-family: 'Roboto', 'Courier New', Courier, monospace;
 }
 
-.code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
+.portfolioTop > h2 { position: relative; }
+
+.portfolioTop > h2::before {
+  content: '<h2>';
+  position: absolute;
+  top: -0.8rem;
+  font-size: 0.8rem;
 }
 
-.grid {
+/* Psuedo Styling */
+.courselContentContainer > h1::before {
+  content: '<h1>';
+  position: absolute;
+  top: 0rem;
+  font-size: 0.8rem;
+}
+
+.portfolioTop > h2::after {
+  content: '</h2>';
+  position: absolute;
+  bottom: -0.8rem;
+  left: 0;
+  font-size: 0.8rem;
+}
+
+.skillsRightContainer > p, 
+.aboutMeText, 
+.recentWorkTextContainer p,
+.portfolioTop > p {
+  font-size: 1rem;
+  letter-spacing: 0.01rem;
+  color:whitesmoke;
+  line-height: 1.4rem;
+  max-width: 80%;
+}
+
+.textContentContainerLeft p, 
+.textContentContainerRight p{
+  max-width: 90%;
+}
+
+.portfolioTop > p { max-width: 50%; }
+/* font Styling */
+
+/* End Global layout  */
+/************************************************************************/
+/* Start layout */
+/* Main Container for all content */
+#hero {
+  position: relative;
+  width: auto;
+  height: 100vh;
+}
+.heroContainer {
+  display: flex;
+  align-items:center;
+  height: inherit;
+}
+/* Rcent Work */
+#recentWork {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
   display: flex;
   align-items: center;
+}
+.recentWorkContainer {
+  height: auto;
+  /*margin-top: 6rem;
+  margin-bottom: 10vh;*/
+}
+/* About me */
+#aboutMe {
+  padding: 1rem 1rem;
+  margin: 5rem 0;
+  height: auto;
+}
+#skills {
+  width: 100%;
+  display: flex;
+}
+/* Portfolio */
+#portfolio {
+  margin: 4rem 0;
+}
+/* Contact Me */
+#contactMe {
+  padding: 0 1rem;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  }
+ .contactMeContainer {
+  display: flex;
+  padding-bottom: 1.5rem;
+  width: 100%;
+}
+
+
+/* End layout */
+/**********************************************************************/
+/*hero section*/
+
+/* next.js automatically adds span tags. need to style all span! */
+.courselContentContainer {
+  position: relative;
+  display: grid;
+  align-items: center;
+  z-index: 100;
+  width: 100%;
+  padding: 1rem;
+  padding-left: 1.5rem;
+}
+.courselContentContainer > * {
+  color:var(--headerColor)
+}
+
+.courselContentContainer > h1 {
+  font-size: 4rem;
+  width: 100%;
+  margin-bottom: 1.2rem;
+  font-weight: 500;
+  letter-spacing:  0.2rem;
+}
+
+.courselContentContainer > h4 {
+  font-size: 0.9rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-style: italic;
+  width: 100%;
+  margin-bottom: 3rem;
+  letter-spacing:  0.2rem;
+}
+
+/* inner hero */
+
+/* hero section */
+/***********************************/
+/* portfolio Section */
+.portfolioTop {
+padding: 1rem 1rem;
+position: relative;
+margin-bottom: 2rem;
+}
+
+.portfolioTop::after {
+content: "Portfolio";
+position: absolute;
+right: 1rem;
+top: 0;
+bottom: 0;
+font-size: 11rem;
+background-color: #233342;
+opacity: 0.2;
+}
+
+/* End portfolio section */
+/*********************************************/
+/* Gallery Section */
+
+.gallery .gridItem {
+  position: relative;
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+
+.gallery .gridItem > span {
+  height: 100% !important;
+}
+/* Gallery item overlay */
+.overlay {
+  position: absolute;
+  transition: all 500ms ease;
+  opacity: 0;
+  inset: 0;
+  display: grid;
+  align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
 }
 
-.card {
-  margin: 1rem;
-  padding: 1.5rem;
-  text-align: left;
-  color: inherit;
-  text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 300px;
+.overlayContainer {
+  background-color: var(--headerColor);
+  display: inline-block;
+  padding: 0.8rem 1rem;
+  transition: all 500ms ease;
+  transform:translateY(0);
 }
 
-.card:hover,
-.card:focus,
-.card:active {
-  color: #0070f3;
-  border-color: #0070f3;
+.gallery .gridItem:hover .overlay{
+  opacity: 1;
+  background:rgba(12, 12, 12, 0.5);
 }
 
-.card h2 {
-  margin: 0 0 1rem 0;
+.gallery .gridItem:hover .overlayContainer {
+  transform:translateY(-1rem);
+}
+/* Gallery item overlay */
+/* end Gallery Section */
+/***********************************/
+/* about Me */
+/* left section */
+.textContentContainerLeft, .skillsRightContainer {
+  flex: 0.5;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+}
+.svgContainer {
+  flex: 0.5;
+}
+.svgContainer:nth-child(2) {
+  flex: 0.5;
+  background: url('../public/img/vector art 1.png') center  no-repeat;
+  object-fit: fill;
+  background-size: contain;
+}
+
+.aboutMeContainer {
+height: inherit;
+display: flex;
+}
+.textContentContainerLeft { overflow: auto; }
+
+/* left section */
+/* right*/
+.svgContainer svg {
+  width: 48px;
+  height: 48px;
+  }
+.svgContainer {
+  margin-left: 1rem;
+  position: relative;
+}
+.svgContainer {
+  overflow: hidden;
+}
+/* End Skills section*/
+/* styling table 
+1 - react
+2 - css 
+3 - github
+4 - node.js 
+5 - mongodb
+6 -  javascript
+7 - html
+*/
+
+/* React.js svg */
+.svgContainer .svgWrapper:nth-child(2n) > svg{
+  width: 4rem;
+  height: 4rem;
+}
+
+.svgContainer .svgWrapper:nth-child(3n) > svg{
+  width: 6rem;
+  height: 6rem;
+}
+
+.svgContainer .svgWrapper:nth-child(4n) > svg{
+  width: 8rem;
+  height: 8rem;
+}
+/* svg Container  */
+.svgWrapper{
+  transition: opacity 500ms ease;
+  position: relative;
+}
+.svgWrapper > h3{
+  transition: opacity 500ms ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+}
+.svgWrapper:hover svg{
+  transition: opacity 500ms ease;
+  opacity: 0;
+}
+.svgWrapper:hover > h3{
+  transition: opacity 500ms ease;
+  opacity: 1;
+  color: var(--fontColor);
   font-size: 1.5rem;
+  font-family: roboto;
+} 
+
+.svgWrapper:nth-child(n){
+  width: auto;
+  height: auto;
+  cursor: pointer;
+}
+/* svg Container  */
+
+.svgContainer .svgWrapper:nth-child(n) {
+  position: absolute;
+  height: auto;
+}
+.svgContainer .svgWrapper:nth-child(1) {
+  top: 20%;
+  left: 10%;
+}
+.svgContainer .svgWrapper:nth-child(2) {
+  top: 10%;
+  left: calc((50%));
+
+}
+/* need to calculate for svg height in order to 
+prevent the svg from overflowing  */
+.svgContainer .svgWrapper:nth-child(3) {
+  top: calc(100% - 6rem);
+  left: 10%;
+}
+/* 
+  20% for the space that is taken to the right when overflow
+ */
+ .svgContainer .svgWrapper:nth-child(4) {
+  top: calc((100%) - 8rem);
+  left: calc((70% - 8rem));
 }
 
-.card p {
-  margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
+.svgContainer .svgWrapper:nth-child(5) {
+  top: calc(20% + 5rem);
+  left: calc(90%  - 5rem);
 }
 
-.logo {
-  height: 1em;
-  margin-left: 0.5rem;
+.svgContainer .svgWrapper:nth-child(6) {
+  top: calc(50%);
+  left: calc(50%);
+}
+/* right*/
+/* react.js svg */
+
+/* About Me Recent SVG STYLING */
+/* **************************************  */
+/* Recent Works */
+.recentWorkTextContainer {
+  padding-left: 1rem;
+  padding-bottom: 2rem;
 }
 
-@media (max-width: 600px) {
-  .grid {
+.recentWorkHeader {
+  color: var(--headerColor);
+  font-size:2rem;
+  margin-bottom: 3vh;
+}
+
+.recentSubheader {
+  font-size:1.2rem;
+}
+
+.recentWorkTextContainer {
+  margin-bottom: 1.2vh;
+}
+
+.recentWorkGalleryContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.recentWorkGalleryContainer > span{
+  flex:calc(1/3) 1 33%;
+}
+
+/* Contact Me Section */
+
+.contactHeader {
+  color: var(--headerColor);
+  text-transform: uppercase;
+}
+
+.contactMeContainerLeft, .contactMeContainerRight {
+  flex:0.5;
+}
+
+.contactMeContainerLeft {
+  display: grid;
+  align-items: center;
+  margin-right: 1rem;
+}
+/* For 960 pixel screen size or more */
+/* End Contact Me Section */
+@media only screen and (min-width: 960px) {
+/* font styling */
+
+.courselContentContainer > h1, .courselContentContainer > h4 {
+  font-size: 4rem;
+  font-weight: 600;
+  margin-bottom: 0.4em;
+  color:var(--headerColor);
+  font-family: 'Roboto', 'Courier New', Courier, monospace;
+}
+.mainContainer * > h2 {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color:var(--headerColor);
+  font-family: 'Roboto', 'Courier New', Courier, monospace;
+}
+
+.portfolioTop > h2 { position: relative; }
+
+.portfolioTop > h2::before {
+  content: '<h2>';
+  position: absolute;
+  top: -1rem;
+  font-size: 1rem;
+}
+
+.portfolioTop > h2::after {
+  content: '</h2>';
+  position: absolute;
+  bottom: -1rem;
+  left: 0;
+  font-size: 1rem;
+}
+
+.courselContentContainer > h4 {
+  font-size: 2em !important;
+  font-weight: 400 !important;
+  margin-bottom: 1.5em !important;
+}
+
+/* Psuedo Styling */
+.courselContentContainer > h1::before {
+  content: '<h1>';
+  position: absolute;
+  top: 0rem;
+  font-size: 1rem;
+}
+
+.courselContentContainer > h1::after {
+  content: '</h1>';
+  position: relative;
+  font-size: 1rem;
+  left: 1rem;
+  margin: auto 0;
+  text-align: center;
+}
+
+.skillsRightContainer > p, 
+.aboutMeText, 
+.recentWorkTextContainer p,
+.portfolioTop > p {
+  font-size: 1em;
+  letter-spacing: 0.01rem;
+  color:whitesmoke;
+  line-height: 1.4rem;
+  max-width: 80%;
+}
+
+}
+
+@media only screen and (min-width:1440px) {
+
+} 
+
+@media only screen and (min-width:2000px) {
+  
+} 
+
+
+
+/* start here for mobile */
+@media only screen and (max-width:580px) {
+  /* font styling */
+  .courselContentContainer > h1 {
+    font-size: 3em;
+  }
+  /* Psuedo Styling */
+  .courselContentContainer > h1::before {
+    content: '<h1>';
+    position: absolute;
+    top: 0rem;
+    font-size: 0.4em;
+  }
+  .courselContentContainer > h1::after {
+    content: '</h1>';
+    position: relative;
+    font-size: 0.4em;
+    left: 1rem;
+    margin: auto 0;
+    text-align: center;
+  }
+  
+  .mainContainer * > h2 {
+    font-size: 2em;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color:var(--headerColor);
+    font-family: 'Roboto', 'Courier New', Courier, monospace;
+  }
+  
+  .portfolioTop > h2 { position: relative; }
+  
+  .portfolioTop > h2::before {
+    content: '<h2>';
+    position: absolute;
+    top: -0.8rem;
+    font-size: 0.8rem;
+  }
+  
+
+  
+  .portfolioTop > h2::after {
+    content: '</h2>';
+    position: absolute;
+    bottom: -0.8rem;
+    left: 0;
+    font-size: 0.8rem;
+  }
+  
+  .skillsRightContainer > p, 
+  .aboutMeText, 
+  .recentWorkTextContainer p,
+  .portfolioTop > p {
+    font-size: 1rem;
+    letter-spacing: 0.01rem;
+    color:whitesmoke;
+    line-height: 1.4rem;
+    max-width: 80%;
+  }
+  
+  .portfolioTop > p { max-width: 50%; }
+  /* font Styling */
+  
+  /* End Global layout  */
+  /************************************************************************/
+  /* Start layout */
+  /* Main Container for all content */
+  #hero {
+    position: relative;
+    width: auto;
+    height: 65vh;
+  }
+  .heroContainer {
+    display: flex;
+    align-items:center;
+    height: inherit;
+  }
+  
+  .gallery {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  }
+  /* Rcent Work */
+  #recentWork {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+  .recentWorkContainer {
+    height: auto;
+    /*margin-top: 6rem;
+    margin-bottom: 10vh;*/
+  }
+  /* About me */
+  #aboutMe {
+    padding: 1rem 1rem;
+    margin: 5rem 0;
+    height: auto;
+  }
+  #skills {
     width: 100%;
+    display: flex;
+  }
+  /* Portfolio */
+  #portfolio {
+    margin: 4rem 0;
+  }
+  /* Contact Me */
+  #contactMe {
+    padding: 0 1rem;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    }
+   .contactMeContainer {
+    display: flex;
+    padding-bottom: 1.5rem;
+    width: 100%;
+  }
+  
+  
+  /* End layout */
+  
+  .portfolioTop > h2 { position: relative; }
+  
+  .portfolioTop > h2::before {
+    content: '<h2>';
+    position: absolute;
+    top: -0.8rem;
+    font-size: 0.8rem;
+  }
+  .portfolioTop > h2::after {
+    content: '</h2>';
+    position: absolute;
+    bottom: -0.8rem;
+    left: 0;
+    font-size: 0.8rem;
+  }
+  
+  .skillsRightContainer > p, 
+  .aboutMeText, 
+  .recentWorkTextContainer p,
+  .portfolioTop > p {
+    font-size: 1rem;
+    letter-spacing: 0.01rem;
+    color:whitesmoke;
+    line-height: 1.4rem;
+    max-width: 80%;
+  }
+  
+  .portfolioTop > p { max-width: 50%; }
+  /* font Styling */
+  /* Global */
+  /********************************************************************/
+  /* Layout*/
+
+  #recentWork {
+    margin: 0;
+    padding: 0;
+    height: auto;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+  }
+
+  #contactMe {
+    height: auto;
+  }
+  .aboutMeContainer, #skills, .contactMeContainer {
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
+  /* Layout*/
+  .portfolioTop {
+    margin-bottom: 5vh;
+  }
+
+
+  .contactMeContainerRight{
+    margin-top: 4rem;
+  }
+
+  .contactMeContainerRight p,   .contactMeContainerLeft p{
+    width: 100%;
+
+  }
+  #skills {
+    flex-direction: column-reverse !important;
+  }
+  /* About Me svg */
+  .svgContainer {
+    margin-top: 2vh;
+    height: 100vh;
+    margin-left: 0;
+    flex: none;
+  }
+  /* svg Containers cards */
+  .svgContainer .svgWrapper:nth-child(1n) > svg{
+    width: 6rem;
+    height: 6rem;
+  }
+  .svgContainer .svgWrapper:nth-child(2n) > svg{
+    width: 6rem;
+    height: 6rem;
+  }
+
+  .svgContainer .svgWrapper:nth-child(3n) > svg{
+    width: 8rem;
+    height: 8rem;
+  }
+
+  .svgContainer .svgWrapper:nth-child(4n) > svg{
+    width: 10rem;
+    height: 10rem;
+  }
+  /* About Me svg */
+  /* Contact Form */
+
+  /* 
+  20% for the space that is taken to the right when overflow
+  */
+  /*
+  .svgContainer:nth-child(2n) > svg{
+  width: 4rem;
+  height: 4rem;
+  }
+
+  .svgContainer:nth-child(3n) > svg{
+  width: 6rem;
+  height: 6rem;
+  }
+
+  .svgContainer:nth-child(4n) > svg{
+  width: 8rem;
+  height: 8rem;
+  }*/
+
+  .svgContainer .svgWrapper:nth-child(2n) {
+    left: calc((100% - 10rem ));
+  }
+  .svgContainer .svgWrapper:nth-child(3n) {
+    left: calc(calc(50% - 10rem));
+  }
+  .svgContainer .svgWrapper:nth-child(4n) {
+    top: calc(50%);
+    left: calc(calc(50% - 10rem ));
+  }
+
+  .svgContainer .svgWrapper:nth-child(5) {
+    left: calc(100% - 10rem );
+  }
+
+  .svgContainer .svgWrapper:nth-child(6) {
+    top: 70%;
+    left: calc(100% - 10rem );
+  }
+
+  .svgContainer .svgWrapper:nth-child(3) {
+    top: 80%;
+  }
+  /* svg Containers cards */
+
+  .recentWorkGalleryContainer {
     flex-direction: column;
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  .card,
-  .footer {
-    border-color: #222;
-  }
-  .code {
-    background: #111;
-  }
-  .logo img {
-    filter: invert(1);
-  }
-}
+
+
+
+
+

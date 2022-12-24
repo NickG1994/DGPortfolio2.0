@@ -1,0 +1,59 @@
+.animateContainer {
+    position: fixed;
+    inset: 0;
+}
+.blockContainer {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% - 100px);
+    height: 100vh;
+    z-index: 100;
+    background-color: #ffffff;
+}
+
+.mainContainer {
+    width: 100%;
+}
+
+.hideLoading {
+    opacity: 0;
+}
+
+
+.block{
+    display: inline-block;
+    position: fixed;
+    flex: 1;
+    z-index: 100;
+    height: 100vh;
+    width: 100%;
+    z-index: 1000;
+}
+.block:nth-child(1) {
+    background-color: red;
+}
+
+
+@media only screen and (min-width: 960px) {
+    .containerTransition {
+        flex: 0 0 calc(100% - 100px)
+    }
+
+}
+
+@media only screen and (max-width: 560px) {
+    .blockContainer {
+        width: 100%;
+        overflow: hidden !important;
+    }
+
+    .containerTransition {
+       flex:  none;
+       width: 100%;
+    }
+}
+
+
+
