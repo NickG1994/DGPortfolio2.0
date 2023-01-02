@@ -24,7 +24,7 @@ function Navigation() {
       setToggle(false);
     }
   }
-  console.log("toogle" + toggle);
+
   useEffect(() => {
     setToggle(false);
   }, [router]);

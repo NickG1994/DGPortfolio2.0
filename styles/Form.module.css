@@ -1,6 +1,4 @@
-.form{
-    width:100%;
-}
+.form{ width:100%; }
 .field{
     position: relative;
     width: 100%;
@@ -16,9 +14,7 @@
     transition: all 500ms ease-in;
 }
 
-.inputField, .placeholder {
-    font-size: 1rem;
-}
+.inputField, .placeholder { font-size: 1rem; }
 
 .inputField{
     position: inherit;
@@ -28,20 +24,12 @@
     padding-left: 0.5rem;
 }
 
-.name {
-
-}
-
-.message{
-    height: 25vh;
-}
-
 .inputField:focus ~ .placeholder, 
 .active ~ .placeholder{
     transform: translateY(-2rem) scale(1.2);
     color: white;
 }
 
-.inputFocus{
-
-}
+.fieldContainer { height: 15rem; }
+.message{ height: 3rem; transition: all 1s ease; resize:none; }
+.message:focus, .active { height: 200px; }

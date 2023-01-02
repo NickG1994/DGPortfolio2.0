@@ -9,12 +9,12 @@ function Modal({ id, state, setToggleModal }) {
   function modal(e) {
     console.log(e.target.className);
     if (e.target.className == "Modal_modalImage__eaytF") {
-      console.log("do not close");
+      //console.log("do not close");
       setToggleModal((prev) => (prev = true));
       return;
     }
     setToggleModal((prev) => (prev = false));
-    console.log("close the modal");
+    //console.log("close the modal");
   }
 
   //console.log("state: " + state);

@@ -25,22 +25,27 @@
     align-items: center;
     justify-content: center;
   }
-  
   .overlayContainer {
     background-color: var(--headerColor);
     display: inline-block;
     padding: 0.8rem 1rem;
   }
-  
-    .gridItem:hover .overlay{
+
+  .gridItem:hover .overlay{
     opacity: 1;
     background:rgba(12, 12, 12, 0.5);
   }
+
   
   .overlayContainer {
     transition: all 500ms ease;
     transform:translateY(0);
   }
+  .front span{
+    position: initial !important;
+    object-fit: fill !important;
+  }
+
   
    .gridItem:hover .overlayContainer {
     transform:translateY(-1rem);

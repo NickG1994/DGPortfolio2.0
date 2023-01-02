@@ -10,7 +10,6 @@ function GridGallery() {
   const [state, setState] = useState(false);
 
   function modal(e) {
-    //console.log(e.target);
     setModalIndex(e.currentTarget.id);
     setState(!state);
   }
@@ -18,27 +17,26 @@ function GridGallery() {
   const slides = useMemo(() => {
     const slide = projects.map((project, index) => (
       <motion.div
+        initial={{ opacity: 0, y: 50 }}
         viewport={{
           once: true,
-          transition: {
-            duration: 1,
-            delay: 0.75,
-          },
         }}
         whileInView={{
           opacity: 1,
-          transition: { duration: 1 },
+          y: 0,
+          transition: { duration: 1, delay: 0.1 * index },
         }}
-        initial={{ opacity: 0 }}
         onClick={(e) => modal(e)}
         id={index}
         key={index}
         className={styles["gridItem"]}
       >
-        <Image src={project.src} loading="lazy" />
-        <div className={styles.overlay}>
-          <div id={index} className={styles.overlayContainer}>
-            <p className={styles.overlayText}>{project.Header}</p>
+        <div className={styles.front}>
+          <Image src={project.src} loading="lazy" objectPosition={"initial"} />
+          <div className={styles.overlay}>
+            <div id={index} className={styles.overlayContainer}>
+              <p className={styles.overlayText}>{project.Header}</p>
+            </div>
           </div>
         </div>
       </motion.div>

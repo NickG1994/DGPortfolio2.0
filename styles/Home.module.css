@@ -7,16 +7,6 @@
   z-index: 1000;
 }
 */
-
-.courselContentContainer > h1::after {
-  content: '</h1>';
-  position: relative;
-  font-size: 0.8rem;
-  left: 1rem;
-  margin: auto 0;
-  text-align: center;
-}
-
 .mainContainer * > h2 {
   font-size: 4rem;
   font-weight: 600;
@@ -38,9 +28,18 @@
 .courselContentContainer > h1::before {
   content: '<h1>';
   position: absolute;
-  top: 0rem;
+  top: -2em;
   font-size: 0.8rem;
 }
+.courselContentContainer > h1::after {
+  content: '</h1>';
+  position: relative;
+  font-size: inherit;
+  left: 1em;
+  margin: auto 0;
+  text-align: center;
+}
+
 
 .portfolioTop > h2::after {
   content: '</h2>';
@@ -58,7 +57,6 @@
   letter-spacing: 0.01rem;
   color:whitesmoke;
   line-height: 1.4rem;
-  max-width: 80%;
 }
 
 .textContentContainerLeft p, 
@@ -98,7 +96,6 @@
 }
 /* About me */
 #aboutMe {
-  padding: 1rem 1rem;
   margin: 5rem 0;
   height: auto;
 }
@@ -122,6 +119,19 @@
   padding-bottom: 1.5rem;
   width: 100%;
 }
+.recentWorkTextContainer{
+  margin-bottom: 2em;
+}
+
+#skills {
+  height: 100vh;
+}
+
+#aboutMe, #skills, #contactMe, .recentWorkTextContainer, 
+.courselContentContainer
+, .portfolioTop {
+  padding: 0 4em;
+}
 
 
 /* End layout */
@@ -135,8 +145,6 @@
   align-items: center;
   z-index: 100;
   width: 100%;
-  padding: 1rem;
-  padding-left: 1.5rem;
 }
 .courselContentContainer > * {
   color:var(--headerColor)
@@ -165,10 +173,10 @@
 /***********************************/
 /* portfolio Section */
 .portfolioTop {
-padding: 1rem 1rem;
 position: relative;
 margin-bottom: 2rem;
 }
+
 
 .portfolioTop::after {
 content: "Portfolio";
@@ -239,8 +247,15 @@ opacity: 0.2;
 .svgContainer:nth-child(2) {
   flex: 0.5;
   background: url('../public/img/vector art 1.png') center  no-repeat;
-  object-fit: fill;
+  object-fit: cover;
   background-size: contain;
+}
+
+.svgContainer:nth-child(1) {
+  flex: 0.5;
+  background: url('../public/img/hobbies.png') center  no-repeat;
+  background-size: fill;
+  
 }
 
 .aboutMeContainer {
@@ -362,10 +377,7 @@ prevent the svg from overflowing  */
 /* About Me Recent SVG STYLING */
 /* **************************************  */
 /* Recent Works */
-.recentWorkTextContainer {
-  padding-left: 1rem;
-  padding-bottom: 2rem;
-}
+
 
 .recentWorkHeader {
   color: var(--headerColor);
@@ -453,7 +465,7 @@ prevent the svg from overflowing  */
 .courselContentContainer > h1::before {
   content: '<h1>';
   position: absolute;
-  top: 0rem;
+  top: -1em;
   font-size: 1rem;
 }
 
@@ -466,7 +478,6 @@ prevent the svg from overflowing  */
   text-align: center;
 }
 
-.skillsRightContainer > p, 
 .aboutMeText, 
 .recentWorkTextContainer p,
 .portfolioTop > p {
@@ -474,7 +485,7 @@ prevent the svg from overflowing  */
   letter-spacing: 0.01rem;
   color:whitesmoke;
   line-height: 1.4rem;
-  max-width: 80%;
+  max-width: 55%;
 }
 
 }
@@ -484,13 +495,26 @@ prevent the svg from overflowing  */
 } 
 
 @media only screen and (min-width:2000px) {
+  .courselContentContainer > h1 {
+    font-size: 6rem;
+    width: 100%;
+    margin-bottom: 1.2rem;
+    font-weight: 500;
+    letter-spacing:  0.2rem;
+  }
   
+  .courselContentContainer > h4 {
+    font-size: 2rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: italic;
+    width: 100%;
+    margin-bottom: 3rem;
+    letter-spacing:  0.2rem;
+  }
 } 
 
-
-
 /* start here for mobile */
-@media only screen and (max-width:580px) {
+@media only screen and (max-width:950px), (max-width:580px) {
   /* font styling */
   .courselContentContainer > h1 {
     font-size: 3em;
@@ -499,7 +523,7 @@ prevent the svg from overflowing  */
   .courselContentContainer > h1::before {
     content: '<h1>';
     position: absolute;
-    top: 0rem;
+    top: -1rem;
     font-size: 0.4em;
   }
   .courselContentContainer > h1::after {
@@ -527,9 +551,7 @@ prevent the svg from overflowing  */
     top: -0.8rem;
     font-size: 0.8rem;
   }
-  
 
-  
   .portfolioTop > h2::after {
     content: '</h2>';
     position: absolute;
@@ -546,10 +568,8 @@ prevent the svg from overflowing  */
     letter-spacing: 0.01rem;
     color:whitesmoke;
     line-height: 1.4rem;
-    max-width: 80%;
+    max-width: 100%;
   }
-  
-  .portfolioTop > p { max-width: 50%; }
   /* font Styling */
   
   /* End Global layout  */
@@ -587,7 +607,6 @@ prevent the svg from overflowing  */
   }
   /* About me */
   #aboutMe {
-    padding: 1rem 1rem;
     margin: 5rem 0;
     height: auto;
   }
@@ -601,20 +620,22 @@ prevent the svg from overflowing  */
   }
   /* Contact Me */
   #contactMe {
-    padding: 0 1rem;
     height: 100vh;
     display: flex;
     align-items: center;
     }
    .contactMeContainer {
     display: flex;
-    padding-bottom: 1.5rem;
     width: 100%;
   }
-  
-  
-  /* End layout */
-  
+
+  #aboutMe, #skills, .portfolioTop,
+  #contactMe, .recentWorkTextContainer{
+    padding: 3em;
+    max-width: 100% !important;
+  }
+
+  /* End layout */  
   .portfolioTop > h2 { position: relative; }
   
   .portfolioTop > h2::before {
@@ -639,10 +660,9 @@ prevent the svg from overflowing  */
     letter-spacing: 0.01rem;
     color:whitesmoke;
     line-height: 1.4rem;
-    max-width: 80%;
+    max-width: fit-content;
   }
-  
-  .portfolioTop > p { max-width: 50%; }
+
   /* font Styling */
   /* Global */
   /********************************************************************/

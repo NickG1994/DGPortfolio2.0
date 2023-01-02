@@ -4,29 +4,35 @@
     text-decoration: none;
 }
 /* nav Container  */
+/* Important to change the width for the nav */
 .navContainer {
     position: initial;
-    width: 100%;
-    flex: 0 0 max(100px);
 }
 .innerNav {
     position: fixed;
     z-index: 100;
-    overflow-x: hidden;
     display: flex !important;
     flex-direction:column;
     justify-content: space-between;
-    max-width: 100px;
-    height: 100vh;
     background-color: var(--accentColor);
+    height: 100vh;
+}
+
+.navContainer {
+    position: absolute;
+    width: auto;
+}
+
+.innerNav {
+    width: 160px;
 }
 
 /* navigation Top */
 .navTop {
-    flex:1 1 20%;
+    flex:1 1 auto;
     padding: 0.5rem;
     display: flex;
-    align-items: center;
+    align-self: center;
 }
 
 .navTop span{
@@ -47,7 +53,7 @@
 .linkContainer {
     position: relative;
     background-color: var(--accentColor);
-    height: calc(100% / 5);
+    height: 4em;
     cursor: pointer;
     border-bottom: 0.2rem solid var(--backGround);
 }
@@ -213,7 +219,7 @@ text-transform: uppercase;
     .navContainer {
         position: initial;
         width: 100%;
-        flex: 0 0 max(100px);
+        flex: 0 0 max(150px) !important;
     }
     .innerNav {
         position: fixed;
@@ -222,7 +228,8 @@ text-transform: uppercase;
         display: flex !important;
         flex-direction:column;
         justify-content: space-between;
-        max-width: 100px;
+        width: 150px;
+        max-width: 150px;
         height: 100vh;
         background-color: var(--accentColor);
     }
@@ -253,7 +260,6 @@ text-transform: uppercase;
     .linkContainer {
         position: relative;
         background-color: var(--accentColor);
-        height: calc(100% / 5);
         cursor: pointer;
         border-bottom: 0.2rem solid var(--backGround);
     }
@@ -320,5 +326,27 @@ text-transform: uppercase;
     }
     
     
+}
+
+@media only screen and (min-width:1440px) {
+}
+
+@media only screen and (min-width:2000px) {
+    .navContainer {
+        position: initial;
+        width: 100%;
+        flex: 0 0 max(200px);
+    }
+    .innerNav {
+        position: fixed;
+        z-index: 100;
+        overflow-x: hidden;
+        display: flex !important;
+        flex-direction:column;
+        justify-content: space-between;
+        max-width: 200px;
+        height: 100vh;
+        background-color: var(--accentColor);
+    }
 }
 

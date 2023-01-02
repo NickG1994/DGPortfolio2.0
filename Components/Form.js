@@ -93,8 +93,9 @@ function Form() {
           />
           <label className={styles.placeholder}>subject: </label>
         </fieldset>
-        <fieldset className={styles.field}>
+        <fieldset className={styles["field"] + " " + styles["fieldContainer"]}>
           <textarea
+            autoComplete="true"
             className={
               styles.message +
               " " +

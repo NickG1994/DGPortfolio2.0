@@ -1,0 +1,75 @@
+.SkillsContainer {
+    display: flex;
+    color: white;
+    position: relative;
+    z-index: 10;
+    justify-content: space-between;
+}
+.SkillsContainer::after {
+    content: "";
+    position: absolute;
+    background: url("../public/img/skills/Project_76-01.png") no-repeat;
+    background-size: cover;
+    inset: 0;
+    background-color: var(--backGround);
+    opacity: 0.2;
+    z-index: -1;
+}
+
+.left {
+    flex: .4;
+}
+
+.left h2{
+ color: var(--headerColor);
+ font-size: 4rem;
+ font-weight: 600;
+ text-transform: uppercase;
+ margin-bottom: 1rem;
+}
+
+.right{
+    flex: .4;
+    width: 100%;
+}
+
+.paragraph {
+    font-size: 1rem;
+    color: whitesmoke;
+}
+
+.image {
+    vertical-align:middle;
+}
+
+@media only screen and (min-width: 960px) {
+    .SkillsContainer {
+        padding: 6vw 6vw;
+    } 
+}
+
+@media only screen and (min-width: 1440px) {
+    .SkillsContainer {
+        padding: 7vw 7vw ;
+    } 
+}
+
+@media only screen and (min-width: 2000px) {
+    .SkillsContainer {
+        padding: 10vw 10vw;
+    } 
+}
+
+@media only screen and (max-width: 580px), (max-width: 960px) {
+    .SkillsContainer {
+        flex-direction: column;
+        padding: 4em 4em;
+    }
+}
+
+@media only screen and (max-width:960px) {
+    .SkillsContainer {
+        flex-direction: column;
+        padding: 15vw 4vw;
+    }  
+}
