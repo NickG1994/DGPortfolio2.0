@@ -1,0 +1,171 @@
+/* global */
+/* end global */
+/*******************************************************/
+/* layouts */
+.about__container {
+height: 100vh;
+position: relative;
+padding: 4rem 3rem;
+}
+
+.about__content__container {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+}
+
+.about__container__right, .about__container__left {
+    flex: .5;
+    height: inherit;
+}
+
+.about__container__left {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    justify-content: center;
+    align-items: left;
+
+}
+
+/* end layouts */
+/*******************************************************/
+/* fonts */
+.about__container__left p {
+ color:whitesmoke;
+}
+.about__container__left h1 {
+    font-size: 4rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color:var(--headerColor);
+    font-family: 'Roboto', 'Courier New', Courier, monospace;
+}
+
+/* ends fonts */
+
+/* svg styles */
+
+/* left section */
+.textContentContainerLeft, .skillsRightContainer {
+    flex: 0.5;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+  }
+  
+  .aboutMeContainer {
+  height: inherit;
+  display: flex;
+  }
+  .textContentContainerLeft { overflow: auto; }
+  
+  /* left section */
+  /* right*/
+  .about__container__right svg {
+    width: 48px;
+    height: 48px;
+    }
+  .about__container__right {
+    position: relative;
+  }
+  .about__container__right {
+    overflow: hidden;
+  }
+  /* End Skills section*/
+  /* styling table 
+  1 - react
+  2 - css 
+  3 - github
+  4 - node.js 
+  5 - mongodb
+  6 -  javascript
+  7 - html
+  */
+  
+  /* React.js svg */
+  .about__container__right .svgWrapper:nth-child(2n) > svg{
+    width: 6rem;
+    height: 6rem;
+  }
+  
+  .about__container__right .svgWrapper:nth-child(3n) > svg{
+    width: 8rem;
+    height: 8rem;
+  }
+  
+  .about__container__right .svgWrapper:nth-child(4n) > svg{
+    width: 10rem;
+    height: 10rem;
+  }
+  /* svg Container  */
+  .svgWrapper{
+    transition: opacity 500ms ease;
+    position: relative;
+  }
+  .svgWrapper > h3{
+    transition: opacity 500ms ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+  }
+  .svgWrapper:hover svg{
+    transition: opacity 500ms ease;
+    opacity: 0;
+  }
+  .svgWrapper:hover > h3{
+    transition: opacity 500ms ease;
+    opacity: 1;
+    color: var(--fontColor);
+    font-size: 1.5rem;
+    font-family: roboto;
+  } 
+  
+  .svgWrapper:nth-child(n){
+    width: auto;
+    height: auto;
+    cursor: pointer;
+  }
+  /* svg Container  */
+  
+  .about__container__right .svgWrapper:nth-child(n) {
+    position: absolute;
+    height: auto;
+  }
+  .about__container__right .svgWrapper:nth-child(1) {
+    top: 20%;
+    left: 10%;
+  }
+  .about__container__right .svgWrapper:nth-child(2) {
+    top: 10%;
+    left: calc((50%));
+  
+  }
+  /* need to calculate for svg height in order to 
+  prevent the svg from overflowing  */
+  .about__container__right .svgWrapper:nth-child(3) {
+    top: calc(100% - (8rem + 4rem));
+    left: 10%;
+  }
+  /* 
+    20% for the space that is taken to the right when overflow
+   */
+   .about__container__right .svgWrapper:nth-child(4) {
+    top: calc((100%) - (10rem + 4rem));
+    left: calc((70% - 8rem));
+  }
+  
+  .about__container__right .svgWrapper:nth-child(5) {
+    top: calc(20% + 5rem);
+    left: calc(90%  - 5rem);
+  }
+  
+  .about__container__right .svgWrapper:nth-child(6) {
+    top: calc(50%);
+    left: calc(50%);
+  }
+  /* right*/
+  /* react.js svg */

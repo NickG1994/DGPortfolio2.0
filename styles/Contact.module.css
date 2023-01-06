@@ -1,0 +1,97 @@
+/* layout */
+.contact__container {
+position: relative;
+z-index: 10;
+}
+
+.contact__container::after {
+
+}
+
+.contact__content__container::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: url("../public/img/form.png") center no-repeat;
+    background-size: cover;
+    opacity: 0.4;
+}
+
+.contact__content__container {
+    display: flex;
+    gap: 10%;
+}
+
+.contact__left, .contact__right {
+    flex: .5;
+}
+
+.contact__left__cards {
+    height: 100vh;
+}
+
+.contact__cards .contact__card {
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+}
+
+.card__content {
+    margin-top: 1em;
+    width: max(60%);
+}
+
+.card__content h2{
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+/* end layout */
+/*************************************************************/
+/* font style */
+.contact__container::after {
+    background-color: black;
+}
+.card__content h2{
+    color: var(--headerColor);
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+.card__content p {
+    color: whitesmoke;
+}
+
+/* end font style */
+
+/* svg */
+.contact__cards svg {
+    font-size: 10rem;
+    vertical-align: middle;
+    color: whitesmoke;
+}
+/* end svg */
+
+@media only screen and (min-width:960px) {
+    .contact__container {
+        padding: 10% 5%;
+        height: calc(100vh + 10%);
+    }
+}
+
+@media only screen and (max-width:580px), (max-width:960px) {
+    /* layout */
+    .contact__container {
+        padding: 10% 5%;
+        height: calc(200% + 10%);
+    }
+    .contact__content__container {
+        padding: 10% 5%;
+        height: calc(200% + 10%);
+        flex-direction: column;
+    }
+    /* end layout */
+}
+
+

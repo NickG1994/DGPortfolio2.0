@@ -101,7 +101,7 @@ export default function Home() {
                 animate={{
                   opacity: 1,
                   x: 0,
-                  transition: { duration: 2, delay: 4 },
+                  transition: { duration: 2, delay: 2 },
                 }}
                 exit={{
                   opacity: 0,
@@ -156,10 +156,11 @@ export default function Home() {
           </div>
         </section>
         {/* About Me section skills and hobbies */}
-        <section id={styles.aboutMe}>
-          <div className={styles.aboutMeContainer}>
-            <div className={styles.textContentContainerLeft}>
+        <section id={styles.about}>
+          <div className={styles.about__container}>
+            <div className={styles.about__left}>
               <motion.h2
+                className={styles.about__title}
                 initial={config.initial}
                 viewport={{
                   once: true,
@@ -168,7 +169,7 @@ export default function Home() {
               >
                 About Me
               </motion.h2>
-              <p className={styles.aboutMeText}>
+              <p className={styles.about__content}>
                 Lorem ipsum dolor sit amet consectetur. Orci viverra risus nisi
                 auctor dictum pharetra. Vitae in dui cursus aliquam aliquet vel.
                 Sapien aliquet molestie in massa ornare. Tellus parturient ut in
@@ -181,7 +182,7 @@ export default function Home() {
                 vel pellentesque dui aliquet.
               </p>
               <br />
-              <p className={styles.aboutMeText}>
+              <p className={styles.about__content}>
                 having a natural curiosty for the world. Along with the passion
                 for learning. Is my core of me. From my work Ethics, lifestyle,
                 and carrer. To my passion, hardwork, and determination. With
@@ -198,20 +199,12 @@ export default function Home() {
                 location={"/Projects"}
               />
             </div>
-            <div className={styles.svgContainer}>
-              {/*              
-              {SVG.map((svgImage, index) => (
-                <span key={index} className={styles.svgWrapper}>
-                  <h3>{svgImage.iconName}</h3>
-                  <HTMLSVG key={index} svgString={svgImage.path} />
-                </span>
-              ))}*/}
-            </div>
+            <div className={styles.about__right}></div>
           </div>
         </section>
 
         <section id={styles.skills}>
-          <div className={styles.svgContainer}>
+          <div className={styles.skills__left}>
             {/*
             {SvgHobbies.map((svg, index) => (
               <motion.span key={index} className={styles.svgWrapper}>
@@ -222,23 +215,33 @@ export default function Home() {
             
             */}
           </div>
-          <div className={styles.skillsRightContainer}>
-            <h2>Hobbies</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur. Orci viverra risus nisi
-              auctor dictum pharetra. Vitae in dui cursus aliquam aliquet vel.
-              Sapien aliquet molestie in massa ornare. Tellus parturient ut in
-              blandit eget odio. At dui ornare quam senectus non sed eget.
-              Egestas at in consectetur massa massa pulvinar molestie vel
-              iaculis.
+          <div className={styles.skills__right}>
+            <h2 className={styles.skills__right__content}>Hobbies</h2>
+            <p className={styles.skills__right__content}>
+              Lorem ipsum dolor sit amet consectetur. Aliquet enim viverra
+              elementum justo sed etiam etiam. Enim morbi massa eu non tempor
+              nascetur. Rhoncus tellus a volutpat interdum dui elementum. Nibh
+              purus nulla faucibus nisi nunc arcu urna felis. Porta pretium
+              dolor etiam vel tellus sit vestibulum scelerisque est. Fermentum
+              lorem nibh libero urna id. Augue placerat in in faucibus in fames
+              ac. Magna augue at dignissim mauris viverra tortor sit facilisis
+              vitae. Amet at ante ut facilisis facilisis vitae varius. Tincidunt
+              feugiat orci nec augue ut.
             </p>
             <br />
-            <p>
-              Purus cursus sit netus sagittis ultricies neque tempus quam proin.
-              Nibh sit sit eu urna. Nisl viverra potenti dui vivamus tellus
-              venenatis sagittis volutpat egestas. At porttitor fringilla at
-              faucibus in aliquam fringilla quisque. Urna diam vel pellentesque
-              dui aliquet.
+            <p className={styles.skills__right__content}>
+              Vel ultrices magna ullamcorper libero adipiscing. Massa in
+              consequat congue scelerisque. Nibh dictum sed mi ullamcorper eget.
+              Lectus vitae velit tellus sit turpis nulla nunc. Habitant libero
+              purus at egestas. Proin ipsum eros fermentum volutpat. Dolor risus
+              scelerisque aliquet velit sed et. Elit id condimentum et habitant
+              volutpat aenean.
+            </p>
+            <br />
+            <p className={styles.skills__right__content}>
+              Porttitor sagittis ullamcorper pulvinar odio nec aliquet magnis.
+              Enim dapibus vestibulum ullamcorper pharetra lectus tortor vitae
+              in elit. Turpis nec id faucibus non donec etiam.
             </p>
           </div>
         </section>
@@ -275,7 +278,6 @@ export default function Home() {
         <section id={styles.contactMe}>
           <div className={styles.contactMeContainer}>
             <div className={styles.contactMeContainerLeft}>
-              <h2 className={styles.contactHeader}>Contact Me</h2>
               <Form />
             </div>
             <div className={styles.contactMeContainerRight}>

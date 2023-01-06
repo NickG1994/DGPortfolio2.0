@@ -1,12 +1,12 @@
+/*
+global styles 
+font style 
+layout style
+media queries
+*/
+
 /* Desktop Styling */
 /* font styling */
-
-/*
-.mainContainer > section {
-  position: relative;
-  z-index: 1000;
-}
-*/
 .mainContainer * > h2 {
   font-size: 4rem;
   font-weight: 600;
@@ -14,138 +14,7 @@
   color:var(--headerColor);
   font-family: 'Roboto', 'Courier New', Courier, monospace;
 }
-
-.portfolioTop > h2 { position: relative; }
-
-.portfolioTop > h2::before {
-  content: '<h2>';
-  position: absolute;
-  top: -0.8rem;
-  font-size: 0.8rem;
-}
-
-/* Psuedo Styling */
-.courselContentContainer > h1::before {
-  content: '<h1>';
-  position: absolute;
-  top: -2em;
-  font-size: 0.8rem;
-}
-.courselContentContainer > h1::after {
-  content: '</h1>';
-  position: relative;
-  font-size: inherit;
-  left: 1em;
-  margin: auto 0;
-  text-align: center;
-}
-
-
-.portfolioTop > h2::after {
-  content: '</h2>';
-  position: absolute;
-  bottom: -0.8rem;
-  left: 0;
-  font-size: 0.8rem;
-}
-
-.skillsRightContainer > p, 
-.aboutMeText, 
-.recentWorkTextContainer p,
-.portfolioTop > p {
-  font-size: 1rem;
-  letter-spacing: 0.01rem;
-  color:whitesmoke;
-  line-height: 1.4rem;
-}
-
-.textContentContainerLeft p, 
-.textContentContainerRight p{
-  max-width: 90%;
-}
-
-.portfolioTop > p { max-width: 50%; }
-/* font Styling */
-
-/* End Global layout  */
-/************************************************************************/
-/* Start layout */
-/* Main Container for all content */
-#hero {
-  position: relative;
-  width: auto;
-  height: 100vh;
-}
-.heroContainer {
-  display: flex;
-  align-items:center;
-  height: inherit;
-}
-/* Rcent Work */
-#recentWork {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-}
-.recentWorkContainer {
-  height: auto;
-  /*margin-top: 6rem;
-  margin-bottom: 10vh;*/
-}
-/* About me */
-#aboutMe {
-  margin: 5rem 0;
-  height: auto;
-}
-#skills {
-  width: 100%;
-  display: flex;
-}
-/* Portfolio */
-#portfolio {
-  margin: 4rem 0;
-}
-/* Contact Me */
-#contactMe {
-  padding: 0 1rem;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  }
- .contactMeContainer {
-  display: flex;
-  padding-bottom: 1.5rem;
-  width: 100%;
-}
-.recentWorkTextContainer{
-  margin-bottom: 2em;
-}
-
-#skills {
-  height: 100vh;
-}
-
-#aboutMe, #skills, #contactMe, .recentWorkTextContainer, 
-.courselContentContainer
-, .portfolioTop {
-  padding: 0 4em;
-}
-
-
-/* End layout */
-/**********************************************************************/
-/*hero section*/
-
-/* next.js automatically adds span tags. need to style all span! */
-.courselContentContainer {
-  position: relative;
-  display: grid;
-  align-items: center;
-  z-index: 100;
-  width: 100%;
-}
+/* hero font style */
 .courselContentContainer > * {
   color:var(--headerColor)
 }
@@ -166,33 +35,183 @@
   margin-bottom: 3rem;
   letter-spacing:  0.2rem;
 }
+.courselContentContainer > h1::before {
+  content: '<h1>';
+  position: absolute;
+  top: -2em;
+  font-size: 0.8rem;
+}
+.courselContentContainer > h1::after {
+  content: '</h1>';
+  position: relative;
+  font-size: inherit;
+  left: 1em;
+  margin: auto 0;
+  text-align: center;
+}
+/* end courasel container */
+/* end hero font*/
+/* ############################################ */
+/* portfolio font stle*/ 
+.portfolioTop > p { max-width: 50%; }
+.portfolioTop > h2 { position: relative; }
 
-/* inner hero */
+.portfolioTop > h2::before {
+  content: '<h2>';
+  position: absolute;
+  top: -0.8rem;
+  font-size: 0.8rem;
+}
 
-/* hero section */
-/***********************************/
-/* portfolio Section */
+.portfolioTop > h2::after {
+  content: '</h2>';
+  position: absolute;
+  bottom: -0.8rem;
+  left: 0;
+  font-size: 0.8rem;
+}
+.portfolioTop::after {
+  font-size: 11rem;
+  background-color: #233342;
+  }
+/* end portfolio font style */ 
+
+/* recent font style */
+.recentWorkHeader {
+  color: var(--headerColor);
+  font-size:2rem;
+  margin-bottom: 3vh;
+}
+
+.recentSubheader { font-size:1.2rem; }
+/* end recent font style */
+
+/* contact font style */
+
+
+/* contact font style */
+
+
+.skillsRightContainer > p, 
+.recentWorkTextContainer p,
+.portfolioTop > p, .about__content, p.skills__right__content {
+  font-size: 1rem;
+  letter-spacing: 0.01rem;
+  color:whitesmoke;
+  line-height: 1.4rem;
+}
+
+/* font Styling */
+
+/* End Global layout  */
+/************************************************************/
+/**************** START LAYOUT SECTION ************************/
+/***********************************************************/
+
+/* Start layout */
+/* hero layout style */
+#hero {
+  position: relative;
+  width: auto;
+  height: 100vh;
+}
+.heroContainer {
+  display: flex;
+  align-items:center;
+  height: inherit;
+}
+
+/* hero courasel layout style */
+/* next.js automatically adds span tags. need to style all span! */
+.courselContentContainer {
+  position: relative;
+  display: grid;
+  align-items: center;
+  z-index: 100;
+  width: 100%;
+}
+
+/* end hero coursel layout style */
+/* end hero layout style */
+/* ###################################################### */
+/* Rcent Work layout style */
+#recentWork {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+.recentWorkContainer {
+  height: auto;
+}
+.recentWorkTextContainer {
+  margin-bottom: 1.2vh;
+}
+
+.recentWorkGalleryContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.recentWorkGalleryContainer > span{
+  flex:calc(1/3) 1 33%;
+}
+/* END Rcent Work layout style */
+
+/* About me layout style */
+#about {
+  height: auto;
+}
+.about__container {
+  display: flex;
+}
+.about__left {
+flex: 0.4;
+}
+.about__right {
+  background: url('../public/img/vector art 1.png') center no-repeat ;
+  background-size: contain;
+flex: 0.6;
+}
+.about__content { max-width: 90%; }
+
+/* end about me layout style */
+/*########################################*/
+/* skills layout style*/
+#skills {
+  width: 100%;
+  display: flex;
+  height: 100vh;
+}
+.skills__left {
+background: url('../public/img/hobbies.png') center no-repeat;
+background-size: contain;
+flex: .6;
+}
+.skills__right {
+flex: .4;
+}
+/* end skills layout style*/
+/*#####################################################*/
+/* Portfolio */
+#portfolio {
+  margin: 4rem 0;
+}
 .portfolioTop {
 position: relative;
 margin-bottom: 2rem;
 }
-
-
+  
 .portfolioTop::after {
 content: "Portfolio";
 position: absolute;
 right: 1rem;
 top: 0;
 bottom: 0;
-font-size: 11rem;
-background-color: #233342;
 opacity: 0.2;
 }
-
-/* End portfolio section */
-/*********************************************/
-/* Gallery Section */
-
+/* portfolio gallery layout style */
 .gallery .gridItem {
   position: relative;
   width: 100%;
@@ -203,7 +222,6 @@ opacity: 0.2;
 .gallery .gridItem > span {
   height: 100% !important;
 }
-/* Gallery item overlay */
 .overlay {
   position: absolute;
   transition: all 500ms ease;
@@ -230,180 +248,27 @@ opacity: 0.2;
 .gallery .gridItem:hover .overlayContainer {
   transform:translateY(-1rem);
 }
-/* Gallery item overlay */
-/* end Gallery Section */
-/***********************************/
-/* about Me */
-/* left section */
-.textContentContainerLeft, .skillsRightContainer {
-  flex: 0.5;
-  width: 100%;
-  max-width: 100%;
-  position: relative;
+/* portfolio gallery layout style */
+/* portfolio layout style */
+/*#########################################################*/
+/* recent work layout style */
+.recentWorkTextContainer{
+  margin-bottom: 2em;
 }
-.svgContainer {
-  flex: 0.5;
-}
-.svgContainer:nth-child(2) {
-  flex: 0.5;
-  background: url('../public/img/vector art 1.png') center  no-repeat;
-  object-fit: cover;
-  background-size: contain;
-}
-
-.svgContainer:nth-child(1) {
-  flex: 0.5;
-  background: url('../public/img/hobbies.png') center  no-repeat;
-  background-size: fill;
-  
-}
-
-.aboutMeContainer {
-height: inherit;
-display: flex;
-}
-.textContentContainerLeft { overflow: auto; }
-
-/* left section */
-/* right*/
-.svgContainer svg {
-  width: 48px;
-  height: 48px;
-  }
-.svgContainer {
-  margin-left: 1rem;
-  position: relative;
-}
-.svgContainer {
-  overflow: hidden;
-}
-/* End Skills section*/
-/* styling table 
-1 - react
-2 - css 
-3 - github
-4 - node.js 
-5 - mongodb
-6 -  javascript
-7 - html
-*/
-
-/* React.js svg */
-.svgContainer .svgWrapper:nth-child(2n) > svg{
-  width: 4rem;
-  height: 4rem;
-}
-
-.svgContainer .svgWrapper:nth-child(3n) > svg{
-  width: 6rem;
-  height: 6rem;
-}
-
-.svgContainer .svgWrapper:nth-child(4n) > svg{
-  width: 8rem;
-  height: 8rem;
-}
-/* svg Container  */
-.svgWrapper{
-  transition: opacity 500ms ease;
-  position: relative;
-}
-.svgWrapper > h3{
-  transition: opacity 500ms ease;
-  opacity: 0;
-  position: absolute;
-  top: 50%;
-  left:50%;
-  transform: translate(-50%, -50%);
-}
-.svgWrapper:hover svg{
-  transition: opacity 500ms ease;
-  opacity: 0;
-}
-.svgWrapper:hover > h3{
-  transition: opacity 500ms ease;
-  opacity: 1;
-  color: var(--fontColor);
-  font-size: 1.5rem;
-  font-family: roboto;
-} 
-
-.svgWrapper:nth-child(n){
-  width: auto;
-  height: auto;
-  cursor: pointer;
-}
-/* svg Container  */
-
-.svgContainer .svgWrapper:nth-child(n) {
-  position: absolute;
-  height: auto;
-}
-.svgContainer .svgWrapper:nth-child(1) {
-  top: 20%;
-  left: 10%;
-}
-.svgContainer .svgWrapper:nth-child(2) {
-  top: 10%;
-  left: calc((50%));
-
-}
-/* need to calculate for svg height in order to 
-prevent the svg from overflowing  */
-.svgContainer .svgWrapper:nth-child(3) {
-  top: calc(100% - 6rem);
-  left: 10%;
-}
-/* 
-  20% for the space that is taken to the right when overflow
- */
- .svgContainer .svgWrapper:nth-child(4) {
-  top: calc((100%) - 8rem);
-  left: calc((70% - 8rem));
-}
-
-.svgContainer .svgWrapper:nth-child(5) {
-  top: calc(20% + 5rem);
-  left: calc(90%  - 5rem);
-}
-
-.svgContainer .svgWrapper:nth-child(6) {
-  top: calc(50%);
-  left: calc(50%);
-}
-/* right*/
-/* react.js svg */
-
-/* About Me Recent SVG STYLING */
-/* **************************************  */
-/* Recent Works */
-
-
-.recentWorkHeader {
-  color: var(--headerColor);
-  font-size:2rem;
-  margin-bottom: 3vh;
-}
-
-.recentSubheader {
-  font-size:1.2rem;
-}
-
-.recentWorkTextContainer {
-  margin-bottom: 1.2vh;
-}
-
-.recentWorkGalleryContainer {
+/* END recent work layout style  */
+/*#########################################################*/
+/* Contact Me layout style */
+#contactMe {
+  padding: 0 1rem;
+  height: 100vh;
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
+  }
+ .contactMeContainer {
+  display: flex;
+  padding-bottom: 1.5rem;
+  width: 100%;
 }
-
-.recentWorkGalleryContainer > span{
-  flex:calc(1/3) 1 33%;
-}
-
-/* Contact Me Section */
-
 .contactHeader {
   color: var(--headerColor);
   text-transform: uppercase;
@@ -418,8 +283,20 @@ prevent the svg from overflowing  */
   align-items: center;
   margin-right: 1rem;
 }
+/* endContact Me layout style */
+
+
+#about, #skills, #contactMe, .recentWorkTextContainer, 
+.courselContentContainer
+, .portfolioTop {
+  padding: 0 4em;
+  margin-bottom: 4em;
+}
+
+
+/* End layout */
+
 /* For 960 pixel screen size or more */
-/* End Contact Me Section */
 @media only screen and (min-width: 960px) {
 /* font styling */
 
@@ -427,15 +304,11 @@ prevent the svg from overflowing  */
   font-size: 4rem;
   font-weight: 600;
   margin-bottom: 0.4em;
-  color:var(--headerColor);
-  font-family: 'Roboto', 'Courier New', Courier, monospace;
 }
 .mainContainer * > h2 {
   font-size: 3rem;
   font-weight: 600;
   margin-bottom: 2rem;
-  color:var(--headerColor);
-  font-family: 'Roboto', 'Courier New', Courier, monospace;
 }
 
 .portfolioTop > h2 { position: relative; }
@@ -483,7 +356,6 @@ prevent the svg from overflowing  */
 .portfolioTop > p {
   font-size: 1em;
   letter-spacing: 0.01rem;
-  color:whitesmoke;
   line-height: 1.4rem;
   max-width: 55%;
 }
@@ -539,7 +411,6 @@ prevent the svg from overflowing  */
     font-size: 2em;
     font-weight: 600;
     margin-bottom: 2rem;
-    color:var(--headerColor);
     font-family: 'Roboto', 'Courier New', Courier, monospace;
   }
   
@@ -566,7 +437,6 @@ prevent the svg from overflowing  */
   .portfolioTop > p {
     font-size: 1rem;
     letter-spacing: 0.01rem;
-    color:whitesmoke;
     line-height: 1.4rem;
     max-width: 100%;
   }
@@ -577,7 +447,6 @@ prevent the svg from overflowing  */
   /* Start layout */
   /* Main Container for all content */
   #hero {
-    position: relative;
     width: auto;
     height: 65vh;
   }
@@ -585,12 +454,6 @@ prevent the svg from overflowing  */
     display: flex;
     align-items:center;
     height: inherit;
-  }
-  
-  .gallery {
-    display: grid;
-    grid-template-rows: auto;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   }
   /* Rcent Work */
   #recentWork {
@@ -728,26 +591,6 @@ prevent the svg from overflowing  */
     height: 10rem;
   }
   /* About Me svg */
-  /* Contact Form */
-
-  /* 
-  20% for the space that is taken to the right when overflow
-  */
-  /*
-  .svgContainer:nth-child(2n) > svg{
-  width: 4rem;
-  height: 4rem;
-  }
-
-  .svgContainer:nth-child(3n) > svg{
-  width: 6rem;
-  height: 6rem;
-  }
-
-  .svgContainer:nth-child(4n) > svg{
-  width: 8rem;
-  height: 8rem;
-  }*/
 
   .svgContainer .svgWrapper:nth-child(2n) {
     left: calc((100% - 10rem ));
@@ -778,6 +621,14 @@ prevent the svg from overflowing  */
     flex-direction: column;
   }
 }
+
+@media only screen and (max-width:950px), (max-width:580px) {
+  .courselContentContainer {
+    margin-top: 5rem;
+  }
+}
+
+
 
 
 

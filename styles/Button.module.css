@@ -1,17 +1,13 @@
+
+/* layout */
 .button {
     position: relative;
     z-index: 1000;
     display:block;
-    background: transparent;
-    border: 5px solid var(--foreGround);
     padding: 1em;
     width: fit-content;
-    font-family: monospace, 'Times New Roman', Times, serif;
-    cursor: pointer;
-}
-
-.button span:nth-child(1) {
-    transition: width 300ms ease;
+    border: 5px solid var(--foreGround);
+    border-radius: 5%;
 }
 
 .button > span:nth-child(1) {
@@ -22,6 +18,7 @@
     height: 100%;
     background-color: var(--fontColor);
 }
+
 .button > span:nth-child(2) {
     content: '';
     position: relative;
@@ -31,12 +28,37 @@
     color: whitesmoke;
 }
 
-
 .button:hover span:nth-child(1) {
     width: 100%;
 }
 
+/* end layout */
+/*****************************************************************/
+/* fonts - colors - background*/
+.button {
+    background: transparent;
+    font-family: monospace, 'Times New Roman', Times, serif;
+    cursor: pointer;
+}
+
+.button span:nth-child(1) {
+    transition: width 300ms ease;
+}
+
+.button > span:nth-child(1) {
+    content: '';
+    background-color: var(--fontColor);
+}
+
+.button > span:nth-child(2) {
+    content: '';
+    color: whitesmoke;
+}
+
+
 @media screen and (min-width:940px) {
+
+    /* layouts */
     .button {
         position: relative;
         z-index: 1000;
@@ -48,9 +70,19 @@
         font-family: monospace, 'Times New Roman', Times, serif;
         cursor: pointer;
     }
+    /* end layout */
+    /*************************************************************/
+    /* font - color - background */
+    .button {
+        background: transparent;
+        font-family: monospace, 'Times New Roman', Times, serif;
+        cursor: pointer;
+    }
+
     .button > span:nth-child(2) {
         font-size: 1.2rem;
         text-transform: uppercase;
     }
+    /* end font - color - background */
 }
 

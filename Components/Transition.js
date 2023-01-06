@@ -16,7 +16,7 @@ function Transition({ children }) {
     let timer = setTimeout(() => {
       //body.style.overflow = "auto";
       isLoading(true);
-    }, [4000]);
+    }, [3000]);
     window.scroll({
       top: 0,
       behavior: "smooth",

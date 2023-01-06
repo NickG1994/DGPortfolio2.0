@@ -1,4 +1,4 @@
-export const SVG = [
+export const dataSVG = [
   /* React.js icon SVG */
   {
     id: 0,

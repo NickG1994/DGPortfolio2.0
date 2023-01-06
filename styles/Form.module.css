@@ -1,3 +1,7 @@
+/* global styles */
+/* end global styles */
+/***********************************************************/
+/* layout styles */
 .form{ width:100%; }
 .field{
     position: relative;
@@ -6,30 +10,58 @@
     border: none;
     margin-bottom: 4vh;
 }
+
 .placeholder{
     position: absolute;
-    z-index: 101;
+    z-index: 10;
     left: 0.5rem;
     top:0.5rem;
     transition: all 500ms ease-in;
+    pointer-events: none;
 }
-
-.inputField, .placeholder { font-size: 1rem; }
 
 .inputField{
     position: inherit;
-    z-index: 100;
+    z-index: 1;
     width: calc(100% - 0.5rem);
     padding: 0.5rem 0;
     padding-left: 0.5rem;
 }
 
+.fieldContainer { height: 15rem; }
+
+.message{ height: 3rem; resize:none; }
+
+.inputField:focus {
+    outline: none;
+    border: 2px solid var(--foreGround);
+    border-radius: 2%;
+}
+
+.message:focus, .field textarea[class*="active"] { height: 200px; }
+/* end layout styles */
+/**********************************************************/
+/* font styles */
+.inputField, .placeholder { font-size: 1rem; }
 .inputField:focus ~ .placeholder, 
 .active ~ .placeholder{
-    transform: translateY(-2rem) scale(1.2);
     color: white;
 }
 
-.fieldContainer { height: 15rem; }
-.message{ height: 3rem; transition: all 1s ease; resize:none; }
-.message:focus, .active { height: 200px; }
+.form h1{
+    color: var(--headerColor);
+    font-size: 4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 4rem;
+}
+
+/* end font styles */
+/***********************************************************/
+/* transitions */
+.inputField:focus ~ .placeholder, 
+.active ~ .placeholder{
+    transform: translateY(-2rem) scale(1.2);
+}
+.message{transition: all 1s ease;}
+/* end transitions */
