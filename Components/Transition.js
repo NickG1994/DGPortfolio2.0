@@ -61,7 +61,7 @@ function Transition({ children }) {
       {/*Animate the children component/pages*/}
       <AnimatePresence
         initial={{ opacity: 0, y: 0, transition: { duration: 1, delay: 2 } }}
-        mode={"wait"}
+        mode={"popLayout"}
       >
         <motion.div
           className={style.mainContainer}
