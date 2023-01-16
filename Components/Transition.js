@@ -7,26 +7,6 @@ import ClipLoader from "react-spinners/ClipLoader";
 
 function Transition({ children }) {
   const { asPath } = useRouter();
-  const [loading, isLoading] = useState(false);
-
-  useEffect(() => {
-    switch (document.readyState) {
-      case "loading":
-        isLoading((prev) => false);
-        console.log(loading);
-      case "complete":
-        isLoading((prev) => true);
-        console.log(loading);
-    }
-
-    window.scroll({
-      top: 0,
-      behavior: "smooth",
-    });
-    return () => {
-      isLoading((prev) => false);
-    };
-  }, [loading]);
 
   const variantOne = {
     inactive: {
@@ -83,34 +63,16 @@ function Transition({ children }) {
         initial={{ opacity: 0, y: 0, transition: { duration: 1, delay: 2 } }}
         mode={"wait"}
       >
-        {!loading ? (
-          <motion.div
-            className={!loading ? style.blockContainer : style.hideLoading}
-            variants={loadingVariant}
-            initial="initial"
-            animate="animate"
-            exit="exit"
-            key={loading}
-          >
-            <ClipLoader
-              loading={!loading}
-              size={150}
-              aria-label="Loading Spinner"
-              data-testid="loader"
-            />
-          </motion.div>
-        ) : (
-          <motion.div
-            className={style.mainContainer}
-            variants={variantOne}
-            initial="enter"
-            animate="inactive"
-            exit="exit"
-            key={asPath}
-          >
-            {children}
-          </motion.div>
-        )}
+        <motion.div
+          className={style.mainContainer}
+          variants={variantOne}
+          initial="enter"
+          animate="inactive"
+          exit="exit"
+          key={asPath}
+        >
+          {children}
+        </motion.div>
       </AnimatePresence>
     </div>
   );
