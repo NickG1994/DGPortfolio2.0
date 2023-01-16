@@ -22,56 +22,8 @@ correct width of the nav and the main container
        margin-left:0 !important;
     }
 }
-/* layout */
-.containerTransition {
-    position: relative;
-    flex-basis: max(100%);
-    z-index: 10;
-}
-.containerTransition::after {
-    content:"";
-    position: absolute;
-    inset: 0;
-    background-color: black;
-    opacity: .4;
-    z-index: -1;
-}
-.blockContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    overflow: hidden;
-    z-index: 10;
-}
-
-.animateContainer {
-    position: fixed;
-    inset: 0;
-}
-
-.block{
-    display: inline-block;
-    position: fixed;
-    flex: 1;
-    z-index: 100;
-    height: 100vh;
-    width: 100%;
-    z-index: 1000;
-}
-
-.mainContainer {
-    width: 100%;
-}
 
 
-/* end layout */
-.hideLoading {
-    opacity: 0;
-}
-.block:nth-child(1) {
-    background-color: red;
-}
 
 
 
