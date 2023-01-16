@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@mui/material";
-import footerStyles from "../styles/footer.module.css";
+import footerStyles from "../styles/Footer.module.css";
 import Image from "next/image";
 import React from "react";
 import Link from "next/link";
