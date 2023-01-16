@@ -4,10 +4,6 @@ position: relative;
 z-index: 10;
 }
 
-.contact__container::after {
-
-}
-
 .contact__content__container::after {
     content: "";
     position: absolute;
@@ -15,7 +11,7 @@ z-index: 10;
     z-index: -1;
     background: url("../public/img/form.png") center no-repeat;
     background-size: cover;
-    opacity: 0.4;
+    opacity: 0.2;
 }
 
 .contact__content__container {
@@ -36,7 +32,9 @@ z-index: 10;
     list-style-type: none;
     justify-content: center;
 }
-
+.contact__card{
+    margin-bottom:2rem ;
+}
 .card__content {
     margin-top: 1em;
     width: max(60%);
@@ -75,13 +73,17 @@ z-index: 10;
 
 @media only screen and (min-width:960px) {
     .contact__container {
-        padding: 10% 5%;
+        padding: 2% 5%;
         height: calc(100vh + 10%);
     }
 }
 
 @media only screen and (max-width:580px), (max-width:960px) {
     /* layout */
+    .contact__card {
+        margin-bottom:2rem ;
+    }
+
     .contact__container {
         padding: 10% 5%;
         height: calc(200% + 10%);

@@ -1,7 +1,8 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import styles from "../styles/Form.module.css";
-import Button from "./Button";
+import { getNativeSelectUtilityClasses } from "@mui/material";
+import ClipLoader from "react-spinners/ClipLoader";
 
 function Form() {
   let formFields = {
@@ -10,62 +11,88 @@ function Form() {
     subject: "",
     message: "",
   };
+
   const [formData, getFormData] = useState(formFields);
   let [isSubmitted, setIsSubmitted] = useState(false);
-  //console.log(formData);
-  useEffect(() => {
-    let errors = formDataValidation(formData);
-    if (
-      (isSubmitted && errors.name.length == 0,
-      errors.message.length == 0,
-      errors.subject.length == 0,
-      errors.email.length == 0)
-    ) {
-      submit();
-    }
+  const [errors, setErrors] = useState({
+    name: [],
+    email: [],
+    subject: [],
+    message: [],
+  });
 
-    return () => {
-      //console.log(isSubmitted);
+  useEffect(() => {
+    formDataValidation(formData);
+  }, [formData]);
+
+  useEffect(() => {
+    if (
+      (isSubmitted && errors.name.length === 0,
+      errors.subject.length === 0,
+      errors.message.length === 0,
+      errors.email.length === 0)
+    ) {
       setTimeout(() => {
-        setIsSubmitted((prev) => (prev = false));
+        setIsSubmitted(false);
+        clearForm(formData);
       }, 3000);
-    };
+    } else {
+      setTimeout(() => {
+        setIsSubmitted(false);
+      }, 3000);
+    }
   }, [isSubmitted]);
 
-  function clearForm(formData) {
-    console.log(formData.message);
-    for (let key in formData) {
-      formData[key] = "";
-    }
+  function clearForm() {
+    getFormData(formFields);
   }
 
   function formDataValidation(formData) {
     const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
-    const errors = { name: [], email: [], subject: [], message: [] };
+    const errorsPush = { name: [], email: [], subject: [], message: [] };
 
-    if (formData.name === null || formData.name === "") {
-      errors.name.push("name is not entered!!!");
+    for (let keys in formData) {
+      if (formData[keys] === null || formData[keys] === "") {
+        errorsPush[keys].push(`${keys} require`);
+      }
     }
-    if (formData.email === null || formData.email === "") {
-      errors.email.push("Please Enter EMail!!!");
-    }
+
     if (regex.test(formData.email) === false) {
-      errors.email.push("please enter email format");
+      errorsPush.email.push("please enter email format");
     }
-    if (formData.subject === null || formData.subject === "") {
-      errors.subject.push("Subject is not entered!!!");
-    }
-    if (formData.message === null || formData.message === "") {
-      errors.message.push("message is not entered!!!");
-    }
+    setErrors({
+      ...errors,
+      name: errorsPush.name,
+      email: errorsPush.email,
+      subject: errorsPush.subject,
+      message: errorsPush.message,
+    });
     return errors;
   }
-  function submit() {
-    axios
-      .post("http://localhost:4000/sendMail", formData)
-      .then((e) => console.log(e))
-      .catch((error) => console.log(error.message));
-    clearForm(formData);
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    let errors = formDataValidation(formData);
+    if (e) {
+      setIsSubmitted(true);
+      if (
+        (errors.name.length === 0,
+        errors.subject.length === 0,
+        errors.message.length === 0,
+        errors.email.length === 0)
+      ) {
+        axios
+          .post("http://localhost:4000/submit", formData)
+          .then((e) => {
+            console.log(e.statusText);
+          })
+          .catch((error) => {
+            console.log("clearing data");
+            alert(error.message);
+            clearForm(formData);
+          });
+      }
+    }
   }
 
   return (
@@ -81,26 +108,26 @@ function Form() {
               " " +
               (formData.name.length > 0 ? styles.active : "")
             }
-            value={
-              formData.name === ""
-                ? (e) => {
-                    e.target.value = "";
-                    getFormData({ ...formData, name: e.target.value });
-                  }
-                : formData.name
-            }
-            onChange={(e) => getFormData({ ...formData, name: e.target.value })}
+            value={formData.name}
+            onChange={(e) => {
+              getFormData({ ...formData, name: e.target.value });
+            }}
             type="text"
             required
+            name="txtName"
           />
-          <label className={styles.placeholder}>Name: </label>
+          <label className={styles.placeholder} htmlFor="name">
+            NAME:
+            <span className={styles.error}>
+              {errors.name ? errors.name[0] : ""}
+            </span>
+          </label>
         </fieldset>
-
         <fieldset className={styles.field}>
           <input
-            onChange={(e) =>
-              getFormData({ ...formData, email: e.target.value })
-            }
+            onChange={(e) => {
+              getFormData({ ...formData, email: e.target.value });
+            }}
             className={
               styles.email +
               " " +
@@ -108,24 +135,21 @@ function Form() {
               " " +
               (formData.email.length > 0 ? styles.active : "")
             }
-            value={
-              formData.email === ""
-                ? (e) => {
-                    e.target.value;
-                    getFormData({ ...formData, email: e.target.value });
-                  }
-                : formData.email
-            }
+            value={formData.email}
             type="email"
             required
+            name="txtEmail"
           />
-          <label className={styles.placeholder}>
-            Email: <span className={styles.errors}></span>
+          <label className={styles.placeholder} htmlFor="txtEmail">
+            Email:
+            <span className={styles.error}>
+              {errors.email ? errors.email[0] : ""}
+            </span>
           </label>
         </fieldset>
-
         <fieldset className={styles.field}>
           <input
+            name="txtSubject"
             className={
               styles.subject +
               " " +
@@ -133,21 +157,15 @@ function Form() {
               " " +
               (formData.subject.length > 0 ? styles.active : "")
             }
-            value={
-              formData.subject === ""
-                ? (e) => {
-                    e.target.value = "";
-                    getFormData({ ...formData, subject: e.target.value });
-                  }
-                : formData.subject
-            }
-            onChange={(e) =>
-              getFormData({ ...formData, subject: e.target.value })
-            }
+            value={formData.subject}
+            onChange={(e) => {
+              getFormData({ ...formData, subject: e.target.value });
+            }}
           />
-          <label className={styles.placeholder}>subject: </label>
+          <label className={styles.placeholder} htmlFor="txtSubject">
+            subject:{" "}
+          </label>
         </fieldset>
-
         <fieldset className={styles["field"] + " " + styles["fieldContainer"]}>
           <textarea
             autoComplete="true"
@@ -158,33 +176,36 @@ function Form() {
               " " +
               (formData.message.length > 0 ? styles.active : "")
             }
-            value={
-              formData.message === ""
-                ? (e) => {
-                    e.target.value = "";
-                    getFormData({ ...formData, message: e.target.value });
-                  }
-                : formData.message
-            }
+            value={formData.message}
             onChange={(e) => {
-              getFormData({ ...formData, message: e.target.value });
+              {
+                getFormData({ ...formData, message: e.target.value });
+              }
             }}
+            name="txtMessage"
           ></textarea>
-          <label className={styles.placeholder}>Optional:</label>
+          <label className={styles.placeholder} htmlFor="txtMessage">
+            Optional:
+          </label>
         </fieldset>
-        {/*        <Button
-          string={"Submit"}
-        /> */}
-
         <button
+          className={styles.button}
           onClick={(e) => {
-            e.preventDefault();
-            isSubmitted === false
-              ? setIsSubmitted((prev) => (prev = true))
-              : console.log("processing");
+            handleSubmit(e);
           }}
         >
-          click me{" "}
+          <span></span>
+          <span className={styles.buttonText}>
+            {!isSubmitted ? (
+              "SEND"
+            ) : (
+              <ClipLoader
+                size={15}
+                color={{ color: "white" }}
+                loading={isSubmitted}
+              />
+            )}
+          </span>
         </button>
       </form>
     </>

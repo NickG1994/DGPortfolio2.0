@@ -39,10 +39,72 @@
 }
 
 .message:focus, .field textarea[class*="active"] { height: 200px; }
+/* layout */
+.button {
+    position: relative;
+    z-index: 1000;
+    display:block;
+    padding: 1rem 2rem;
+    border: 5px solid var(--foreGround);
+    width: fit-content;
+    border-radius: 5%;
+}
+
+.button {
+    border: 5px solid var(--foreGround);
+}
+
+.button > span:nth-child(1) {
+    content: '';
+    position: absolute;
+    inset: 0;
+    width: 0;
+    height: 100%;
+    background-color: var(--fontColor);
+}
+
+.button > span:nth-child(2) {
+    content: '';
+    position: relative;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    color: whitesmoke;
+}
+
+.button:hover span:nth-child(1) {
+    width: 100%;
+}
+
+/* end layout */
+/*****************************************************************/
+/* fonts - colors - background*/
+.button  {
+    background: transparent;
+    font-family: monospace, 'Times New Roman', Times, serif;
+    cursor: pointer;
+}
+
+.button  span:nth-child(1) {
+    transition: width 300ms ease;
+}
+
+.button  > span:nth-child(1) {
+    content: '';
+    background-color: var(--fontColor);
+}
+
+.button__content  > span:nth-child(2) {
+    content: '';
+    color: whitesmoke;
+}
+.error {
+    margin-left: .8em;
+}
 /* end layout styles */
 /**********************************************************/
 /* font styles */
-.inputField, .placeholder { font-size: 1rem; }
+.inputField, .placeholder { font-size: 1rem; text-transform: uppercase; }
 .inputField:focus ~ .placeholder, 
 .active ~ .placeholder{
     color: white;
@@ -50,10 +112,17 @@
 
 .form h1{
     color: var(--headerColor);
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: 600;
     text-transform: uppercase;
     margin-bottom: 4rem;
+}
+
+
+.error {
+    font-style: normal;
+    color:rgb(177, 6, 6);
+    text-transform:none;
 }
 
 /* end font styles */
