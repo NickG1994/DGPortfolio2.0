@@ -20,13 +20,13 @@ function Transition({ children }) {
       opacity: 0,
       transition: {
         duration: 0,
-        delay: 2,
+        delay: 0.75,
       },
     },
     exit: {
       opacity: 0,
       transition: {
-        duration: 2,
+        duration: 1,
       },
     },
   };
