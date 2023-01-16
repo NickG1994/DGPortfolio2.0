@@ -83,7 +83,7 @@ function Transition({ children }) {
       {/*Animate the children component/pages*/}
       <AnimatePresence
         initial={{ opacity: 0, y: 0, transition: { duration: 1, delay: 2 } }}
-        mode={"popLayout"}
+        mode={"wait"}
       >
         {!loading ? (
           <motion.div
