@@ -10,25 +10,23 @@ function Transition({ children }) {
   const [loading, isLoading] = useState(false);
 
   useEffect(() => {
-    //const body = document.querySelector("body");
+    switch (document.readyState) {
+      case "loading":
+        isLoading((prev) => false);
+        console.log(loading);
+      case "complete":
+        isLoading((prev) => true);
+        console.log(loading);
+    }
 
-    //console.log(body);
-    let timer = setTimeout(() => {
-      //body.style.overflow = "auto";
-      isLoading(true);
-    }, [3000]);
     window.scroll({
       top: 0,
       behavior: "smooth",
     });
     return () => {
-      //body.style.overflow = "hidden";
-      clearTimeout(timer);
-      isLoading((prevLoading) => (prevLoading = false));
+      isLoading((prev) => false);
     };
-  }, [asPath]);
-
-  //console.log(loading);
+  }, [loading]);
 
   const variantOne = {
     inactive: {
@@ -73,7 +71,7 @@ function Transition({ children }) {
       opacity: 0,
       transition: {
         duration: 2,
-        delay: 0,
+        delay: 1,
       },
     },
   };

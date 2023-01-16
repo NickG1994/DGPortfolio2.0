@@ -32,7 +32,7 @@ function GridGallery() {
         className={styles["gridItem"]}
       >
         <div className={styles.front}>
-          <Image src={project.src} loading="lazy" objectPosition={"initial"} />
+          <Image src={project.src} loading="eager" objectPosition={"initial"} />
           <div className={styles.overlay}>
             <div id={index} className={styles.overlayContainer}>
               <p className={styles.overlayText}>{project.Header}</p>

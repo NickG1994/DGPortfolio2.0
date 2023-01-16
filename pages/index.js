@@ -14,7 +14,6 @@ import { projects } from "../data/projects_data";
 import { SVG } from "../data/SVG.js";
 import { SvgHobbies } from "../data/SvgHobbies";
 import HTMLSVG from "../Components/HTMLSVG";
-import { duration } from "@mui/material";
 const GoogleMaps = React.lazy(() => import("../Components/GoogleMaps.js"));
 const Modal = React.lazy(() => import("../Components/Modal.js"));
 
@@ -101,7 +100,7 @@ export default function Home() {
                 animate={{
                   opacity: 1,
                   x: 0,
-                  transition: { duration: 2, delay: 2 },
+                  transition: { duration: 2, delay: 0 },
                 }}
                 exit={{
                   opacity: 0,

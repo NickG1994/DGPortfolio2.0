@@ -38,7 +38,7 @@ function Navigation() {
             height={100 + "%"}
             className={styles.logo}
             alt="Dominic's Logo"
-            src={require("../../public/img/DominicGaonaTabLogo.ico").default}
+            src={require("../../public/img/DominicGaonaTabLogo.ico")}
           />
         </div>
 
