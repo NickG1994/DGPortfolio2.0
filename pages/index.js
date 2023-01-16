@@ -65,7 +65,17 @@ export default function Home() {
         ></meta>
       </Head>
       {/* Main content */}
-      <main id={styles.main} className={styles.mainContainer}>
+      <motion.main
+        exit={{
+          opacity: 0,
+          transition: {
+            duration: 1,
+            delay: 0.75,
+          },
+        }}
+        id={styles.main}
+        className={styles.mainContainer}
+      >
         {/* Hero Section */}
         <section id={styles.hero}>
           <div className={styles.heroContainer}>
@@ -211,7 +221,6 @@ export default function Home() {
                 <HTMLSVG key={index} svgString={svg.path} />
               </motion.span>
             ))}
-            
             */}
           </div>
           <div className={styles.skills__right}>
@@ -287,7 +296,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-      </main>
+      </motion.main>
     </>
   );
 }
