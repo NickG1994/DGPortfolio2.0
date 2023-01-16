@@ -40,6 +40,7 @@ function Skills() {
           src={require("../public/img/skills/Layer 1.png").default}
           loading="lazy"
           className={Skillstyle.image}
+          alt="skill image "
         />
       </div>
     </div>

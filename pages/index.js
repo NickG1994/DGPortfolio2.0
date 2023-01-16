@@ -189,7 +189,7 @@ export default function Home() {
                 having a curious mind i have always been hard on myself. When i
                 failed to understand questions/topics/ect. Which is both a
                 weakness and strength. While having a passion for learning with
-                an inquisitive mind. Can be a useful or helpful to have in my '
+                an inquisitive mind. Can be a useful or helpful to have in my
                 field.
               </p>
               <br />
