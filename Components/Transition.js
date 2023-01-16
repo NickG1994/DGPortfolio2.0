@@ -61,7 +61,7 @@ function Transition({ children }) {
     <div className={style.containerTransition} style={{ overflow: "hidden" }}>
       {/*Animate the children component/pages*/}
       <AnimatePresence
-        initial={{ opacity: 0, y: 0, transition: { duration: 1, delay: 2 } }}
+        initial={{ opacity: 0, y: 0, transition: { duration: 1, delay: 0.75 } }}
         mode={"popLayout"}
       >
         <motion.div
