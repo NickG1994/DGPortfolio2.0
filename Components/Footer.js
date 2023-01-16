@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@mui/material";
-import footer from "../styles/footer.module.css";
+import footerStyles from "../styles/footer.module.css";
 import Image from "next/image";
 import React from "react";
 import Link from "next/link";
@@ -10,15 +10,15 @@ import Button from "./Button";
 function Footer() {
   return (
     <>
-      <ul className={footer.cardContainer}>
-        <li className={footer.cards}>
-          <div className={footer.imageContainer}>
+      <ul className={footerStyles.cardContainer}>
+        <li className={footerStyles.cards}>
+          <div className={footerStyles.imageContainer}>
             <Image
-              style={footer.footerImage}
+              style={footerStyles.footerImage}
               src={require("../public/img/LOGO.png").default}
             />
           </div>
-          <div className={footer.footerContentContainer}>
+          <div className={footerStyles.footerContentContainer}>
             <h2>about me</h2>
             <p>
               An inspired and creative new web developer. Willing to work
@@ -34,13 +34,13 @@ function Footer() {
           </div>
         </li>
 
-        <li className={footer.cards}>
+        <li className={footerStyles.cards}>
           <h2 style={{ display: "inline-block" }}>sitemap</h2>
-          <nav className={footer.siteMap}>
+          <nav className={footerStyles.siteMap}>
             <ul>
               {PageLink.map((page, index) => (
                 <li key={index}>
-                  <Link className={footer.link} href={page.path}>
+                  <Link className={footerStyles.link} href={page.path}>
                     <span>{page.title}</span>
                   </Link>
                 </li>
@@ -48,7 +48,7 @@ function Footer() {
             </ul>
           </nav>
         </li>
-        <li className={footer.cards}>
+        <li className={footerStyles.cards}>
           <h2>External Links</h2>
         </li>
       </ul>
