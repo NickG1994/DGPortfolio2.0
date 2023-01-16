@@ -27,6 +27,7 @@ function Transition({ children }) {
       opacity: 0,
       transition: {
         duration: 1,
+        delay: 0.75,
       },
     },
   };
