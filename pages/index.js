@@ -159,7 +159,7 @@ export default function Home() {
               <br />
               <Button
                 string={"learn more"}
-                layout={{ background: "var(----foreGround) !important" }}
+                layout={null}
                 location={"/Projects"}
               />
             </div>
