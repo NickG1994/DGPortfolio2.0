@@ -13,6 +13,7 @@ function Coursel() {
           src={img.src}
           className={styles.bgImage}
           key={index}
+          fill="true"
         />
       </div>
     ));

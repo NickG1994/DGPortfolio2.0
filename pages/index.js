@@ -9,18 +9,19 @@ import GridGallery from "../Components/GridGallery";
 const Form = React.lazy(() => import("../Components/Form"));
 import Coursel from "../Components/Courasel/Coursel";
 import Button from "../Components/Button";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, delay } from "framer-motion";
 import { projects } from "../data/projects_data";
 import { SVG } from "../data/SVG.js";
 import { SvgHobbies } from "../data/SvgHobbies";
 import HTMLSVG from "../Components/HTMLSVG";
 const GoogleMaps = React.lazy(() => import("../Components/GoogleMaps.js"));
 const Modal = React.lazy(() => import("../Components/Modal.js"));
+import { textVariantOne } from "../data/framer-motion config.js";
 
+console.log({ ...textVariantOne.animate.transition, delay: 0.8 });
 export default function Home() {
   const [toggleModal, setToggleModal] = useState(false);
   const [modalIndex, setModalIndex] = useState(0);
-  //console.log(window.pageXOffset);
   function modal(e) {
     console.log(e.currentTarget);
     if (e.currentTarget) {
@@ -28,54 +29,6 @@ export default function Home() {
       setModalIndex(e.target.id);
     }
   }
-
-  const config = {
-    initial: {
-      opacity: 0,
-      transition: {
-        duration: 1,
-        delay: 0,
-      },
-    },
-    animate: {
-      opacity: 1,
-      transition: {
-        duration: 1,
-        delay: 0,
-      },
-    },
-    exit: {
-      opacity: 0,
-      transition: {
-        duration: 1,
-        delay: 0,
-      },
-    },
-  };
-
-  const variantOne = {
-    inactive: {
-      opacity: 1,
-      transition: {
-        duration: 1,
-        delay: 1,
-      },
-    },
-    enter: {
-      opacity: 0,
-      transition: {
-        duration: 0,
-        delay: 0.75,
-      },
-    },
-    exit: {
-      opacity: 0,
-      transition: {
-        duration: 1,
-        delay: 0.75,
-      },
-    },
-  };
 
   return (
     <>
@@ -89,30 +42,16 @@ export default function Home() {
         ></meta>
       </Head>
       {/* Main content */}
-      <main
-        variants={variantOne}
-        id={styles.main}
-        className={styles.mainContainer}
-      >
+      <main id={styles.main} className={styles.mainContainer}>
         {/* Hero Section */}
         <section id={styles.hero}>
           <div className={styles.heroContainer}>
             <Coursel />
             <div className={styles.courselContentContainer}>
               <motion.h1
-                initial={{
-                  opacity: 0,
-                  y: -100,
-                }}
-                animate={{
-                  opacity: 1,
-                  y: 0,
-                  transition: {
-                    delay: 0.75,
-                    duration: 2,
-                  },
-                }}
-                exit={{ opacity: 0 }}
+                initial={textVariantOne.initial}
+                animate={textVariantOne.animate}
+                exit={textVariantOne.exit}
               >
                 <span>
                   Hello,
@@ -120,21 +59,9 @@ export default function Home() {
                 </span>
               </motion.h1>
               <motion.h4
-                initial={{
-                  opacity: 0,
-                  x: -100,
-                  transition: { duration: 2 },
-                }}
-                animate={{
-                  opacity: 1,
-                  x: 0,
-                  transition: { duration: 2, delay: 0 },
-                }}
-                exit={{
-                  opacity: 0,
-                  x: -100,
-                  transition: { duration: 2, delay: 0 },
-                }}
+                initial={textVariantOne.initial}
+                animate={{ ...textVariantOne.animate.transition, delay: 1 }}
+                exit={textVariantOne.exit}
               >
                 Front-end | Back-end Developer
               </motion.h4>
@@ -188,11 +115,11 @@ export default function Home() {
             <div className={styles.about__left}>
               <motion.h2
                 className={styles.about__title}
-                initial={config.initial}
+                initial={textVariantOne.initial}
                 viewport={{
                   once: true,
                 }}
-                whileInView={config.animate}
+                whileInView={textVariantOne.animate}
               >
                 About Me
               </motion.h2>
