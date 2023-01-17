@@ -7,15 +7,12 @@ function MyApp({ Component, pageProps }) {
   return (
     <div style={{ display: "flex" }}>
       {/* Navigation Component */}
-      {/*       <Navigation />  
+
+      <Navigation />
       <Transition>
         <Component {...pageProps} />
         {/*<Footer />*/}
-
-      <Navigation />
-
-      <Component {...pageProps} />
-      {/*<Footer />*/}
+      </Transition>
     </div>
   );
 }
