@@ -10,7 +10,7 @@ function Transition({ children }) {
 
   const variantOne = {
     initial: {
-      opacity: 0,
+      opacity: 1,
       transition: {
         duration: 1,
       },
