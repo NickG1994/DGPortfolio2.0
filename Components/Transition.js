@@ -10,7 +10,7 @@ function Transition({ children }) {
 
   const variantOne = {
     initial: {
-      opacity: 1,
+      opacity: 0,
       transition: {
         duration: 1,
       },
@@ -60,7 +60,7 @@ function Transition({ children }) {
     <div className={style.containerTransition} style={{ overflow: "hidden" }}>
       {/*Animate the children component/pages*/}
       <AnimatePresence
-        initial={{ opacity: 1, y: 0, transition: { duration: 1, delay: 0.75 } }}
+        initial={{ opacity: 0, y: 0, transition: { duration: 1, delay: 0.75 } }}
         mode={"wait"}
       >
         <motion.div
