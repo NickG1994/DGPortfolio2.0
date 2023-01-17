@@ -91,9 +91,6 @@ export default function Home() {
       {/* Main content */}
       <motion.main
         variants={variantOne}
-        initial={variantOne.inactive}
-        animate={variantOne.enter}
-        exit={variantOne.exit}
         id={styles.main}
         className={styles.mainContainer}
       >

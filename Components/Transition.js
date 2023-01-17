@@ -9,15 +9,14 @@ function Transition({ children }) {
   const { asPath } = useRouter();
 
   const variantOne = {
-    inactive: {
-      opacity: 1,
+    initial: {
+      opacity: 0,
       transition: {
         duration: 1,
-        delay: 1,
       },
     },
     enter: {
-      opacity: 0,
+      opacity: 1,
       transition: {
         duration: 1,
         delay: 0.75,
@@ -67,9 +66,9 @@ function Transition({ children }) {
         <motion.div
           className={style.mainContainer}
           variants={variantOne}
-          initial="enter"
-          animate="inactive"
-          exit="exit"
+          initial={variantOne.initial}
+          animate={variantOne.enter}
+          exit={variantOne.exit}
           key={asPath}
         >
           {children}
