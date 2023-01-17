@@ -16,9 +16,14 @@ import { SvgHobbies } from "../data/SvgHobbies";
 import HTMLSVG from "../Components/HTMLSVG";
 const GoogleMaps = React.lazy(() => import("../Components/GoogleMaps.js"));
 const Modal = React.lazy(() => import("../Components/Modal.js"));
-import { textVariantOne } from "../data/framer-motion config.js";
+import {
+  textVariantOne,
+  loadingVariant,
+} from "../data/framer-motion config.js";
 
-console.log({ ...textVariantOne.animate.transition, delay: 0.8 });
+console.log(
+  textVariantOne.animate + { ...textVariantOne.animate.transition, delay: 1 }
+);
 export default function Home() {
   const [toggleModal, setToggleModal] = useState(false);
   const [modalIndex, setModalIndex] = useState(0);
@@ -42,12 +47,17 @@ export default function Home() {
         ></meta>
       </Head>
       {/* Main content */}
-      <main id={styles.main} className={styles.mainContainer}>
+      <div id={styles.main} className={styles.mainContainer}>
         {/* Hero Section */}
         <section id={styles.hero}>
           <div className={styles.heroContainer}>
             <Coursel />
-            <div className={styles.courselContentContainer}>
+            <motion.div
+              initial={loadingVariant.initial}
+              animate={loadingVariant.animate}
+              exit={loadingVariant.exit}
+              className={styles.courselContentContainer}
+            >
               <motion.h1
                 initial={textVariantOne.initial}
                 animate={textVariantOne.animate}
@@ -60,7 +70,7 @@ export default function Home() {
               </motion.h1>
               <motion.h4
                 initial={textVariantOne.initial}
-                animate={{ ...textVariantOne.animate.transition, delay: 1 }}
+                animate={textVariantOne.animate}
                 exit={textVariantOne.exit}
               >
                 Front-end | Back-end Developer
@@ -70,12 +80,12 @@ export default function Home() {
                 location="/contact"
                 layout={{ fontSize: ".8rem" }}
               />
-            </div>
+            </motion.div>
           </div>
         </section>
         {/* portfolio Section */}
         <section id={styles.portfolio}>
-          <div className={styles.portfolioContainer}>
+          <>
             <div className={styles.portfolioTop}>
               <motion.h2
                 initial={{ opacity: 0 }}
@@ -107,7 +117,7 @@ export default function Home() {
                 <GridGallery />
               </div>
             </div>
-          </div>
+          </>
         </section>
         {/* About Me section skills and hobbies */}
         <section id={styles.about}>
@@ -241,7 +251,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-      </main>
+      </div>
     </>
   );
 }

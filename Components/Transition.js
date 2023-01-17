@@ -4,7 +4,7 @@ import { animate, AnimatePresence, motion, LayoutGroup } from "framer-motion";
 import Projects from "../pages/Projects";
 import style from "../styles/Transition.module.css";
 import ClipLoader from "react-spinners/ClipLoader";
-
+import { loadingVariant } from "../data/framer-motion config";
 function Transition({ children }) {
   const { asPath } = useRouter();
 
@@ -30,43 +30,21 @@ function Transition({ children }) {
       },
     },
   };
-  const loadingVariant = {
-    initial: {
-      opacity: 0,
-      transition: {
-        duration: 0.65,
-        delay: 0,
-      },
-      overflow: "hidden",
-    },
-    animate: {
-      opacity: 1,
-      transition: {
-        duration: 0.65,
-        delay: 0,
-      },
-    },
-
-    exit: {
-      opacity: 0,
-      transition: {
-        duration: 2,
-        delay: 1,
-      },
-    },
-  };
 
   return (
     <div className={style.containerTransition} style={{ overflow: "hidden" }}>
       {/*Animate the children component/pages*/}
       <AnimatePresence initial={false} mode={"wait"}>
-        <motion.div
+        <motion.main
           className={style.mainContainer}
-          variants={variantOne}
+          variants={loadingVariant}
+          initial={loadingVariant.initial}
+          animate={loadingVariant.animate}
+          exit={loadingVariant.exit}
           key={asPath}
         >
           {children}
-        </motion.div>
+        </motion.main>
       </AnimatePresence>
     </div>
   );
