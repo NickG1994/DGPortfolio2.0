@@ -53,6 +53,30 @@ export default function Home() {
     },
   };
 
+  const variantOne = {
+    inactive: {
+      opacity: 1,
+      transition: {
+        duration: 1,
+        delay: 1,
+      },
+    },
+    enter: {
+      opacity: 0,
+      transition: {
+        duration: 0,
+        delay: 0.75,
+      },
+    },
+    exit: {
+      opacity: 0,
+      transition: {
+        duration: 1,
+        delay: 0.75,
+      },
+    },
+  };
+
   return (
     <>
       <Head>
@@ -66,13 +90,10 @@ export default function Home() {
       </Head>
       {/* Main content */}
       <motion.main
-        exit={{
-          opacity: 0,
-          transition: {
-            duration: 1,
-            delay: 0.75,
-          },
-        }}
+        variants={variantOne}
+        initial={variantOne.inactive}
+        animate={variantOne.enter}
+        exit={variantOne.exit}
         id={styles.main}
         className={styles.mainContainer}
       >

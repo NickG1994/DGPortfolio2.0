@@ -6,6 +6,7 @@ import Form from "../Components/Form";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import MailIcon from "@mui/icons-material/Mail";
 import FacebookIcon from "@mui/icons-material/Facebook";
+import Head from "next/head";
 
 export default function contact() {
   return (
