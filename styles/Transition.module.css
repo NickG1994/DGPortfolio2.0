@@ -2,26 +2,7 @@
 with the flex container basis to ensure the 
 correct width of the nav and the main container
  */
- @media only screen and (min-width: 960px) {
-    .containerTransition {
-        flex-basis: max(100% - 110px);
-        margin-left: 0;
-    }
 
-}
-
-@media only screen and (max-width: 560px) {
-    .blockContainer {
-        width: initial;
-        margin: 0 !important;
-        overflow: hidden !important;
-    }
-
-    .containerTransition {
-       flex:  none;
-       margin-left:0 !important;
-    }
-}
 
 
 
