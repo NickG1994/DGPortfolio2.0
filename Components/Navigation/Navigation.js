@@ -39,7 +39,7 @@ function Navigation() {
             className={styles.logo}
             alt="Dominic's Logo"
             loading="eager"
-            src={require("../../public/img/DominicGaonaTabLogo.ico")}
+            src={require("../../public/img/DominicGaonaTabLogo.png")}
           />
         </div>
 
