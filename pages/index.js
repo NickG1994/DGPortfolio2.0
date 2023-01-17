@@ -48,7 +48,7 @@ export default function Home() {
       opacity: 0,
       transition: {
         duration: 1,
-        delay: 0.4,
+        delay: 0,
       },
     },
   };
@@ -89,7 +89,7 @@ export default function Home() {
         ></meta>
       </Head>
       {/* Main content */}
-      <motion.main
+      <main
         variants={variantOne}
         id={styles.main}
         className={styles.mainContainer}
@@ -314,7 +314,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-      </motion.main>
+      </main>
     </>
   );
 }

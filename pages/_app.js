@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps }) {
       <Navigation />
       <Transition>
         <Component {...pageProps} />
-        <Footer />
+        {/*<Footer />*/}
       </Transition>
     </div>
   );

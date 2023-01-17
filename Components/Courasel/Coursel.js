@@ -13,7 +13,6 @@ function Coursel() {
           src={img.src}
           className={styles.bgImage}
           key={index}
-          style={{ width: "100vw" }}
         />
       </div>
     ));
