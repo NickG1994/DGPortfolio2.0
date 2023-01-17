@@ -3,7 +3,9 @@ with the flex container basis to ensure the
 correct width of the nav and the main container
  */
 
-
+ .mainContainer {
+    width: 100%;
+ }
 
 
 
