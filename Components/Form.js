@@ -95,7 +95,121 @@ function Form() {
     }
   }
 
-  return <></>;
+  return (
+    <>
+      <form className={styles.form}>
+        <h1> Contact Me </h1>
+        <fieldset className={styles.field}>
+          <input
+            className={
+              styles.name +
+              " " +
+              styles.inputField +
+              " " +
+              (formData.name.length > 0 ? styles.active : "")
+            }
+            value={formData.name}
+            onChange={(e) => {
+              getFormData({ ...formData, name: e.target.value });
+            }}
+            type="text"
+            required
+            name="txtName"
+          />
+          <label className={styles.placeholder} htmlFor="name">
+            NAME:
+            <span className={styles.error}>
+              {errors.name ? errors.name[0] : ""}
+            </span>
+          </label>
+        </fieldset>
+        <fieldset className={styles.field}>
+          <input
+            onChange={(e) => {
+              getFormData({ ...formData, email: e.target.value });
+            }}
+            className={
+              styles.email +
+              " " +
+              styles.inputField +
+              " " +
+              (formData.email.length > 0 ? styles.active : "")
+            }
+            value={formData.email}
+            type="email"
+            required
+            name="txtEmail"
+          />
+          <label className={styles.placeholder} htmlFor="txtEmail">
+            Email:
+            <span className={styles.error}>
+              {errors.email ? errors.email[0] : ""}
+            </span>
+          </label>
+        </fieldset>
+        <fieldset className={styles.field}>
+          <input
+            name="txtSubject"
+            className={
+              styles.subject +
+              " " +
+              styles.inputField +
+              " " +
+              (formData.subject.length > 0 ? styles.active : "")
+            }
+            value={formData.subject}
+            onChange={(e) => {
+              getFormData({ ...formData, subject: e.target.value });
+            }}
+          />
+          <label className={styles.placeholder} htmlFor="txtSubject">
+            subject:{" "}
+          </label>
+        </fieldset>
+        <fieldset className={styles["field"] + " " + styles["fieldContainer"]}>
+          <textarea
+            autoComplete="true"
+            className={
+              styles.message +
+              " " +
+              styles.inputField +
+              " " +
+              (formData.message.length > 0 ? styles.active : "")
+            }
+            value={formData.message}
+            onChange={(e) => {
+              {
+                getFormData({ ...formData, message: e.target.value });
+              }
+            }}
+            name="txtMessage"
+          ></textarea>
+          <label className={styles.placeholder} htmlFor="txtMessage">
+            Optional:
+          </label>
+        </fieldset>
+        <button
+          className={styles.button}
+          onClick={(e) => {
+            handleSubmit(e);
+          }}
+        >
+          <span></span>
+          <span className={styles.buttonText}>
+            {!isSubmitted ? (
+              "SEND"
+            ) : (
+              <ClipLoader
+                size={15}
+                color={{ color: "white" }}
+                loading={isSubmitted}
+              />
+            )}
+          </span>
+        </button>
+      </form>
+    </>
+  );
 }
 
 export default Form;
