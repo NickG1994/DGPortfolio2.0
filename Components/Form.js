@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import styles from "../styles/Form.module.css";
-import { getNativeSelectUtilityClasses } from "@mui/material";
+import formStyles from "../styles/Form.module.css";
 import ClipLoader from "react-spinners/ClipLoader";
 
 function Form() {
@@ -95,16 +94,16 @@ function Form() {
 
   return (
     <>
-      <form className={styles.form}>
+      <form className={formStyles.form}>
         <h1> Contact Me </h1>
-        <fieldset className={styles.field}>
+        <fieldset className={formStyles.field}>
           <input
             className={
-              styles.name +
+              formStyles.name +
               " " +
-              styles.inputField +
+              formStyles.inputField +
               " " +
-              (formData.name.length > 0 ? styles.active : "")
+              (formData.name.length > 0 ? formStyles.active : "")
             }
             value={formData.name}
             onChange={(e) => {
@@ -114,65 +113,67 @@ function Form() {
             required
             name="txtName"
           />
-          <label className={styles.placeholder} htmlFor="name">
+          <label className={formStyles.placeholder} htmlFor="name">
             NAME:
-            <span className={styles.error}>
+            <span className={formStyles.error}>
               {errors.name ? errors.name[0] : ""}
             </span>
           </label>
         </fieldset>
-        <fieldset className={styles.field}>
+        <fieldset className={formStyles.field}>
           <input
             onChange={(e) => {
               getFormData({ ...formData, email: e.target.value });
             }}
             className={
-              styles.email +
+              formStyles.email +
               " " +
-              styles.inputField +
+              formStyles.inputField +
               " " +
-              (formData.email.length > 0 ? styles.active : "")
+              (formData.email.length > 0 ? formStyles.active : "")
             }
             value={formData.email}
             type="email"
             required
             name="txtEmail"
           />
-          <label className={styles.placeholder} htmlFor="txtEmail">
+          <label className={formStyles.placeholder} htmlFor="txtEmail">
             Email:
-            <span className={styles.error}>
+            <span className={formStyles.error}>
               {errors.email ? errors.email[0] : ""}
             </span>
           </label>
         </fieldset>
-        <fieldset className={styles.field}>
+        <fieldset className={formStyles.field}>
           <input
             name="txtSubject"
             className={
-              styles.subject +
+              formStyles.subject +
               " " +
-              styles.inputField +
+              formStyles.inputField +
               " " +
-              (formData.subject.length > 0 ? styles.active : "")
+              (formData.subject.length > 0 ? formStyles.active : "")
             }
             value={formData.subject}
             onChange={(e) => {
               getFormData({ ...formData, subject: e.target.value });
             }}
           />
-          <label className={styles.placeholder} htmlFor="txtSubject">
+          <label className={formStyles.placeholder} htmlFor="txtSubject">
             subject:{" "}
           </label>
         </fieldset>
-        <fieldset className={styles["field"] + " " + styles["fieldContainer"]}>
+        <fieldset
+          className={formStyles["field"] + " " + formStyles["fieldContainer"]}
+        >
           <textarea
             autoComplete="true"
             className={
-              styles.message +
+              formStyles.message +
               " " +
-              styles.inputField +
+              formStyles.inputField +
               " " +
-              (formData.message.length > 0 ? styles.active : "")
+              (formData.message.length > 0 ? formStyles.active : "")
             }
             value={formData.message}
             onChange={(e) => {
@@ -182,18 +183,18 @@ function Form() {
             }}
             name="txtMessage"
           ></textarea>
-          <label className={styles.placeholder} htmlFor="txtMessage">
+          <label className={formStyles.placeholder} htmlFor="txtMessage">
             Optional:
           </label>
         </fieldset>
         <button
-          className={styles.button}
+          className={formStyles.button}
           onClick={(e) => {
             handleSubmit(e);
           }}
         >
           <span></span>
-          <span className={styles.buttonText}>
+          <span className={formStyles.buttonText}>
             {!isSubmitted ? (
               "SEND"
             ) : (
