@@ -22,21 +22,6 @@ import {
 } from "../data/framer-motion config.js";
 
 export default function Home() {
-  const [toggleModal, setToggleModal] = useState(false);
-  const [modalIndex, setModalIndex] = useState(0);
-  function modal(e) {
-    useEffect(() => {
-      console.log(
-        textVariantOne.animate +
-          { ...textVariantOne.animate.transition, delay: 1 }
-      );
-      if (e.currentTarget) {
-        setToggleModal((prev) => !prev);
-        setModalIndex(e.target.id);
-      }
-    }, [toggleModal, modalIndex]);
-  }
-
   return (
     <>
       <Head>

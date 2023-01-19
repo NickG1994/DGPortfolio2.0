@@ -1,4 +1,4 @@
-import React, { useMemo, useEffect, useState } from "react";
+import React, { useMemo, useState } from "react";
 import styles from "../styles/gridGallery.module.css";
 import { projects } from "../data/projects_data";
 import Image from "next/image";
@@ -8,11 +8,6 @@ import { motion } from "framer-motion";
 function GridGallery() {
   const [modalIndex, setModalIndex] = useState(0);
   const [state, setState] = useState(false);
-
-  function modal(e) {
-    setModalIndex(e.currentTarget.id);
-    setState(!state);
-  }
 
   const slides = useMemo(() => {
     const slide = projects.map((project, index) => (
@@ -26,7 +21,11 @@ function GridGallery() {
           y: 0,
           transition: { duration: 1, delay: 0.09 * index },
         }}
-        onClick={(e) => modal(e)}
+        onClick={(e) => {
+          setModalIndex(e.currentTarget.id);
+          console.log(e.currentTarget.id);
+          setState(true);
+        }}
         id={index}
         key={index}
         className={styles["gridItem"]}
