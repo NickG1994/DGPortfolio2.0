@@ -224,20 +224,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-        {/* Contact Me Section */}
-        <section id={indexStyles.contactMe}>
-          <div className={indexStyles.contactMeContainer}>
-            <div className={indexStyles.contactMeContainerLeft}>
-              <Form />
-            </div>
-            <div className={indexStyles.contactMeContainerRight}>
-              <Suspense>
-                {" "}
-                <GoogleMaps />
-              </Suspense>
-            </div>
-          </div>
-        </section>
       </div>
     </>
   );
