@@ -230,9 +230,7 @@ export default function Home() {
             <div className={indexStyles.contactMeContainerLeft}>
               <Form />
             </div>
-            <div className={indexStyles.contactMeContainerRight}>
-              <GoogleMaps />
-            </div>
+            <div className={indexStyles.contactMeContainerRight}></div>
           </div>
         </section>
       </div>
