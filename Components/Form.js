@@ -95,7 +95,7 @@ function Form() {
     }
   }
 
-  return <>this is where the form should be</>;
+  return <></>;
 }
 
 export default Form;
