@@ -1,7 +1,7 @@
 import React, { Component, Suspense, useEffect, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
-import styles from "../styles/Home.module.css";
+import indexStyles from "../styles/Home.module.css";
 const Navigation = React.lazy(() =>
   import("../Components/Navigation/Navigation")
 );
@@ -21,18 +21,20 @@ import {
   loadingVariant,
 } from "../data/framer-motion config.js";
 
-console.log(
-  textVariantOne.animate + { ...textVariantOne.animate.transition, delay: 1 }
-);
 export default function Home() {
   const [toggleModal, setToggleModal] = useState(false);
   const [modalIndex, setModalIndex] = useState(0);
   function modal(e) {
-    console.log(e.currentTarget);
-    if (e.currentTarget) {
-      setToggleModal((prev) => !prev);
-      setModalIndex(e.target.id);
-    }
+    useEffect(() => {
+      console.log(
+        textVariantOne.animate +
+          { ...textVariantOne.animate.transition, delay: 1 }
+      );
+      if (e.currentTarget) {
+        setToggleModal((prev) => !prev);
+        setModalIndex(e.target.id);
+      }
+    }, [toggleModal, modalIndex]);
   }
 
   return (
@@ -47,16 +49,16 @@ export default function Home() {
         ></meta>
       </Head>
       {/* Main content */}
-      <div id={styles.main} className={styles.mainContainer}>
+      <div id={indexStyles.main} className={indexStyles.mainContainer}>
         {/* Hero Section */}
-        <section id={styles.hero}>
-          <div className={styles.heroContainer}>
+        <section id={indexStyles.hero}>
+          <div className={indexStyles.heroContainer}>
             <Coursel />
             <motion.div
               initial={loadingVariant.initial}
               animate={loadingVariant.animate}
               exit={loadingVariant.exit}
-              className={styles.courselContentContainer}
+              className={indexStyles.courselContentContainer}
             >
               <motion.h1
                 initial={textVariantOne.initial}
@@ -84,9 +86,9 @@ export default function Home() {
           </div>
         </section>
         {/* portfolio Section */}
-        <section id={styles.portfolio}>
+        <section id={indexStyles.portfolio}>
           <>
-            <div className={styles.portfolioTop}>
+            <div className={indexStyles.portfolioTop}>
               <motion.h2
                 initial={{ opacity: 0 }}
                 viewport={{
@@ -112,19 +114,19 @@ export default function Home() {
                 thrive in a professional Programming environment.
               </p>
             </div>
-            <div className={styles.portfolioBottom}>
-              <div className={styles.gallery}>
+            <div className={indexStyles.portfolioBottom}>
+              <div className={indexStyles.gallery}>
                 <GridGallery />
               </div>
             </div>
           </>
         </section>
         {/* About Me section skills and hobbies */}
-        <section id={styles.about}>
-          <div className={styles.about__container}>
-            <div className={styles.about__left}>
+        <section id={indexStyles.about}>
+          <div className={indexStyles.about__container}>
+            <div className={indexStyles.about__left}>
               <motion.h2
-                className={styles.about__title}
+                className={indexStyles.about__title}
                 initial={textVariantOne.initial}
                 viewport={{
                   once: true,
@@ -133,7 +135,7 @@ export default function Home() {
               >
                 About Me
               </motion.h2>
-              <p className={styles.about__content}>
+              <p className={indexStyles.about__content}>
                 Lorem ipsum dolor sit amet consectetur. Orci viverra risus nisi
                 auctor dictum pharetra. Vitae in dui cursus aliquam aliquet vel.
                 Sapien aliquet molestie in massa ornare. Tellus parturient ut in
@@ -146,7 +148,7 @@ export default function Home() {
                 vel pellentesque dui aliquet.
               </p>
               <br />
-              <p className={styles.about__content}>
+              <p className={indexStyles.about__content}>
                 having a natural curiosty for the world. Along with the passion
                 for learning. Is my core of me. From my work Ethics, lifestyle,
                 and carrer. To my passion, hardwork, and determination. With
@@ -163,24 +165,24 @@ export default function Home() {
                 location={"/Projects"}
               />
             </div>
-            <div className={styles.about__right}></div>
+            <div className={indexStyles.about__right}></div>
           </div>
         </section>
 
-        <section id={styles.skills}>
-          <div className={styles.skills__left}>
+        <section id={indexStyles.skills}>
+          <div className={indexStyles.skills__left}>
             {/*
             {SvgHobbies.map((svg, index) => (
-              <motion.span key={index} className={styles.svgWrapper}>
+              <motion.span key={index} className={indexStyles.svgWrapper}>
                 <h3>{svg.iconName}</h3>
                 <HTMLSVG key={index} svgString={svg.path} />
               </motion.span>
             ))}
             */}
           </div>
-          <div className={styles.skills__right}>
-            <h2 className={styles.skills__right__content}>Hobbies</h2>
-            <p className={styles.skills__right__content}>
+          <div className={indexStyles.skills__right}>
+            <h2 className={indexStyles.skills__right__content}>Hobbies</h2>
+            <p className={indexStyles.skills__right__content}>
               Lorem ipsum dolor sit amet consectetur. Aliquet enim viverra
               elementum justo sed etiam etiam. Enim morbi massa eu non tempor
               nascetur. Rhoncus tellus a volutpat interdum dui elementum. Nibh
@@ -192,7 +194,7 @@ export default function Home() {
               feugiat orci nec augue ut.
             </p>
             <br />
-            <p className={styles.skills__right__content}>
+            <p className={indexStyles.skills__right__content}>
               Vel ultrices magna ullamcorper libero adipiscing. Massa in
               consequat congue scelerisque. Nibh dictum sed mi ullamcorper eget.
               Lectus vitae velit tellus sit turpis nulla nunc. Habitant libero
@@ -201,7 +203,7 @@ export default function Home() {
               volutpat aenean.
             </p>
             <br />
-            <p className={styles.skills__right__content}>
+            <p className={indexStyles.skills__right__content}>
               Porttitor sagittis ullamcorper pulvinar odio nec aliquet magnis.
               Enim dapibus vestibulum ullamcorper pharetra lectus tortor vitae
               in elit. Turpis nec id faucibus non donec etiam.
@@ -209,10 +211,10 @@ export default function Home() {
           </div>
         </section>
         {/* Recent Work Section */}
-        <section id={styles.recentWork}>
-          <div className={styles.recentWorkContainer}>
-            <div className={styles.recentWorkTextContainer}>
-              <h2 className={styles.recentWorkHeader}>Recent Work</h2>
+        <section id={indexStyles.recentWork}>
+          <div className={indexStyles.recentWorkContainer}>
+            <div className={indexStyles.recentWorkTextContainer}>
+              <h2 className={indexStyles.recentWorkHeader}>Recent Work</h2>
               <p className="recentSubheader">
                 Lorem ipsum dolor sit amet consectetur. Orci viverra risus nisi
                 auctor dictum pharetra. Vitae in dui cursus aliquam aliquet vel.
@@ -222,13 +224,13 @@ export default function Home() {
                 iaculis.
               </p>
             </div>
-            <div className={styles.recentWorkGalleryContainer}>
+            <div className={indexStyles.recentWorkGalleryContainer}>
               {projects.map((project, index) => {
                 if (index < 3) {
                   return (
                     <Image
                       key={index}
-                      className={styles.recentItems}
+                      className={indexStyles.recentItems}
                       src={project.src}
                     />
                   );
@@ -238,12 +240,12 @@ export default function Home() {
           </div>
         </section>
         {/* Contact Me Section */}
-        <section id={styles.contactMe}>
-          <div className={styles.contactMeContainer}>
-            <div className={styles.contactMeContainerLeft}>
+        <section id={indexStyles.contactMe}>
+          <div className={indexStyles.contactMeContainer}>
+            <div className={indexStyles.contactMeContainerLeft}>
               <Form />
             </div>
-            <div className={styles.contactMeContainerRight}>
+            <div className={indexStyles.contactMeContainerRight}>
               <Suspense>
                 {" "}
                 <GoogleMaps />
