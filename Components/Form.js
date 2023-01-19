@@ -22,10 +22,60 @@ function Form() {
   });
 
   useEffect(() => {
+    function formDataValidation(formData) {
+      const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+      const errorsPush = { name: [], email: [], subject: [], message: [] };
+
+      for (let keys in formData) {
+        if (formData[keys] === null || formData[keys] === "") {
+          errorsPush[keys].push(`${keys} require`);
+        }
+      }
+
+      if (regex.test(formData.email) === false) {
+        errorsPush.email.push("please enter email format");
+      }
+      setErrors({
+        ...errors,
+        name: errorsPush.name,
+        email: errorsPush.email,
+        subject: errorsPush.subject,
+        message: errorsPush.message,
+      });
+      return errors;
+    }
     formDataValidation(formData);
   }, [formData]);
 
   useEffect(() => {
+    function clearForm() {
+      getFormData(formFields);
+    }
+
+    function handleSubmit(e) {
+      e.preventDefault();
+      let errors = formDataValidation(formData);
+      if (e) {
+        setIsSubmitted(true);
+        if (
+          (errors.name.length === 0,
+          errors.subject.length === 0,
+          errors.message.length === 0,
+          errors.email.length === 0)
+        ) {
+          axios
+            .post("http://localhost:4000/submit", formData)
+            .then((e) => {
+              console.log(e.statusText);
+            })
+            .catch((error) => {
+              console.log("clearing data");
+              alert(error.message);
+              clearForm(formData);
+            });
+        }
+      }
+    }
     if (
       (isSubmitted && errors.name.length === 0,
       errors.subject.length === 0,
@@ -42,58 +92,6 @@ function Form() {
       }, 3000);
     }
   }, [isSubmitted]);
-
-  function clearForm() {
-    getFormData(formFields);
-  }
-
-  function formDataValidation(formData) {
-    const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
-    const errorsPush = { name: [], email: [], subject: [], message: [] };
-
-    for (let keys in formData) {
-      if (formData[keys] === null || formData[keys] === "") {
-        errorsPush[keys].push(`${keys} require`);
-      }
-    }
-
-    if (regex.test(formData.email) === false) {
-      errorsPush.email.push("please enter email format");
-    }
-    setErrors({
-      ...errors,
-      name: errorsPush.name,
-      email: errorsPush.email,
-      subject: errorsPush.subject,
-      message: errorsPush.message,
-    });
-    return errors;
-  }
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    let errors = formDataValidation(formData);
-    if (e) {
-      setIsSubmitted(true);
-      if (
-        (errors.name.length === 0,
-        errors.subject.length === 0,
-        errors.message.length === 0,
-        errors.email.length === 0)
-      ) {
-        axios
-          .post("http://localhost:4000/submit", formData)
-          .then((e) => {
-            console.log(e.statusText);
-          })
-          .catch((error) => {
-            console.log("clearing data");
-            alert(error.message);
-            clearForm(formData);
-          });
-      }
-    }
-  }
 
   return (
     <>
