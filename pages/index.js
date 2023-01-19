@@ -2,11 +2,8 @@ import React, { Component, Suspense, useEffect, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import indexStyles from "../styles/Home.module.css";
-const Navigation = React.lazy(() =>
-  import("../Components/Navigation/Navigation")
-);
 import GridGallery from "../Components/GridGallery";
-const Form = React.lazy(() => import("../Components/Form"));
+import Form from "../Components/Form";
 import Coursel from "../Components/Courasel/Coursel";
 import Button from "../Components/Button";
 import { motion, AnimatePresence, delay } from "framer-motion";
@@ -230,7 +227,9 @@ export default function Home() {
             <div className={indexStyles.contactMeContainerLeft}>
               <Form />
             </div>
-            <div className={indexStyles.contactMeContainerRight}></div>
+            <div className={indexStyles.contactMeContainerRight}>
+              <GoogleMaps />
+            </div>
           </div>
         </section>
       </div>
