@@ -2,6 +2,7 @@ import Transition from "../Components/Transition";
 import Navigation from "../Components/Navigation/Navigation";
 import Footer from "../Components/Footer";
 import globalStyles from "../styles/globals.css";
+import { motion } from "framer-motion";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -10,7 +11,7 @@ function MyApp({ Component, pageProps }) {
 
       <Navigation />
       <Transition>
-        <Component {...pageProps} />
+        <Component props={motion} {...pageProps} />
         {/*<Footer />*/}
       </Transition>
     </div>

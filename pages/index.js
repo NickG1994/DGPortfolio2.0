@@ -1,4 +1,4 @@
-import React, { Component, Suspense, useEffect, useState } from "react";
+import React, { Component, useEffect, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import indexStyles from "../styles/Home.module.css";
@@ -6,7 +6,7 @@ import GridGallery from "../Components/GridGallery";
 import Form from "../Components/Form";
 import Coursel from "../Components/Courasel/Coursel";
 import Button from "../Components/Button";
-import { motion, AnimatePresence, delay } from "framer-motion";
+import { motion } from "framer-motion";
 import { projects } from "../data/projects_data";
 import { SVG } from "../data/SVG.js";
 import { SvgHobbies } from "../data/SvgHobbies";
@@ -14,8 +14,12 @@ import HTMLSVG from "../Components/HTMLSVG";
 const GoogleMaps = React.lazy(() => import("../Components/GoogleMaps.js"));
 const Modal = React.lazy(() => import("../Components/Modal.js"));
 import {
-  textVariantOne,
+  textMovingDown,
+  textMovingDownDelayOne,
+  textMovingRight,
+  textMovingUp,
   loadingVariant,
+  variantsOne,
 } from "../data/framer-motion config.js";
 
 export default function Home() {
@@ -37,25 +41,32 @@ export default function Home() {
           <div className={indexStyles.heroContainer}>
             <Coursel />
             <motion.div
-              initial={loadingVariant.initial}
-              animate={loadingVariant.animate}
-              exit={loadingVariant.exit}
               className={indexStyles.courselContentContainer}
+              initial={{ hidden: { opacity: 0 } }}
+              animate={{
+                show: {
+                  opacity: 1,
+                  transition: {
+                    delayChildren: 1,
+                    staggerChildren: 0.5,
+                  },
+                },
+              }}
             >
               <motion.h1
-                initial={textVariantOne.initial}
-                animate={textVariantOne.animate}
-                exit={textVariantOne.exit}
+                variants={textMovingDown}
+                initial={textMovingDown.initial}
+                animate={textMovingDown.animate}
+                exit={textMovingDown.exit}
               >
-                <span>
-                  Hello,
-                  <br /> My name is <br /> Dominic Gaona
-                </span>
+                Hello,
+                <br /> My name is <br /> Dominic Gaona
               </motion.h1>
               <motion.h4
-                initial={textVariantOne.initial}
-                animate={textVariantOne.animate}
-                exit={textVariantOne.exit}
+                variants={textMovingDownDelayOne}
+                initial={textMovingDownDelayOne.initial}
+                animate={textMovingDownDelayOne.animate}
+                exit={textMovingDownDelayOne.exit}
               >
                 Front-end | Back-end Developer
               </motion.h4>
@@ -86,7 +97,19 @@ export default function Home() {
               >
                 Portfolio
               </motion.h2>
-              <p>
+              <motion.p
+                initial={{ opacity: 0 }}
+                viewport={{
+                  once: true,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  transition: {
+                    duration: 1,
+                    delay: 0.75,
+                  },
+                }}
+              >
                 Each project is created using Vue.js, React.js, or word-press.
                 Working with different technologies has helped me build
                 confidence and the technical skills i need to design and build
@@ -94,7 +117,7 @@ export default function Home() {
                 deploying these projects. Have giving me insight on how these
                 technologies work. As well as skills needed to succeed and
                 thrive in a professional Programming environment.
-              </p>
+              </motion.p>
             </div>
             <div className={indexStyles.portfolioBottom}>
               <div className={indexStyles.gallery}>
@@ -109,15 +132,28 @@ export default function Home() {
             <div className={indexStyles.about__left}>
               <motion.h2
                 className={indexStyles.about__title}
-                initial={textVariantOne.initial}
+                initial={textMovingRight.initial}
                 viewport={{
                   once: true,
                 }}
-                whileInView={textVariantOne.animate}
+                whileInView={textMovingRight.animate}
               >
                 About Me
               </motion.h2>
-              <p className={indexStyles.about__content}>
+              <motion.p
+                initial={{ opacity: 0 }}
+                viewport={{
+                  once: true,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  transition: {
+                    duration: 1,
+                    delay: 1,
+                  },
+                }}
+                className={indexStyles.about__content}
+              >
                 Lorem ipsum dolor sit amet consectetur. Orci viverra risus nisi
                 auctor dictum pharetra. Vitae in dui cursus aliquam aliquet vel.
                 Sapien aliquet molestie in massa ornare. Tellus parturient ut in
@@ -128,9 +164,22 @@ export default function Home() {
                 vivamus tellus venenatis sagittis volutpat egestas. At porttitor
                 fringilla at faucibus in aliquam fringilla quisque. Urna diam
                 vel pellentesque dui aliquet.
-              </p>
+              </motion.p>
               <br />
-              <p className={indexStyles.about__content}>
+              <motion.p
+                className={indexStyles.about__content}
+                initial={{ opacity: 0 }}
+                viewport={{
+                  once: true,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  transition: {
+                    duration: 1,
+                    delay: 1.5,
+                  },
+                }}
+              >
                 having a natural curiosty for the world. Along with the passion
                 for learning. Is my core of me. From my work Ethics, lifestyle,
                 and carrer. To my passion, hardwork, and determination. With
@@ -139,11 +188,10 @@ export default function Home() {
                 weakness and strength. While having a passion for learning with
                 an inquisitive mind. Can be a useful or helpful to have in my
                 field.
-              </p>
-              <br />
+              </motion.p>
               <Button
                 string={"learn more"}
-                layout={null}
+                layout={{ marginTop: "4rem" }}
                 location={"/Projects"}
               />
             </div>
@@ -190,6 +238,11 @@ export default function Home() {
               Enim dapibus vestibulum ullamcorper pharetra lectus tortor vitae
               in elit. Turpis nec id faucibus non donec etiam.
             </p>
+            <Button
+              location={"/skills"}
+              string={"Skills"}
+              layout={{ marginTop: "4rem" }}
+            />
           </div>
         </section>
         {/* Recent Work Section */}

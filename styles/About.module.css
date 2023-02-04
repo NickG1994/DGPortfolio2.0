@@ -3,21 +3,27 @@
 /*******************************************************/
 /* layouts */
 .about__container {
-height: 100vh;
 position: relative;
 padding: 4rem 3rem;
 }
 
 .about__content__container {
     display: flex;
-    position: absolute;
     width: 100%;
-    height: 100vh;
+}
+
+.about__container__left {
+  flex-basis: 40%;
+}
+
+.about__container__right {
+  flex-basis: 60%;
 }
 
 .about__container__right, .about__container__left {
-    flex: .5;
     height: inherit;
+    flex-grow: 1;
+    flex-shrink: 1;
 }
 
 .about__container__left {
@@ -48,8 +54,15 @@ padding: 4rem 3rem;
 /* svg styles */
 
 /* left section */
+.textContentContainerLeft {
+flex-basis: 40%
+}
+.skillsRightContainer {
+flex-basis: 60%;
+}
 .textContentContainerLeft, .skillsRightContainer {
-    flex: 0.5;
+  flex-grow: 1;
+  flex-shrink: 1;
     width: 100%;
     max-width: 100%;
     position: relative;
@@ -155,7 +168,7 @@ padding: 4rem 3rem;
    */
    .about__container__right .svgWrapper:nth-child(4) {
     top: calc((100%) - (10rem + 4rem));
-    left: calc((70% - 8rem));
+    left: calc((90% - 10rem));
   }
   
   .about__container__right .svgWrapper:nth-child(5) {

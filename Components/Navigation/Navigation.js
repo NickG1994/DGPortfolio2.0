@@ -45,7 +45,14 @@ function Navigation() {
 
         <div className={styles.navMiddle}>
           {PageLink.map((link, index) => (
-            <div key={index} className={styles.linkContainer}>
+            <div
+              key={index}
+              className={
+                styles.linkContainer +
+                " " +
+                (router.pathname == link.path ? styles.activeBackground : "")
+              }
+            >
               <div
                 className={
                   router.pathname == link.path

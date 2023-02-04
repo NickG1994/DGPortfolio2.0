@@ -1,9 +1,9 @@
 :root {
-  --backGround:#233342;
-  --foreGround: #4B2B31;
-  --fontColor:#CE8054;
-  --headerColor: #B35340;
-  --accentColor:#6f3637;
+  --backGround:#041C32;
+  --foreGround: #04293A;
+  --fontColor:#064663;
+  --headerColor: #ECB365;
+  --borderColor:#ECB365;
 }
 
 @font-face {
@@ -23,6 +23,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Roboto", Verdana, Geneva, Tahoma, sans-serif;
+  scroll-behavior: smooth;
 }
 
 body {

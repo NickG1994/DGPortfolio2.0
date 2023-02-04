@@ -23,7 +23,6 @@ function GridGallery() {
         }}
         onClick={(e) => {
           setModalIndex(e.currentTarget.id);
-          console.log(e.currentTarget.id);
           setState(true);
         }}
         id={index}
@@ -46,7 +45,9 @@ function GridGallery() {
   return (
     <div className={styles.galleryGrid}>
       {slides}
-      <Modal id={modalIndex} state={state} setToggleModal={setState} />
+      {state && (
+        <Modal id={modalIndex} state={state} setToggleModal={setState} />
+      )}
     </div>
   );
 }

@@ -5,6 +5,7 @@
 /* variables */
 
 /* font style */
+
 /* inner font style */
 .linkWrapper a{
     color: white;
@@ -13,17 +14,13 @@
 }
 /* inner font style */
 .linkContainer {
-    background-color: var(--accentColor);
+    background-color: var(--backGround);
     cursor: pointer;
 }
 .linkContainer a{
     text-decoration: none;
     color: whitesmoke;
     text-transform: uppercase;
-}
-
-.innerNav {
-    background-color: var(--accentColor);
 }
 
 .linkWrapper a{
@@ -47,20 +44,26 @@
 
 .iconContainer > svg{
     font-size: 2.5rem;
+    color:var(--headerColor)
 }
 
+.navBottom > svg{
+    color: var(--headerColor);
+}
+
+
+/* END font/svg style */
+/*******************************************************/
+/*********************LAYOUTS**************************/
+/*******************************************************/
+/* layouts */
+/* nav layouts */
 .title{
     display: grid;
     justify-content: center;
     align-items: center;
     height: 100%;
 }
-/* END font style */
-/*******************************************************/
-/*********************LAYOUTS**************************/
-/*******************************************************/
-/* layouts */
-/* nav layouts */
 #nav {
     flex:0 0 max(110px);
 }
@@ -72,11 +75,11 @@
     display: flex !important;
     flex-direction:column;
     justify-content: space-between;
-    background-color: var(--accentColor);
+    background-color: var(--backGround);
     height: 100vh;
     max-width: 150px;
 }
-
+/* navigation Top layout */
 .navTop {
     flex:1 1 auto;
     padding: 0.5rem;
@@ -84,19 +87,6 @@
     align-self: center;
 }
 
-.navTop span{
-    text-align: center;
-}
-
-/* navigation Top layout */
-.navMiddle {
-    flex:1 1 60%;
-}
-
-.navBottom {
-    flex: 1 1 30%;
-    text-align: center;
-}
 .linkContainer {
     position: relative;
     height: calc(100% / 6);
@@ -118,6 +108,7 @@
 
 .linkContainer:hover a{
     position: relative;
+    background-color: var(--fontColor);
     z-index: 100;
 }
 
@@ -129,7 +120,7 @@
     transition: opacity 100ms ease-in;
     position: absolute;
     inset: 0;
-    background-color:var(--accentColor);
+    background-color:var(--backGround);
     width: 100%;
     height: 100%;
     display: grid;
@@ -137,12 +128,33 @@
     justify-content: center;
     opacity: 1;
 }
+/* navigation Top layout */
+.navTop span{
+    text-align: center;
+}
+
+
+.navMiddle {
+    flex:1 1 60%;
+}
+
+.navBottom {
+    flex: 1 1 30%;
+    text-align: center;
+}
+
+/* end layout */
+
 .active { display: none; }
 .navLinkContainer {
-    display: none;
+    background-color: var(--borderColor);
 }
 .active .navLinkContainer {
     display: initial;
+}
+
+.activeBackground {
+    background-color: var(--fontColor);
 }
 
 .active .linkContainer svg { opacity: 0; }
@@ -199,7 +211,6 @@
     }
 
     .mobileNav svg:hover {
-        color:var(--accentColor);
         transform: scale(1.2);
     }
 
@@ -239,7 +250,7 @@
 
 
     .linkWrapper a{
-        color: white;
+        color: var(--fontColor);
         font-size: 0.8em;
         text-decoration: none;
     }
@@ -290,7 +301,6 @@
         width: 110px;
         max-width: 110px;
         height: 100vh;
-        background-color: var(--accentColor);
     }
     
     /* navigation Top */
@@ -318,13 +328,9 @@
     /* animation for slides nav */
     .linkContainer {
         position: relative;
-        background-color: var(--accentColor);
-        cursor: pointer;
-        border-bottom: 0.2rem solid var(--backGround);
-    }
     
-    .linkContainer:nth-child(1) {
-        border-top: 0.2rem solid var(--backGround);
+        cursor: pointer;
+    
     }
     
     .linkContainer a{
@@ -350,7 +356,6 @@
         transition: opacity 100ms ease-in;
         position: absolute;
         inset: 0;
-        background-color:var(--accentColor);
         width: 100%;
         height: 100%;
         display: grid;
@@ -373,7 +378,6 @@
     
     .active {
         display: none;
-        background-color: red;
     }
     
     .active .linkContainer svg {
@@ -405,7 +409,6 @@
         justify-content: space-between;
         max-width: 200px;
         height: 100vh;
-        background-color: var(--accentColor);
     }
 }
 

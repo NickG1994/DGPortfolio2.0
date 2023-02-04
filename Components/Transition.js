@@ -5,6 +5,7 @@ import Projects from "../pages/Projects";
 import style from "../styles/Transition.module.css";
 import ClipLoader from "react-spinners/ClipLoader";
 import { loadingVariant } from "../data/framer-motion config";
+import Footer from "./Footer";
 function Transition({ children }) {
   const { asPath } = useRouter();
 
@@ -34,7 +35,7 @@ function Transition({ children }) {
   return (
     <div className={style.containerTransition} style={{ overflow: "hidden" }}>
       {/*Animate the children component/pages*/}
-      <AnimatePresence initial={false} mode={"wait"}>
+      <AnimatePresence mode={"wait"} initial={true}>
         <motion.main
           className={style.mainContainer}
           variants={loadingVariant}
@@ -44,6 +45,7 @@ function Transition({ children }) {
           key={asPath}
         >
           {children}
+          <Footer />
         </motion.main>
       </AnimatePresence>
     </div>
