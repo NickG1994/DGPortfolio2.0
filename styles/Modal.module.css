@@ -1,25 +1,13 @@
-.modalContainerOpen {
-    transition: all 1s ease;
+.modal {
     position: fixed;
-    inset: 0 !important;
+    inset: 0;
     z-index: 10;
     background-color: rgba(0, 0, 0, 0.5);
     width: 100%;
     height: 100%;
 }
 
-.modalContainerClose {
-    transition: all 1s ease;
-    position: initial;
-    display:hidden;
-    inset: 0;
-    background-color: none;
-    width: 0;
-    height: 0;
-}
-
-.modalInnerContainer {
-    transition: all 1s ease;
+.modal__content {
     position: absolute;
     inset: 0;
     top: 50%;
