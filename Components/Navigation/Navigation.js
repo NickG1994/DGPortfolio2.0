@@ -69,7 +69,9 @@ function Navigation() {
         </div>
 
         <div className={styles.navBottom}>
-          <LinkedInIcon />
+          <a>
+            <LinkedInIcon />
+          </a>
           <FacebookIcon />
           <WebAssetIcon />
           <YouTubeIcon />
