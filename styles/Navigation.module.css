@@ -140,9 +140,19 @@
 
 .navBottom {
     flex: 1 1 30%;
-    text-align: center;
+    flex-wrap: wrap;
+    padding: 0 1rem;
 }
 
+.navBottom > svg {
+    transition: transform 200ms ease;
+    font-size: 2rem;
+}
+
+.navBottom > svg:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
 /* end layout */
 
 .active { display: none; }
@@ -247,7 +257,6 @@
     }
 
     .linkWrapper a:hover{ color: var(--accentColor); }
-
 
     .linkWrapper a{
         color: var(--fontColor);

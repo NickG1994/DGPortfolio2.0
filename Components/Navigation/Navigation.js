@@ -9,6 +9,7 @@ import { PageLink } from "../../data/PageLinks";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import WebAssetIcon from "@mui/icons-material/WebAsset";
+import YouTubeIcon from "@mui/icons-material/YouTube";
 import MenuIcon from "@mui/icons-material/Menu";
 import Image from "next/image";
 
@@ -71,6 +72,7 @@ function Navigation() {
           <LinkedInIcon />
           <FacebookIcon />
           <WebAssetIcon />
+          <YouTubeIcon />
         </div>
       </aside>
 

@@ -10,15 +10,21 @@
 .modal__content {
     position: absolute;
     inset: 0;
-    top: 50%;
+    top: 30%;
     left: 50%;
-    transform:translate(-50%, -50%) !important;
+    transform:translate(-50%, -30%) !important;
     width: 60%;
     height: 60%;
-
 }
 
 .modalImage {
     width: 100%;
     height:100%;
+}
+
+@media only screen and (max-width:560px){
+    .modal__content {
+        width: 60%;
+        height: 30%;
+    }
 }

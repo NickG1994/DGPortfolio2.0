@@ -4,7 +4,11 @@
 /* layouts */
 .about__container {
 position: relative;
-padding: 4rem 3rem;
+padding: 0 3rem;
+height: 100vh;
+display: grid;
+align-items: center;
+justify-content: center;
 }
 
 .about__content__container {
@@ -40,6 +44,7 @@ padding: 4rem 3rem;
 /* fonts */
 .about__container__left p {
  color:whitesmoke;
+ font-size: 1rem;
 }
 .about__container__left h1 {
     font-size: 4rem;
@@ -132,7 +137,7 @@ flex-basis: 60%;
   .svgWrapper:hover > h3{
     transition: opacity 500ms ease;
     opacity: 1;
-    color: var(--fontColor);
+    color: var(--headerColor);
     font-size: 1.5rem;
     font-family: roboto;
   } 
@@ -180,5 +185,40 @@ flex-basis: 60%;
     top: calc(50%);
     left: calc(50%);
   }
+
+  .about__container__right .svgWrapper:nth-child(7) {
+    top: calc(0);
+    left: calc(20%);
+  }
   /* right*/
   /* react.js svg */
+
+  @media only screen and (max-width:580px) , (max-width:780px) {
+   .about__content__container {
+    display: initial;
+   } 
+
+   .about__container__right {
+    max-height: 100vh;
+    height: 100vh;
+   }
+  }
+  /* Desktop monitors 1660px and up */
+  @media only screen and (min-width:1660px){
+    /* fonts */
+    .about__container__left h1 {
+      font-size: 4.5rem;
+      margin-bottom: 2rem;
+
+    }
+    .about__container__left p {
+      font-size: 1.2rem;
+    }
+    /* fonts */
+  }
+
+  @media only screen and (max-width:580px) , (max-width:1080px){
+    .about__container {
+      height: auto !important;
+    }
+  }
