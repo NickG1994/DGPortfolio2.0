@@ -3,7 +3,7 @@ import Image from "next/image";
 export const images = [
   {
     id: 1,
-    src: require("../public/img/Hero Section.png"),
+    src: require("../public/img/image2.webp"),
   },
   {
     id: 2,
