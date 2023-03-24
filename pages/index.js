@@ -3,16 +3,19 @@ import Head from "next/head";
 import Image from "next/image";
 import indexStyles from "../styles/Home.module.css";
 import GridGallery from "../Components/GridGallery";
+/* Components */
 import Form from "../Components/Form";
 import Coursel from "../Components/Courasel/Coursel";
 import Button from "../Components/Button";
+import Modal from "../Components/Modal.js";
 import { motion } from "framer-motion";
 import { projects } from "../data/projects_data";
+/* Import SVG */
 import { SVG } from "../data/SVG.js";
 import { SvgHobbies } from "../data/SvgHobbies";
 import HTMLSVG from "../Components/HTMLSVG";
 const GoogleMaps = React.lazy(() => import("../Components/GoogleMaps.js"));
-const Modal = React.lazy(() => import("../Components/Modal.js"));
+
 import {
   textMovingDown,
   textMovingDownDelayOne,

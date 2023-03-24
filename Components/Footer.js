@@ -1,4 +1,3 @@
-import { Card, CardContent } from "@mui/material";
 import footerStyles from "../styles/Footer.module.css";
 import Image from "next/image";
 import React from "react";
@@ -9,8 +8,8 @@ import Button from "./Button";
 
 function Footer() {
   return (
-    <>
-      <ul className={footerStyles.cardContainer}>
+    <ul className={footerStyles.cardContainer}>
+      {
         <li className={footerStyles.cards}>
           <div className={footerStyles.imageContainer}>
             <Image
@@ -26,33 +25,28 @@ function Footer() {
               able to be self-sufficient alone. Building, learning and deploying
               web pages...
             </p>
-            <Button
-              layout={{ marginTop: "1em", marginLeft: "1em" }}
-              string={"About me"}
-              location={"/about"}
-            />
+            {/* Th button that was once here made the error in the footer. */}
           </div>
         </li>
-
-        <li className={footerStyles.cards}>
-          <h2 style={{ display: "inline-block" }}>sitemap</h2>
-          <nav className={footerStyles.siteMap}>
-            <ul>
-              {PageLink.map((page, index) => (
-                <li key={index}>
-                  <Link className={footerStyles.link} href={page.path}>
-                    <span>{page.title}</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </li>
-        <li className={footerStyles.cards}>
-          <h2>External Links</h2>
-        </li>
-      </ul>
-    </>
+      }
+      {/* <li className={footerStyles.cards}>
+        <h2 style={{ display: "inline-block" }}>sitemap</h2>
+        <nav className={footerStyles.siteMap}>
+          <ul>
+            {PageLink.map((page, index) => (
+              <li key={index}>
+                <Link className={footerStyles.link} href={page.path}>
+                  <span>{page.title}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </li> */}
+      <li className={footerStyles.cards}>
+        <h2>External Links</h2>
+      </li>{" "}
+    </ul>
   );
 }
 
