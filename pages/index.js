@@ -48,8 +48,8 @@ export default function Home() {
         {/* Hero Section */}
         <section id={indexStyles.hero}>
           <div className={indexStyles.heroContainer}>
-            {/* <Coursel /> */}
-            {/* <motion.div
+            <Coursel />
+            <motion.div
               className={indexStyles.courselContentContainer}
               initial={{ hidden: { opacity: 0 } }}
               animate={{
@@ -84,7 +84,7 @@ export default function Home() {
                 location="/contact"
                 layout={{ fontSize: ".8rem" }}
               />
-            </motion.div> */}
+            </motion.div>
           </div>
         </section>
         {/* portfolio Section */}
