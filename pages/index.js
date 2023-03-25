@@ -1,20 +1,26 @@
 import React, { Component, useEffect, useState } from "react";
+import dynamic from "next/dynamic";
 import Head from "next/head";
 import Image from "next/image";
+// import styles
 import indexStyles from "../styles/Home.module.css";
-import GridGallery from "../Components/GridGallery";
 /* Components */
 import Form from "../Components/Form";
 import Coursel from "../Components/Courasel/Coursel";
 import Button from "../Components/Button";
 import Modal from "../Components/Modal.js";
 import { motion } from "framer-motion";
-import { projects } from "../data/projects_data";
+import GridGallery from "../Components/GridGallery";
 /* Import SVG */
 import { SVG } from "../data/SVG.js";
 import { SvgHobbies } from "../data/SvgHobbies";
 import HTMLSVG from "../Components/HTMLSVG";
-const GoogleMaps = React.lazy(() => import("../Components/GoogleMaps.js"));
+// import Data
+import { projects } from "../data/projects_data";
+
+const GoogleMaps = dynamic(() => import("../Components/GoogleMaps.js"), {
+  ssr: false,
+});
 
 import {
   textMovingDown,
@@ -42,8 +48,8 @@ export default function Home() {
         {/* Hero Section */}
         <section id={indexStyles.hero}>
           <div className={indexStyles.heroContainer}>
-            <Coursel />
-            <motion.div
+            {/* <Coursel /> */}
+            {/* <motion.div
               className={indexStyles.courselContentContainer}
               initial={{ hidden: { opacity: 0 } }}
               animate={{
@@ -78,56 +84,56 @@ export default function Home() {
                 location="/contact"
                 layout={{ fontSize: ".8rem" }}
               />
-            </motion.div>
+            </motion.div> */}
           </div>
         </section>
         {/* portfolio Section */}
+        {/* This is where a problem is accuring. Fix this section.  */}
         <section id={indexStyles.portfolio}>
-          <>
-            <div className={indexStyles.portfolioTop}>
-              <motion.h2
-                initial={{ opacity: 0 }}
-                viewport={{
-                  once: true,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  transition: {
-                    duration: 1,
-                    delay: 0,
-                  },
-                }}
-              >
-                Portfolio
-              </motion.h2>
-              <motion.p
-                initial={{ opacity: 0 }}
-                viewport={{
-                  once: true,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  transition: {
-                    duration: 1,
-                    delay: 0.75,
-                  },
-                }}
-              >
-                Each project is created using Vue.js, React.js, or word-press.
-                Working with different technologies has helped me build
-                confidence and the technical skills i need to design and build
-                the projects. always innovating, designing, building, and
-                deploying these projects. Have giving me insight on how these
-                technologies work. As well as skills needed to succeed and
-                thrive in a professional Programming environment.
-              </motion.p>
+          <div className={indexStyles.portfolioTop}>
+            <motion.h2
+              initial={{ opacity: 0 }}
+              viewport={{
+                once: true,
+              }}
+              whileInView={{
+                opacity: 1,
+                transition: {
+                  duration: 1,
+                  delay: 0,
+                },
+              }}
+            >
+              Portfolio
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0 }}
+              viewport={{
+                once: true,
+              }}
+              whileInView={{
+                opacity: 1,
+                transition: {
+                  duration: 1,
+                  delay: 0.75,
+                },
+              }}
+            >
+              Each project is created using Vue.js, React.js, or word-press.
+              Working with different technologies has helped me build confidence
+              and the technical skills i need to design and build the projects.
+              always innovating, designing, building, and deploying these
+              projects. Have giving me insight on how these technologies work.
+              As well as skills needed to succeed and thrive in a professional
+              Programming environment.
+            </motion.p>
+          </div>
+          <div className={indexStyles.portfolioBottom}>
+            <div className={indexStyles.gallery}>
+              {/* The gridGallery is causing the issue with further inspection. */}
+              <GridGallery />
             </div>
-            <div className={indexStyles.portfolioBottom}>
-              <div className={indexStyles.gallery}>
-                <GridGallery />
-              </div>
-            </div>
-          </>
+          </div>
         </section>
         {/* About Me section skills and hobbies */}
         <section id={indexStyles.about}>
@@ -203,16 +209,6 @@ export default function Home() {
         </section>
 
         <section id={indexStyles.skills}>
-          <div className={indexStyles.skills__left}>
-            {/*
-            {SvgHobbies.map((svg, index) => (
-              <motion.span key={index} className={indexStyles.svgWrapper}>
-                <h3>{svg.iconName}</h3>
-                <HTMLSVG key={index} svgString={svg.path} />
-              </motion.span>
-            ))}
-            */}
-          </div>
           <div className={indexStyles.skills__right}>
             <h2 className={indexStyles.skills__right__content}>Hobbies</h2>
             <p className={indexStyles.skills__right__content}>
@@ -281,7 +277,7 @@ export default function Home() {
         <section id={indexStyles.contactMe}>
           <div className={indexStyles.contactMeContainer}>
             <div className={indexStyles.contactMeContainerLeft}>
-              <Form />
+              {/* <Form /> */}
             </div>
             <div className={indexStyles.contactMeContainerRight}>
               <GoogleMaps />
