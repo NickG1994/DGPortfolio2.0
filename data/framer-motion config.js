@@ -62,7 +62,7 @@ export const loadingVariant = {
   animate: {
     opacity: 1,
     transition: {
-      duration: 0.65,
+      duration: 2,
       delay: 0.75,
     },
   },
@@ -70,7 +70,7 @@ export const loadingVariant = {
   exit: {
     opacity: 0,
     transition: {
-      duration: 2,
+      duration: 1,
       delay: 1,
     },
   },
