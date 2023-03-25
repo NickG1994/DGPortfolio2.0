@@ -1,7 +1,7 @@
 export const projects = [
   {
     id: 0,
-    src: require("../public/img/React App.png"),
+    src: require("../public/img/react_netflix.png"),
     alt: "image",
     Header: "Netfix Clone",
     project_url: "https://grand-figolla-d2bbb2.netlify.app/",
