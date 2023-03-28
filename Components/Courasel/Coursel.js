@@ -9,7 +9,6 @@ function Coursel() {
     const Images = images.map((img, index) => (
       <div key={index} className={styles.slides}>
         <Image
-          loading="eager"
           src={img.src}
           className={styles.bgImage}
           key={index}

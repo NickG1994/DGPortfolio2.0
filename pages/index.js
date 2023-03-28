@@ -107,13 +107,14 @@ export default function Home() {
                 },
               }}
             >
-              Each project is created using Vue.js, React.js, or word-press.
-              Working with different technologies has helped me build confidence
-              and the technical skills i need to design and build the projects.
-              always innovating, designing, building, and deploying these
-              projects. Have giving me insight on how these technologies work.
-              As well as skills needed to succeed and thrive in a professional
-              Programming environment.
+              Proficient in developing projects using Vue.js, React.js, and
+              WordPress, with experience in building, testing, and deploying.
+              Skilled in innovating and designing to meet project requirements
+              while maintaining a high level of technical excellence.
+              Continuously enhancing technical knowledge and expertise through
+              continuous learning and exploration of new technologies. Strong
+              ability to work in a collaborative team environment while
+              demonstrating excellent communication and problem-solving skills.
             </motion.p>
           </div>
           <div className={indexStyles.portfolioBottom}>
