@@ -49,19 +49,7 @@ export default function Home() {
         <section id={indexStyles.hero}>
           <div className={indexStyles.heroContainer}>
             <Coursel />
-            <motion.div
-              className={indexStyles.courselContentContainer}
-              initial={{ hidden: { opacity: 0 } }}
-              animate={{
-                show: {
-                  opacity: 1,
-                  transition: {
-                    delayChildren: 1,
-                    staggerChildren: 0.5,
-                  },
-                },
-              }}
-            >
+            <div className={indexStyles.courselContentContainer}>
               <motion.h1
                 variants={textMovingDown}
                 initial={textMovingDown.initial}
@@ -84,7 +72,7 @@ export default function Home() {
                 location="/contact"
                 layout={{ fontSize: ".8rem" }}
               />
-            </motion.div>
+            </div>
           </div>
         </section>
         {/* portfolio Section */}
