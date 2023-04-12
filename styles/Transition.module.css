@@ -46,7 +46,7 @@ correct width of the nav and the main container
 }
 
 .animateContainer {
-    position: fixed;
+    /*position: fixed;*/
     inset: 0;
 }
 
@@ -68,9 +68,6 @@ correct width of the nav and the main container
 /* end layout */
 .hideLoading {
     opacity: 0;
-}
-.block:nth-child(1) {
-    background-color: red;
 }
 
 
