@@ -38,10 +38,6 @@ export default function Home() {
         <title>Nick - Home</title>
         <meta name="description" content="Dominic gaona's portoflio" />
         <link rel="icon" href="/img/DominicGaonaTabLogo.ico" />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1"
-        ></meta>
       </Head>
       {/* Main content */}
       <div id={indexStyles.main} className={indexStyles.mainContainer}>
