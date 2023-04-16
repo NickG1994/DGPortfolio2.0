@@ -57,7 +57,7 @@ function GridGallery() {
 
   return (
     <AnimatePresence initial={false}>
-      <main>
+      <>
         <div className={styles.galleryGrid}>{slides}</div>
         <div
           onClick={(e) => {
@@ -66,7 +66,7 @@ function GridGallery() {
         >
           {state && <Modal id={modalIndex} />}
         </div>
-      </main>
+      </>
     </AnimatePresence>
   );
 }
