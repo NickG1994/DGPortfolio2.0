@@ -38,6 +38,7 @@ export default function Home() {
         <title>Nick - Home</title>
         <meta name="description" content="Dominic gaona's portoflio" />
         <link rel="icon" href="/img/DominicGaonaTabLogo.ico" />
+        <link rel="preload" href="../styles/Home.module.css" as="style"></link>
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1"
