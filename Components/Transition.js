@@ -22,9 +22,9 @@ function Transition({ children }) {
           key={asPath}
         >
           {children}
+          <Footer />
         </motion.main>
       </AnimatePresence>
-      <Footer />
     </>
   );
 }
