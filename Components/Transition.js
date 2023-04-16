@@ -10,9 +10,9 @@ function Transition({ children }) {
   const { asPath } = useRouter();
 
   return (
-    <div className={style.containerTransition} style={{ overflow: "hidden" }}>
+    <div className={style.containerTransition}>
       {/*Animate the children component/pages*/}
-      <AnimatePresence mode={"wait"} initial={true}>
+      <AnimatePresence mode={"wait"} initial={false}>
         <motion.main
           className={style.mainContainer}
           variants={loadingVariant}
