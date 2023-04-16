@@ -33,7 +33,7 @@ import {
 
 export default function Home() {
   return (
-    <>
+    <div>
       <Head>
         <title>Nick - Home</title>
         <meta name="description" content="Dominic gaona's portoflio" />
@@ -275,6 +275,6 @@ export default function Home() {
           </div>
         </section>
       </div>
-    </>
+    </div>
   );
 }

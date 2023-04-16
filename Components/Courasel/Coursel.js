@@ -1,5 +1,4 @@
 import React from "react";
-import { AnimatePresence } from "framer-motion";
 import { useMemo, useState } from "react";
 import { images } from "../../data/Carousel__Images.js";
 import styles from "../../styles/Coursel.module.css";
@@ -23,11 +22,9 @@ function Coursel() {
   }, []);
 
   return (
-    <AnimatePresence>
-      <div className={styles.courselContainer}>
-        <div className={styles.slidesContainer}>{slides}</div>
-      </div>
-    </AnimatePresence>
+    <div className={styles.courselContainer}>
+      <div className={styles.slidesContainer}>{slides}</div>
+    </div>
   );
 }
 

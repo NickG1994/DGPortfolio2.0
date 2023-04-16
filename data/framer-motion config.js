@@ -71,7 +71,7 @@ export const loadingVariant = {
     opacity: 0,
     transition: {
       duration: 1,
-      delay: 1,
+      delay: 0,
     },
   },
 };
