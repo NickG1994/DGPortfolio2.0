@@ -198,40 +198,48 @@ export default function Home() {
         </section>
 
         <section id={indexStyles.skills}>
-          <div className={indexStyles.skills__right}>
-            <h2 className={indexStyles.skills__right__content}>Hobbies</h2>
-            <p className={indexStyles.skills__right__content}>
-              Lorem ipsum dolor sit amet consectetur. Aliquet enim viverra
-              elementum justo sed etiam etiam. Enim morbi massa eu non tempor
-              nascetur. Rhoncus tellus a volutpat interdum dui elementum. Nibh
-              purus nulla faucibus nisi nunc arcu urna felis. Porta pretium
-              dolor etiam vel tellus sit vestibulum scelerisque est. Fermentum
-              lorem nibh libero urna id. Augue placerat in in faucibus in fames
-              ac. Magna augue at dignissim mauris viverra tortor sit facilisis
-              vitae. Amet at ante ut facilisis facilisis vitae varius. Tincidunt
-              feugiat orci nec augue ut.
-            </p>
-            <br />
-            <p className={indexStyles.skills__right__content}>
-              Vel ultrices magna ullamcorper libero adipiscing. Massa in
-              consequat congue scelerisque. Nibh dictum sed mi ullamcorper eget.
-              Lectus vitae velit tellus sit turpis nulla nunc. Habitant libero
-              purus at egestas. Proin ipsum eros fermentum volutpat. Dolor risus
-              scelerisque aliquet velit sed et. Elit id condimentum et habitant
-              volutpat aenean.
-            </p>
-            <br />
-            <p className={indexStyles.skills__right__content}>
-              Porttitor sagittis ullamcorper pulvinar odio nec aliquet magnis.
-              Enim dapibus vestibulum ullamcorper pharetra lectus tortor vitae
-              in elit. Turpis nec id faucibus non donec etiam.
-            </p>
-            <Button
-              location={"/skills"}
-              string={"Skills"}
-              layout={{ marginTop: "4rem" }}
-            />
-          </div>
+          <content className={indexStyles.skills_container}>
+            <div className={indexStyles.skills__right}>
+              <h2 className={indexStyles.skills__right__content}>Hobbies</h2>
+              <p className={indexStyles.skills__right__content}>
+                Lorem ipsum dolor sit amet consectetur. Aliquet enim viverra
+                elementum justo sed etiam etiam. Enim morbi massa eu non tempor
+                nascetur. Rhoncus tellus a volutpat interdum dui elementum. Nibh
+                purus nulla faucibus nisi nunc arcu urna felis. Porta pretium
+                dolor etiam vel tellus sit vestibulum scelerisque est. Fermentum
+                lorem nibh libero urna id. Augue placerat in in faucibus in
+                fames ac. Magna augue at dignissim mauris viverra tortor sit
+                facilisis vitae. Amet at ante ut facilisis facilisis vitae
+                varius. Tincidunt feugiat orci nec augue ut.
+              </p>
+              <br />
+              <p className={indexStyles.skills__right__content}>
+                Vel ultrices magna ullamcorper libero adipiscing. Massa in
+                consequat congue scelerisque. Nibh dictum sed mi ullamcorper
+                eget. Lectus vitae velit tellus sit turpis nulla nunc. Habitant
+                libero purus at egestas. Proin ipsum eros fermentum volutpat.
+                Dolor risus scelerisque aliquet velit sed et. Elit id
+                condimentum et habitant volutpat aenean.
+              </p>
+              <br />
+              <p className={indexStyles.skills__right__content}>
+                Porttitor sagittis ullamcorper pulvinar odio nec aliquet magnis.
+                Enim dapibus vestibulum ullamcorper pharetra lectus tortor vitae
+                in elit. Turpis nec id faucibus non donec etiam.
+              </p>
+              <Button
+                location={"/skills"}
+                string={"Skills"}
+                layout={{ marginTop: "4rem" }}
+              />
+            </div>
+            <div className={indexStyles.skills__left}>
+              <Image
+                layout="responsive"
+                src={require("/public/img/hobbies.png")}
+              />
+            </div>
+          </content>
         </section>
         {/* Recent Work Section */}
         <section id={indexStyles.recentWork}>

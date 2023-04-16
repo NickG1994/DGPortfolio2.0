@@ -179,19 +179,15 @@ flex: 0.6;
 /* end about me layout style */
 /*########################################*/
 /* skills layout style*/
-#skills {
-  width: 100%;
+.skills_container {
   display: flex;
-  height: 100vh;
-  gap: 50px;
 }
-.skills__left {
-background: url('../public/img/hobbies.png') center no-repeat;
-background-size: cover;
-flex: .6;
-}
+
 .skills__right {
 flex: .4;
+}
+.skills__left {
+  flex: .6;
 }
 /* end skills layout style*/
 /*#####################################################*/
@@ -560,7 +556,7 @@ opacity: 0.2;
     margin-top: 4rem;
   }
 
-  .contactMeContainerRight p,   .contactMeContainerLeft p{
+  .contactMeContainerRight p, .contactMeContainerLeft p{
     width: 100%;
 
   }
