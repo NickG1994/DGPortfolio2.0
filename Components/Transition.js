@@ -17,7 +17,7 @@ function Transition({ children }) {
           className={style.mainContainer}
           variants={loadingVariant}
           initial={loadingVariant.initial}
-          animate={loadingVariant.animate}
+          //          animate={loadingVariant.animate}
           exit={loadingVariant.exit}
           key={asPath}
         >
