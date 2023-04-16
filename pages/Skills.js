@@ -39,7 +39,7 @@ function Skills() {
           <Image
             layout="responsive"
             src={require("../public/img/skills/Layer 1.png").default}
-            loading="lazy"
+            loading="eager"
             className={Skillstyle.image}
             alt="skill image "
           />
