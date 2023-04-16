@@ -17,29 +17,23 @@ function Transition({ children }) {
           className={style.mainContainer}
           variants={loadingVariant}
           initial={{
-            initial: {
-              opacity: 0,
-              transition: {
-                duration: 0.65,
-              },
+            opacity: 0,
+            transition: {
+              duration: 0.65,
             },
           }}
           animate={{
-            animate: {
-              opacity: 1,
-              transition: {
-                duration: 2,
-                delay: 0.75,
-              },
+            opacity: 1,
+            transition: {
+              duration: 2,
+              delay: 0.75,
             },
           }}
           exit={{
-            exit: {
-              opacity: 0,
-              transition: {
-                duration: 1,
-                delay: 0,
-              },
+            opacity: 0,
+            transition: {
+              duration: 1,
+              delay: 1,
             },
           }}
           key={asPath}
