@@ -12,13 +12,12 @@ function Transition({ children }) {
   return (
     <div className={style.containerTransition} style={{ overflow: "hidden" }}>
       {/*Animate the children component/pages*/}
-      <AnimatePresence mode={"popLayout"} initial={false} onExitComplete={true}>
+      <AnimatePresence mode={"popLayout"} initial={false} exit={false}>
         <motion.main
           className={style.mainContainer}
           variants={loadingVariant}
           initial={loadingVariant.initial}
           animate={loadingVariant.animate}
-          exit={loadingVariant.exit}
           key={asPath}
         >
           {children}
