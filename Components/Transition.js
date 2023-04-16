@@ -10,7 +10,7 @@ function Transition({ children }) {
   const { asPath } = useRouter();
 
   return (
-    <div className={style.containerTransition}>
+    <>
       {/*Animate the children component/pages*/}
       <AnimatePresence mode={"wait"} initial={false}>
         <motion.main
@@ -25,7 +25,7 @@ function Transition({ children }) {
         </motion.main>
       </AnimatePresence>
       <Footer />
-    </div>
+    </>
   );
 }
 
