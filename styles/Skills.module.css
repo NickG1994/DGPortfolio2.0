@@ -1,4 +1,9 @@
 .skills_container {
+
+}
+.skills_container_inner  {
+    display: flex;
+    justify-content: space-between;
     display: flex;
     justify-content: space-between;
     padding:0 3rem;
@@ -6,10 +11,6 @@
     display: grid;
     align-items: center;
     justify-content: center;
-}
-.skills_container_inner  {
-    display: flex;
-    justify-content: space-between;
 }
 .skills_container::after {
     content: "";
