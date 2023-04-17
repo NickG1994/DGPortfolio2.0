@@ -41,6 +41,7 @@ export default function Home() {
       </Head>
       {/* Main content */}
       <div id={indexStyles.main} className={indexStyles.mainContainer}>
+        <h1 style={{ color: "red", fontSize: "21px" }}>Testing Header</h1>
         {/* Hero Section */}
         <section id={indexStyles.hero}>
           <div className={indexStyles.heroContainer}>

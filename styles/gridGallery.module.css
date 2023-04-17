@@ -43,7 +43,6 @@
     object-fit: fill !important;
   }
 
-  
    .gridItem:hover .overlayContainer {
     transform:translateY(-1rem);
   }
