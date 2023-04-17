@@ -33,7 +33,7 @@ function Transition({ children }) {
           exit={{
             opacity: 0,
             transition: {
-              duration: 30,
+              duration: 2,
             },
           }}
           key={asPath}
