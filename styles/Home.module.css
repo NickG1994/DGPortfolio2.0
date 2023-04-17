@@ -6,6 +6,13 @@
  --media queries
 */
 
+/* Testing styling  */
+.testing {
+  color: red;
+  font-size: 21px;
+  text-align: center;
+}
+
 /* Desktop Styling */
 /* font styling */
 .mainContainer * > h2 {
