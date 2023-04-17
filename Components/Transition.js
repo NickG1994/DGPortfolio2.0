@@ -12,7 +12,7 @@ function Transition({ children }) {
     <div style={{ overflow: "hidden" }}>
       {/*Animate the children component/pages*/}
       <AnimatePresence mode={"wait"} onExitComplete initial={false}>
-        <motion.main
+        <motion.div
           className={style.mainContainer}
           variants={loadingVariant}
           initial={{
@@ -37,7 +37,7 @@ function Transition({ children }) {
           key={asPath}
         >
           {children}
-        </motion.main>
+        </motion.div>
       </AnimatePresence>
     </div>
   );
