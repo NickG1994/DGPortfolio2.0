@@ -38,7 +38,7 @@ function Transition({ children }) {
           }}
           key={asPath}
         >
-          {<Loader /> && children}
+          {" " && children}
         </motion.main>
       </AnimatePresence>
       <Footer />
