@@ -1,9 +1,9 @@
-import React, { Component, useEffect, useState } from "react";
+import React from "react";
+// import styles
+import indexStyles from "../styles/Home.module.css";
 import dynamic from "next/dynamic";
 import Head from "next/head";
 import Image from "next/image";
-// import styles
-import indexStyles from "../styles/Home.module.css";
 /* Components */
 import Form from "../Components/Form";
 import Coursel from "../Components/Courasel/Coursel";
