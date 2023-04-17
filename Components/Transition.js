@@ -4,8 +4,6 @@ import { animate, AnimatePresence, motion } from "framer-motion";
 import Projects from "../pages/Projects";
 import style from "../styles/Transition.module.css";
 import { loadingVariant } from "../data/framer-motion config";
-import Footer from "./Footer";
-import { Loader } from "next/dynamic";
 
 function Transition({ children }) {
   const { asPath } = useRouter();
@@ -38,10 +36,9 @@ function Transition({ children }) {
           }}
           key={asPath}
         >
-          {" " && children}
+          {children}
         </motion.main>
       </AnimatePresence>
-      <Footer />
     </div>
   );
 }
