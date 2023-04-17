@@ -4,14 +4,14 @@ import Footer from "../Components/Footer";
 import globalStyles from "../styles/globals.css";
 import { motion } from "framer-motion";
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component }) {
   return (
     <div style={{ display: "flex" }}>
       {/* Navigation Component */}
 
       <Navigation />
       <Transition>
-        <Component props={motion} {...pageProps} />
+        <Component props={motion} />
         {/*<Footer />*/}
       </Transition>
     </div>
