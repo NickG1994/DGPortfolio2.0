@@ -1,7 +1,6 @@
 import React from "react";
 import Head from "next/head";
 import { projects } from "../data/projects_data";
-import styles from "../styles/Projects.module.css";
 import GridGallery from "../Components/GridGallery";
 
 function Projects() {

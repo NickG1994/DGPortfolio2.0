@@ -70,7 +70,6 @@ function Navigation() {
 
         <div className={styles.navBottom}>
           <LinkedInIcon />
-
           <FacebookIcon />
           <WebAssetIcon />
           <YouTubeIcon />

@@ -1,5 +1,5 @@
 import React from "react";
-import contactStyles from "../styles/Contact.module.css";
+import styles from "../styles/Contact.module.css";
 import Form from "../Components/Form";
 
 //import component icons
@@ -10,12 +10,12 @@ import Head from "next/head";
 
 export default function contact() {
   return (
-    <div className={contactStyles.contact__container}>
-      <div className={contactStyles.contact__content__container}>
-        <div className={contactStyles.contact__left}>
-          <ul className={contactStyles.contact__cards}>
-            <li className={contactStyles.contact__card}>
-              <div className={contactStyles.card__content}>
+    <div className={styles.contact__container}>
+      <div className={styles.contact__content__container}>
+        <div className={styles.contact__left}>
+          <ul className={styles.contact__cards}>
+            <li className={styles.contact__card}>
+              <div className={styles.card__content}>
                 <h2>Give me a email</h2>
                 <p>
                   you can reach me with my personal email to chat, give a high
@@ -25,9 +25,9 @@ export default function contact() {
 
               <MailIcon />
             </li>
-            <li className={contactStyles.contact__card}>
+            <li className={styles.contact__card}>
               <FacebookIcon />
-              <div className={contactStyles.card__content}>
+              <div className={styles.card__content}>
                 <h2>Find me in facebook!</h2>
                 <p>
                   you can find me in facebook to get in touch. message me
@@ -36,8 +36,8 @@ export default function contact() {
                 </p>
               </div>
             </li>
-            <li className={contactStyles.contact__card}>
-              <div className={contactStyles.card__content}>
+            <li className={styles.contact__card}>
+              <div className={styles.card__content}>
                 <h2>Say Hi in Linkdn</h2>
                 <p>
                   you can reach me with my personal email to chat, give a high
@@ -48,7 +48,7 @@ export default function contact() {
             </li>
           </ul>
         </div>
-        <div className={contactStyles.contact__right}>
+        <div className={styles.contact__right}>
           <Form />
         </div>
       </div>
