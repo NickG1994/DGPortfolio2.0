@@ -26,12 +26,15 @@ function Transition({ children }) {
           animate={{
             opacity: 1,
             transition: {
-              duration: 50,
+              duration: 2,
               delay: 0.75,
             },
           }}
           exit={{
             opacity: 0,
+            transition: {
+              duration: 30,
+            },
           }}
           key={asPath}
         >
