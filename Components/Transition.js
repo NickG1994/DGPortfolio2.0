@@ -5,6 +5,7 @@ import Projects from "../pages/Projects";
 import style from "../styles/Transition.module.css";
 import { loadingVariant } from "../data/framer-motion config";
 import Footer from "./Footer";
+import { Loader } from "next/dynamic";
 
 function Transition({ children }) {
   const { asPath } = useRouter();
@@ -12,7 +13,7 @@ function Transition({ children }) {
   return (
     <div className={style.containerTransition} style={{ overflow: "hidden" }}>
       {/*Animate the children component/pages*/}
-      <AnimatePresence mode={"wait"} initial={false} onExitComplete>
+      <AnimatePresence mode={"wait"} initial={false}>
         <motion.main
           className={style.mainContainer}
           variants={loadingVariant}
@@ -33,12 +34,12 @@ function Transition({ children }) {
             opacity: 0,
             transition: {
               duration: 1,
-              delay: 30,
+              delay: 0,
             },
           }}
           key={asPath}
         >
-          {Transition && children}
+          {<Loader /> && children}
         </motion.main>
       </AnimatePresence>
       <Footer />
