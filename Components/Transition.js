@@ -11,7 +11,7 @@ function Transition({ children }) {
   return (
     <div style={{ overflow: "hidden" }}>
       {/*Animate the children component/pages*/}
-      <AnimatePresence mode={"wait"} onExitComplete initial={false}>
+      <AnimatePresence mode={"wait"}>
         <motion.div
           className={style.mainContainer}
           variants={loadingVariant}
