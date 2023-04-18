@@ -10,7 +10,7 @@ function Transition({ children }) {
   return (
     <div style={{ overflow: "hidden" }}>
       {/*Animate the children component/pages*/}
-      <AnimatePresence mode={"wait"} initial={false}>
+      <AnimatePresence mode={"sync"} initial={false}>
         <motion.div
           className={style.mainContainer}
           variants={loadingVariant}
