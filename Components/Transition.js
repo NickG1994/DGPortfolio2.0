@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
-import { animate, AnimatePresence, motion } from "framer-motion";
-import Projects from "../pages/Projects";
+import { AnimatePresence, motion } from "framer-motion";
 import style from "../styles/Transition.module.css";
 import { loadingVariant } from "../data/framer-motion config";
 
@@ -31,7 +30,7 @@ function Transition({ children }) {
           exit={{
             opacity: 0,
             transition: {
-              duration: 2,
+              duration: 0,
             },
           }}
           key={asPath}
