@@ -31,6 +31,7 @@ function Transition({ children }) {
             opacity: 0,
             transition: {
               duration: 2,
+              delay: 40,
             },
           }}
           key={asPath}
