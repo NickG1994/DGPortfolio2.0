@@ -25,7 +25,7 @@ body {
   font-family: "Roboto", Verdana, Geneva, Tahoma, sans-serif;
   scroll-behavior: smooth;
 }
-/*
+
 body {
   position: relative;
   z-index: 10;
@@ -41,5 +41,5 @@ body::before {
   opacity: 0.5;
   background: url('../public/img/SVG/bg.svg');
 }
-*/
+
 
