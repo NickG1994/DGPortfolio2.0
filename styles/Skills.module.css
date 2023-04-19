@@ -10,10 +10,18 @@
     -webkit-box-align: center;
     justify-content: center;
 }
+.skills_container_inner::before {
+    content: "";
+    position: relative;
+    z-index: 10000;
+    opacity: 1;
+    background-color: black;
+    background: url("../public/img/skills/Project_76-01.png") no-repeat;
+    background-size: cover;
+}
 .skills_container::after {
     content: "";
     position: absolute;
-    background: url("../public/img/skills/Project_76-01.png") no-repeat;
     background-size: cover;
     inset: 0;
     background-color: var(--backGround);

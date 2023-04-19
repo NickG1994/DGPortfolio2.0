@@ -5,7 +5,26 @@ import style from "../styles/Transition.module.css";
 import { loadingVariant } from "../data/framer-motion config";
 
 function Transition({ children }) {
-  const { asPath } = useRouter();
+  const router = useRouter();
+  const [isLoading, setLoading] = useState(false);
+
+  useEffect(() => {
+    router.events.on("routeChangeStart", () => {
+      setLoading(false);
+    });
+    router.events.on("routerChangeComplete", () => {
+      setLoading(true);
+    });
+    return () => {
+      router.events.off("routeChangeStart", () => {
+        setLoading(false);
+      });
+      router.events.off("routerChangeComplete", () => {
+        setLoading(false);
+      });
+    };
+  }, [router.asPath]);
+  console.log(isLoading);
 
   return (
     <div style={{ overflow: "hidden" }}>
@@ -17,7 +36,7 @@ function Transition({ children }) {
           initial={{
             opacity: 0,
             transition: {
-              duration: 0.65,
+              duration: 2,
             },
           }}
           animate={{
@@ -34,9 +53,9 @@ function Transition({ children }) {
               delay: 0,
             },
           }}
-          key={asPath}
+          key={router.asPath}
         >
-          {children}
+          {!isLoading ? children : ""}
         </motion.div>
       </AnimatePresence>
     </div>
