@@ -41,6 +41,12 @@ export const PageLink = [
     path: "/contact",
     icon: <ContactPageIcon />,
   },
+  {
+    id: 5,
+    title: "Testing",
+    path: "/testing",
+    icon: <ContactPageIcon />,
+  },
 ];
 
 export const socialLinks = [{}];
