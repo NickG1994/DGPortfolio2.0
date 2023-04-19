@@ -38,6 +38,7 @@ export default function Home() {
         <title>Nick - Home</title>
         <meta name="description" content="Dominic gaona's portoflio" />
         <link rel="icon" href="/img/DominicGaonaTabLogo.ico" />
+        <link rel="stylsheet" href="styles/Home.module.css"></link>
       </Head>
       {/* Main content */}
       <div id={indexStyles.main} className={indexStyles.mainContainer}>
