@@ -12,7 +12,6 @@ function Transition({ children }) {
       {/*Animate the children component/pages*/}
       <AnimatePresence mode={"sync"} initial={false}>
         <motion.div
-          className={style.mainContainer}
           variants={loadingVariant}
           initial={{
             opacity: 0,
@@ -31,7 +30,7 @@ function Transition({ children }) {
             opacity: 0,
             transition: {
               duration: 2,
-              delay: 40,
+              delay: 2,
             },
           }}
           key={asPath}
