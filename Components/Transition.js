@@ -15,7 +15,7 @@ function Transition({ children }) {
   return (
     <div style={{ overflow: "hidden" }}>
       {/*Animate the children component/pages*/}
-      <AnimatePresence mode={"popLayout"} onExitComplete initial={true}>
+      <AnimatePresence mode={"wait"}>
         <motion.div
           className={style.mainContainer}
           variants={loadingVariant}
@@ -32,7 +32,13 @@ function Transition({ children }) {
               delay: 0.75,
             },
           }}
-          exit={{}}
+          exit={{
+            opacity: 0,
+            transition: {
+              duration: 2,
+              delay: 0.65,
+            },
+          }}
           key={asPath}
         >
           {isPresent && children}
