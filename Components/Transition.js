@@ -1,12 +1,16 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, usePresence } from "framer-motion";
 import style from "../styles/Transition.module.css";
 import { loadingVariant } from "../data/framer-motion config";
-import { render } from "react-dom";
 
 function Transition({ children }) {
   const { asPath } = useRouter();
+  const [isPresent, safeToRemove] = usePresence();
+
+  useEffect(() => {
+    !isPresent && setTimeout(safeToRemove, 1000);
+  }, [isPresent]);
 
   return (
     <div style={{ overflow: "hidden" }}>
@@ -38,7 +42,7 @@ function Transition({ children }) {
           }}
           key={asPath}
         >
-          {children}
+          {isPresent && children}
         </motion.div>
       </AnimatePresence>
     </div>
