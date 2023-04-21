@@ -8,7 +8,7 @@ import { useRouter } from "next/router";
 function MyApp({ Component }) {
   const router = useRouter();
   return (
-    <div style={{ overflow: "hidden" }}>
+    <div style={{ overflow: "hidden", display: "flex" }}>
       {/* Navigation Component */}
 
       <Navigation />
