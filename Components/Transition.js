@@ -5,21 +5,44 @@ import style from "../styles/Transition.module.css";
 import { loadingVariant } from "../data/framer-motion config";
 
 function Transition({ children }) {
-  const router = useRouter();
+  const { asPath } = useRouter();
+  const [isPresent, safeToRemove] = usePresence();
+
+  useEffect(() => {
+    !isPresent && setTimeout(safeToRemove, 1000);
+  }, [isPresent, safeToRemove]);
 
   return (
     <div style={{ overflow: "hidden" }}>
       {/*Animate the children component/pages*/}
-      <AnimatePresence mode="wait">
-        <motion.main
-          key={router.route}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.5 }}
+      <AnimatePresence mode="wait" initial={true}>
+        <motion.div
+          className={style.mainContainer}
+          variants={loadingVariant}
+          initial={{
+            opacity: 0,
+            transition: {
+              duration: 1,
+            },
+          }}
+          animate={{
+            opacity: 1,
+            transition: {
+              duration: 2,
+              delay: 0.75,
+            },
+          }}
+          exit={{
+            opacity: 0,
+            transition: {
+              duration: 2,
+              delay: 0.65,
+            },
+          }}
+          key={asPath}
         >
-          {children}
-        </motion.main>
+          {isPresent && children}
+        </motion.div>
       </AnimatePresence>
     </div>
   );
