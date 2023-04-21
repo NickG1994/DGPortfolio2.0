@@ -41,7 +41,7 @@ export default function Home() {
         <link rel="stylsheet" href="styles/Home.module.css"></link>
       </Head>
       {/* Main content */}
-      <div id={indexStyles.main} className={indexStyles.mainContainer}>
+      <>
         <h1 className={indexStyles.testing}>Testing Header</h1>
         {/* Hero Section */}
         <section id={indexStyles.hero}>
@@ -279,7 +279,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-      </div>
+      </>
     </>
   );
 }
