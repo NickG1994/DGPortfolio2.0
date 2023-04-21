@@ -23,6 +23,7 @@ const GoogleMaps = dynamic(() => import("../Components/GoogleMaps.js"), {
   ssr: false,
 });
 
+/*
 import {
   textMovingDown,
   textMovingDownDelayOne,
@@ -31,7 +32,7 @@ import {
   loadingVariant,
   variantsOne,
 } from "../data/framer-motion config.js";
-
+*/
 export default function Home() {
   return (
     <>
