@@ -180,6 +180,7 @@ export default function Home() {
                 iaculis.
               </p>
             </div>
+            {/* 
             <div className={indexStyles.recentWorkGalleryContainer}>
               {projects.map((project, index) => {
                 if (index < 3) {
@@ -193,6 +194,7 @@ export default function Home() {
                 }
               })}
             </div>
+            */}
           </div>
         </section>
         {/* Contact Me Section */}
