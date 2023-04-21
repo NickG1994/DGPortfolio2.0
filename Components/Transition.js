@@ -5,12 +5,7 @@ import style from "../styles/Transition.module.css";
 import { loadingVariant } from "../data/framer-motion config";
 
 function Transition({ children }) {
-  const { asPath } = useRouter();
-  const [isPresent, safeToRemove] = usePresence();
-
-  useEffect(() => {
-    !isPresent && setTimeout(safeToRemove, 1000);
-  }, [isPresent, safeToRemove]);
+  const router = useRouter();
 
   return (
     <div style={{ overflow: "hidden" }}>
@@ -39,9 +34,9 @@ function Transition({ children }) {
               delay: 0.65,
             },
           }}
-          key={asPath}
+          key={router.route}
         >
-          {isPresent && children}
+          {children}
         </motion.div>
       </AnimatePresence>
     </div>
