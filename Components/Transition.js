@@ -10,7 +10,7 @@ function Transition({ children }) {
 
   useEffect(() => {
     !isPresent && setTimeout(safeToRemove, 1000);
-  }, [isPresent]);
+  }, [isPresent, safeToRemove]);
 
   return (
     <div style={{ overflow: "hidden" }}>

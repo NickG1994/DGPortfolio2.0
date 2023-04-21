@@ -2,6 +2,7 @@ import React from "react";
 import Head from "next/head";
 import { projects } from "../data/projects_data";
 import GridGallery from "../Components/GridGallery";
+import indexStyles from "../styles/Home.module.css";
 
 function Projects() {
   return (
