@@ -43,7 +43,6 @@ export default function Home() {
       </Head>
       {/* Main content */}
       <>
-        <h1 className={indexStyles.testing}>Testing Header</h1>
         {/* Hero Section */}
         <section id={indexStyles.hero}>
           <div className={indexStyles.heroContainer}>
@@ -53,7 +52,6 @@ export default function Home() {
                 variants={textMovingDown}
                 initial={textMovingDown.initial}
                 animate={textMovingDown.animate}
-                exit={textMovingDown.exit}
               >
                 Hello,
                 <br /> My name is <br /> Dominic Gaona
