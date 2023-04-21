@@ -8,18 +8,17 @@ import { useRouter } from "next/router";
 function MyApp({ Component }) {
   const router = useRouter();
   return (
-    <div style={{ display: "flex" }}>
+    <div style={{ overflow: "hidden" }}>
       {/* Navigation Component */}
 
       <Navigation />
       <AnimatePresence>
         <motion.main
-          style={{ overflow: "hidden" }}
           key={router.route}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 1 }}
         >
           <Component />
         </motion.main>
