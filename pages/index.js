@@ -48,22 +48,11 @@ export default function Home() {
           <div className={indexStyles.heroContainer}>
             <Coursel />
             <div className={indexStyles.courselContentContainer}>
-              <motion.h1
-                variants={textMovingDown}
-                initial={textMovingDown.initial}
-                animate={textMovingDown.animate}
-              >
+              <h1>
                 Hello,
                 <br /> My name is <br /> Dominic Gaona
-              </motion.h1>
-              <motion.h4
-                variants={textMovingDownDelayOne}
-                initial={textMovingDownDelayOne.initial}
-                animate={textMovingDownDelayOne.animate}
-                exit={textMovingDownDelayOne.exit}
-              >
-                Front-end | Back-end Developer
-              </motion.h4>
+              </h1>
+              <h4>Front-end | Back-end Developer</h4>
               <Button
                 string={"Contact Me"}
                 location="/contact"
@@ -76,34 +65,8 @@ export default function Home() {
         {/* This is where a problem is accuring. Fix this section.  */}
         <section id={indexStyles.portfolio}>
           <div className={indexStyles.portfolioTop}>
-            <motion.h2
-              initial={{ opacity: 0 }}
-              viewport={{
-                once: true,
-              }}
-              whileInView={{
-                opacity: 1,
-                transition: {
-                  duration: 1,
-                  delay: 0,
-                },
-              }}
-            >
-              Portfolio
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0 }}
-              viewport={{
-                once: true,
-              }}
-              whileInView={{
-                opacity: 1,
-                transition: {
-                  duration: 1,
-                  delay: 0.75,
-                },
-              }}
-            >
+            <h2>Portfolio</h2>
+            <p>
               Proficient in developing projects using Vue.js, React.js, and
               WordPress, with experience in building, testing, and deploying.
               Skilled in innovating and designing to meet project requirements
@@ -112,7 +75,7 @@ export default function Home() {
               continuous learning and exploration of new technologies. Strong
               ability to work in a collaborative team environment while
               demonstrating excellent communication and problem-solving skills.
-            </motion.p>
+            </p>
           </div>
           <div className={indexStyles.portfolioBottom}>
             <div className={indexStyles.gallery}>
@@ -125,30 +88,8 @@ export default function Home() {
         <section id={indexStyles.about}>
           <div className={indexStyles.about__container}>
             <div className={indexStyles.about__left}>
-              <motion.h2
-                className={indexStyles.about__title}
-                initial={textMovingRight.initial}
-                viewport={{
-                  once: true,
-                }}
-                whileInView={textMovingRight.animate}
-              >
-                About Me
-              </motion.h2>
-              <motion.p
-                initial={{ opacity: 0 }}
-                viewport={{
-                  once: true,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  transition: {
-                    duration: 1,
-                    delay: 1,
-                  },
-                }}
-                className={indexStyles.about__content}
-              >
+              <h2>About Me</h2>
+              <p className={indexStyles.about__content}>
                 Lorem ipsum dolor sit amet consectetur. Orci viverra risus nisi
                 auctor dictum pharetra. Vitae in dui cursus aliquam aliquet vel.
                 Sapien aliquet molestie in massa ornare. Tellus parturient ut in
@@ -159,22 +100,9 @@ export default function Home() {
                 vivamus tellus venenatis sagittis volutpat egestas. At porttitor
                 fringilla at faucibus in aliquam fringilla quisque. Urna diam
                 vel pellentesque dui aliquet.
-              </motion.p>
+              </p>
               <br />
-              <motion.p
-                className={indexStyles.about__content}
-                initial={{ opacity: 0 }}
-                viewport={{
-                  once: true,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  transition: {
-                    duration: 1,
-                    delay: 1.5,
-                  },
-                }}
-              >
+              <p className={indexStyles.about__content}>
                 having a natural curiosty for the world. Along with the passion
                 for learning. Is my core of me. From my work Ethics, lifestyle,
                 and carrer. To my passion, hardwork, and determination. With
@@ -183,7 +111,7 @@ export default function Home() {
                 weakness and strength. While having a passion for learning with
                 an inquisitive mind. Can be a useful or helpful to have in my
                 field.
-              </motion.p>
+              </p>
               <Button
                 string={"learn more"}
                 layout={{ marginTop: "4rem" }}
