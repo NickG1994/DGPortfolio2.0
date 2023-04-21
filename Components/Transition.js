@@ -32,13 +32,6 @@ function Transition({ children }) {
               delay: 0.75,
             },
           }}
-          exit={{
-            opacity: 0,
-            transition: {
-              duration: 2,
-              delay: 0.65,
-            },
-          }}
           key={asPath}
         >
           {isPresent && children}
