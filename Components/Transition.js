@@ -11,7 +11,7 @@ function Transition({ children }) {
   return (
     <div style={{ overflow: "hidden" }}>
       {/*Animate the children component/pages*/}
-      <AnimatePresence mode={"popLayout"} initial={true}>
+      <AnimatePresence mode={"popLayout"} onExitComplete={false} initial={true}>
         <motion.div
           layout={false}
           className={style.mainContainer}
