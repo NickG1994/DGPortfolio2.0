@@ -12,7 +12,7 @@ function MyApp({ Component }) {
       {/* Navigation Component */}
 
       <Navigation />
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         <motion.main
           key={router.route}
           initial={{ opacity: 0 }}
