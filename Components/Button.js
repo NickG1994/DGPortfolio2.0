@@ -10,6 +10,7 @@ import {
 import { domAnimation } from "framer-motion";
 
 function Button({ string, location, layout }) {
+  /*
   return (
     <LazyMotion features={domAnimation} strict>
       <m.div
@@ -25,6 +26,16 @@ function Button({ string, location, layout }) {
         </Link>
       </m.div>
     </LazyMotion>
+  );
+  */
+  return (
+    <div style={layout}>
+      <Link className={styles.button} href={location ? location : "#"}>
+        <div className={styles.button__content}>
+          <span></span> <span className={styles.buttonText}>{string}</span>
+        </div>
+      </Link>
+    </div>
   );
 }
 
