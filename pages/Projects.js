@@ -2,7 +2,7 @@ import React from "react";
 import Head from "next/head";
 import { projects } from "../data/projects_data";
 import GridGallery from "../Components/GridGallery";
-import indexStyles from "../styles/Home.module.css";
+import styles from "../styles/Projects.module.css";
 
 function Projects() {
   return (
@@ -13,6 +13,7 @@ function Projects() {
         <link rel="icon" href="/img/DominicGaonaTabLogo.ico" />
       </Head>
       <>
+        <h1 className={styles.header}>Testing</h1>
         <GridGallery />
       </>
     </>
