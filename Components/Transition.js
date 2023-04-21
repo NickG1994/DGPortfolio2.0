@@ -11,33 +11,15 @@ function Transition({ children }) {
     <div style={{ overflow: "hidden" }}>
       {/*Animate the children component/pages*/}
       <AnimatePresence mode="wait">
-        <motion.div
-          className={style.mainContainer}
-          variants={loadingVariant}
-          initial={{
-            opacity: 0,
-            transition: {
-              duration: 1,
-            },
-          }}
-          animate={{
-            opacity: 1,
-            transition: {
-              duration: 2,
-              delay: 0.75,
-            },
-          }}
-          exit={{
-            opacity: 0,
-            transition: {
-              duration: 2,
-              delay: 0.65,
-            },
-          }}
+        <motion.main
           key={router.route}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
         >
           {children}
-        </motion.div>
+        </motion.main>
       </AnimatePresence>
     </div>
   );
