@@ -19,12 +19,6 @@ function Transition({ children }) {
         <motion.div
           className={style.mainContainer}
           variants={loadingVariant}
-          initial={{
-            opacity: 0,
-            transition: {
-              duration: 1,
-            },
-          }}
           animate={{
             opacity: 1,
             transition: {
