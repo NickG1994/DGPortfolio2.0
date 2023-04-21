@@ -3,40 +3,23 @@ import { useRouter } from "next/router";
 import { AnimatePresence, motion } from "framer-motion";
 import style from "../styles/Transition.module.css";
 import { loadingVariant } from "../data/framer-motion config";
+import { render } from "react-dom";
 
 function Transition({ children }) {
-  const router = useRouter();
-  const [isLoading, setLoading] = useState(false);
+  const asPath = useRouter();
 
-  useEffect(() => {
-    router.events.on("routeChangeStart", () => {
-      setLoading(false);
-    });
-    router.events.on("routerChangeComplete", () => {
-      setLoading(true);
-    });
-    return () => {
-      router.events.off("routeChangeStart", () => {
-        setLoading(false);
-      });
-      router.events.off("routerChangeComplete", () => {
-        setLoading(false);
-      });
-    };
-  }, [router.asPath]);
-  console.log(isLoading);
-
+  console.log(render);
   return (
     <div style={{ overflow: "hidden" }}>
       {/*Animate the children component/pages*/}
-      <AnimatePresence mode={"sync"} initial={true}>
+      <AnimatePresence mode={"wait"} initial={true}>
         <motion.div
           className={style.mainContainer}
           variants={loadingVariant}
           initial={{
             opacity: 0,
             transition: {
-              duration: 2,
+              duration: 0.65,
             },
           }}
           animate={{
@@ -53,9 +36,9 @@ function Transition({ children }) {
               delay: 0,
             },
           }}
-          key={router.asPath}
+          key={asPath}
         >
-          {!isLoading ? children : ""}
+          {children}
         </motion.div>
       </AnimatePresence>
     </div>
