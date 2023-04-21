@@ -6,20 +6,20 @@ import { loadingVariant } from "../data/framer-motion config";
 import { render } from "react-dom";
 
 function Transition({ children }) {
-  const asPath = useRouter();
+  const { asPath } = useRouter();
 
-  console.log(render);
   return (
     <div style={{ overflow: "hidden" }}>
       {/*Animate the children component/pages*/}
-      <AnimatePresence mode={"wait"} initial={true}>
+      <AnimatePresence mode={"popLayout"} initial={true}>
         <motion.div
+          layout={false}
           className={style.mainContainer}
           variants={loadingVariant}
           initial={{
             opacity: 0,
             transition: {
-              duration: 0.65,
+              duration: 1,
             },
           }}
           animate={{
@@ -33,7 +33,7 @@ function Transition({ children }) {
             opacity: 0,
             transition: {
               duration: 2,
-              delay: 0,
+              delay: 0.65,
             },
           }}
           key={asPath}
