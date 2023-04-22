@@ -4,14 +4,26 @@ import { AnimatePresence, motion, useIsPresent } from "framer-motion";
 import style from "../styles/Transition.module.css";
 import { loadingVariant } from "../data/framer-motion config";
 
-function Transition({ children }) {
-  const { asPath } = useRouter();
-  const isPresent = useIsPresent();
-
+const Transition = ({ children }) => {
+  const Router = useRouter();
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
-    !isPresent && console.log("i have been removed");
-  }, [isPresent]);
-  console.log(isPresent);
+    // Used for page transition
+    const start = () => {
+      setLoading(true);
+    };
+    const end = () => {
+      setLoading(false);
+    };
+    Router.events.on("routeChangeStart", start);
+    Router.events.on("routeChangeComplete", end);
+    Router.events.on("routeChangeError", end);
+    return () => {
+      Router.events.off("routeChangeStart", start);
+      Router.events.off("routeChangeComplete", end);
+      Router.events.off("routeChangeError", end);
+    };
+  }, []);
 
   return (
     <div style={{ overflow: "hidden" }}>
@@ -27,13 +39,13 @@ function Transition({ children }) {
             opacity: 0,
           }}
           transition={{ duration: 2 }}
-          key={asPath}
+          key={Router.route}
         >
-          {isPresent && children}
+          {!loading && children}
         </motion.div>
       </AnimatePresence>
     </div>
   );
-}
+};
 
 export default Transition;
