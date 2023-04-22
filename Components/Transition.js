@@ -46,27 +46,25 @@ const Transition = ({ children }) => {
           transition={{ duration: 2 }}
           key={Router.route}
         >
-          {loading ? (
-            <motion.span
-              initial={{ opacity: 0 }}
-              animate={{
-                opacity: 1,
-                transition: {
-                  duration: 4,
-                },
-              }}
-              exit={{
-                opacity: 0,
-                transition: {
-                  duration: 0.65,
-                },
-              }}
-              transition={{ duration: 0.65 }}
-              style={{ display: "flex", alignItems: "center" }}
-            ></motion.span>
-          ) : (
-            children
-          )}
+          <motion.span
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: 1,
+              transition: {
+                duration: 0.65,
+              },
+            }}
+            exit={{
+              opacity: 0,
+              transition: {
+                duration: 0.65,
+              },
+            }}
+            transition={{ duration: 0.65 }}
+            style={{ display: "flex", alignItems: "center" }}
+          >
+            {children}
+          </motion.span>
         </motion.div>
       </AnimatePresence>
     </div>

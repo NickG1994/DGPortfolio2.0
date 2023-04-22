@@ -4,6 +4,7 @@ import { projects } from "../data/projects_data";
 import Image from "next/image";
 import Modal from "./Modal";
 import { motion, AnimatePresence } from "framer-motion";
+import { SyncLoader } from "react-spinners";
 
 function GridGallery() {
   const [modalIndex, setModalIndex] = useState(0);
@@ -43,7 +44,14 @@ function GridGallery() {
         className={styles.gridItem}
       >
         <div className={styles.front}>
-          <Image src={project.src} loading="eager" objectPosition={"initial"} />
+          <div>
+            <Image
+              src={project.src}
+              loading="eager"
+              objectPosition={"initial"}
+            />
+          </div>
+
           <div className={styles.overlay}>
             <div id={index} className={styles.overlayContainer}>
               <p className={styles.overlayText}>{project.Header}</p>
