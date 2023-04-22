@@ -41,7 +41,7 @@ const Transition = ({ children }) => {
           transition={{ duration: 2 }}
           key={Router.route}
         >
-          {!loading && children}
+          {!loading ? children : children}
         </motion.div>
       </AnimatePresence>
     </div>
