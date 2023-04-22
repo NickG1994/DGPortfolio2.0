@@ -1,21 +1,22 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
-import { AnimatePresence, motion, usePresence } from "framer-motion";
+import { AnimatePresence, motion, useIsPresent } from "framer-motion";
 import style from "../styles/Transition.module.css";
 import { loadingVariant } from "../data/framer-motion config";
 
 function Transition({ children }) {
   const { asPath } = useRouter();
-  const [isPresent, safeToRemove] = usePresence();
+  const isPresent = useIsPresent();
 
   useEffect(() => {
-    !isPresent && setTimeout(safeToRemove, 1000);
-  }, [isPresent, safeToRemove]);
+    !isPresent && console.log("i have been removed");
+  }, [isPresent]);
+  console.log(isPresent);
 
   return (
     <div style={{ overflow: "hidden" }}>
       {/*Animate the children component/pages*/}
-      <AnimatePresence mode="wait" initial="true">
+      <AnimatePresence mode="wait">
         <motion.div
           className={style.mainContainer}
           variants={loadingVariant}

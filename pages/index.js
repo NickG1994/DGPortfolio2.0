@@ -35,7 +35,7 @@ import {
 */
 export default function Home() {
   return (
-    <>
+    <main>
       <Head>
         <title>Nick - Home</title>
         <meta name="description" content="Dominic gaona's portoflio" />
@@ -43,7 +43,7 @@ export default function Home() {
         <link rel="stylsheet" href="/styles/Home.module.css"></link>
       </Head>
       {/* Main content */}
-      <>
+      <content>
         {/* Hero Section */}
         <section id={indexStyles.hero}>
           <div className={indexStyles.heroContainer}>
@@ -209,7 +209,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-      </>
-    </>
+      </content>
+    </main>
   );
 }
