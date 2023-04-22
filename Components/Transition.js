@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { AnimatePresence, motion, useIsPresent } from "framer-motion";
 import style from "../styles/Transition.module.css";
 import { loadingVariant } from "../data/framer-motion config";
+import { SyncLoader } from "react-spinners";
 
 const Transition = ({ children }) => {
   const Router = useRouter();
@@ -28,20 +29,30 @@ const Transition = ({ children }) => {
   return (
     <div style={{ overflow: "hidden" }}>
       {/*Animate the children component/pages*/}
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="popLayout" initial="true">
         <motion.div
           className={style.mainContainer}
           variants={loadingVariant}
+          initial={{ opacity: 0 }}
           animate={{
             opacity: 1,
           }}
           exit={{
             opacity: 0,
+            transition: {
+              duration: 1,
+            },
           }}
           transition={{ duration: 2 }}
           key={Router.route}
         >
-          {!loading ? children : children}
+          {loading ? (
+            <span style={{ display: "flex", alignItems: "center" }}>
+              <SyncLoader color="red" />
+            </span>
+          ) : (
+            children
+          )}
         </motion.div>
       </AnimatePresence>
     </div>
