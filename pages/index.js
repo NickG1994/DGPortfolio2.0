@@ -17,7 +17,6 @@ import { SvgHobbies } from "../data/SvgHobbies";
 import HTMLSVG from "../Components/HTMLSVG";
 // import Data
 import { projects } from "../data/projects_data";
-import { AnimatePresence } from "framer-motion";
 
 const GoogleMaps = dynamic(() => import("../Components/GoogleMaps.js"), {
   ssr: false,
