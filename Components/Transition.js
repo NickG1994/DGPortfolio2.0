@@ -47,9 +47,23 @@ const Transition = ({ children }) => {
           key={Router.route}
         >
           {loading ? (
-            <span style={{ display: "flex", alignItems: "center" }}>
-              <SyncLoader color="red" />
-            </span>
+            <motion.span
+              initial={{ opacity: 0 }}
+              animate={{
+                opacity: 1,
+                transition: {
+                  duration: 4,
+                },
+              }}
+              exit={{
+                opacity: 0,
+                transition: {
+                  duration: 0.65,
+                },
+              }}
+              transition={{ duration: 0.65 }}
+              style={{ display: "flex", alignItems: "center" }}
+            ></motion.span>
           ) : (
             children
           )}
