@@ -4,6 +4,7 @@ import { AnimatePresence, motion, useIsPresent } from "framer-motion";
 import style from "../styles/Transition.module.css";
 import { loadingVariant } from "../data/framer-motion config";
 import { SyncLoader } from "react-spinners";
+import Footer from "../Components/Footer.js";
 
 const Transition = ({ children }) => {
   const Router = useRouter();
@@ -46,25 +47,17 @@ const Transition = ({ children }) => {
           transition={{ duration: 2 }}
           key={Router.route}
         >
-          <motion.span
-            initial={{ opacity: 0 }}
-            animate={{
-              opacity: 1,
-              transition: {
-                duration: 0.65,
-              },
-            }}
-            exit={{
-              opacity: 0,
-              transition: {
-                duration: 0.65,
-              },
-            }}
-            transition={{ duration: 0.65 }}
-            style={{ display: "flex", alignItems: "center" }}
-          >
-            {children}
-          </motion.span>
+          {loading ? (
+            <motion.span
+              exit={{
+                opacity: 0,
+              }}
+              transition={{ duration: 0 }}
+              style={{ display: "flex", alignItems: "center" }}
+            ></motion.span>
+          ) : (
+            children
+          )}
         </motion.div>
       </AnimatePresence>
     </div>

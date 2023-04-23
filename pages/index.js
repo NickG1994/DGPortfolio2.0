@@ -42,7 +42,7 @@ export default function Home() {
         <link rel="stylsheet" href="/styles/Home.module.css"></link>
       </Head>
       {/* Main content */}
-      <content>
+      <content className={indexStyles.mainContainer}>
         {/* Hero Section */}
         <section id={indexStyles.hero}>
           <div className={indexStyles.heroContainer}>
@@ -162,6 +162,7 @@ export default function Home() {
               <Image
                 layout="responsive"
                 src={require("/public/img/hobbies.png")}
+                alt="hobbies image"
               />
             </div>
           </content>
@@ -180,7 +181,7 @@ export default function Home() {
                 iaculis.
               </p>
             </div>
-            {/* 
+
             <div className={indexStyles.recentWorkGalleryContainer}>
               {projects.map((project, index) => {
                 if (index < 3) {
@@ -194,7 +195,6 @@ export default function Home() {
                 }
               })}
             </div>
-            */}
           </div>
         </section>
         {/* Contact Me Section */}
@@ -202,6 +202,7 @@ export default function Home() {
           <div className={indexStyles.contactMeContainer}>
             <div className={indexStyles.contactMeContainerLeft}>
               {/* <Form /> */}
+              <Form />
             </div>
             <div className={indexStyles.contactMeContainerRight}>
               <GoogleMaps />

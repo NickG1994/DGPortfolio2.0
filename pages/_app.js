@@ -12,7 +12,6 @@ function MyApp({ Component }) {
       <Transition>
         <Component />
       </Transition>
-      {/*<Footer />*/}
     </div>
   );
 }
