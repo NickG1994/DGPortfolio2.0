@@ -13,7 +13,6 @@ function Projects() {
         <link rel="icon" href="/img/DominicGaonaTabLogo.ico" />
       </Head>
       <>
-        <h1 className={styles.header}>Testing</h1>
         <GridGallery />
       </>
     </>

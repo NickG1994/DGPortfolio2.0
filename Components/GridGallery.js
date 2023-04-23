@@ -46,7 +46,11 @@ function GridGallery() {
           className={styles.gridItem}
         >
           <>
-            <Image src={project.src} loading={"eager"} placeholder={"blur"} />
+            <Image
+              src={project.src}
+              loading={"eager"}
+              placeholder={<SyncLoader />}
+            />
           </>
 
           <div className={styles.overlay}>
