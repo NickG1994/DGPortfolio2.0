@@ -9,6 +9,16 @@ import Footer from "../Components/Footer.js";
 const Transition = ({ children }) => {
   const Router = useRouter();
   const [loading, setLoading] = useState(false);
+  const [route, setRoute] = useState(null);
+  let prevRoute = Router.route;
+  function changedRoute() {
+    if (prevRoute === Router.route) {
+      setRoute(Router.route);
+    }
+    return;
+  }
+  console.log(prevRoute);
+
   useEffect(() => {
     // Used for page transition
     const start = () => {
@@ -45,7 +55,7 @@ const Transition = ({ children }) => {
             },
           }}
           transition={{ duration: 2 }}
-          key={Router.route}
+          key={route}
         >
           {loading ? (
             <motion.span

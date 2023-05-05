@@ -35,8 +35,7 @@ function GridGallery() {
                 initial={{ opacity: 1 }}
                 animate={{ opacity: 1, background: "#ECB365", zIndex: 100 }}
                 exit={{ opacity: 0, backgroundColor: "transparent" }}
-                transition={2}
-                key={isLoading}
+                transition={1}
               >
                 <SyncLoader
                   color="#064663"
@@ -57,7 +56,7 @@ function GridGallery() {
                 onClick={(e) => {
                   toggleModal(e);
                 }}
-                key={index}
+                key={isLoading}
                 className={styles.gridItem}
               >
                 <>
