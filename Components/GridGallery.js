@@ -64,8 +64,11 @@ function GridGallery() {
                     loading="lazy"
                     src={project.src}
                     onLoad={() => {
-                      setIsLoading((prevLoading) => (prevLoading = false));
-                      //console.log("loading..." + isLoading);
+                      setTimeout(() => {
+                        setIsLoading((prevLoading) => (prevLoading = false));
+                        //console.log("loading..." + isLoading);
+                      },[3000])
+=
                     }}
                   />
                   ;

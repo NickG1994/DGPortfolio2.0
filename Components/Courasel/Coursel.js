@@ -25,7 +25,9 @@ function Coursel() {
               className={styles.bgImage}
               fill="true"
               onLoad={() => {
-                setIsLoadingHero(false);
+                setTimeout(() => {
+                  setIsLoadingHero(false);
+                });
                 console.log("hero image loading: " + isLoadingHero);
               }}
             />
