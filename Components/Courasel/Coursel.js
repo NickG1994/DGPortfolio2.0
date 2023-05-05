@@ -9,13 +9,13 @@ function Coursel() {
   const [isLoadingHero, setIsLoadingHero] = useState(true);
 
   return (
-    <div className={styles.courselContainer}>
+    <div className={isLoadingHero ? styles.courselContainer : ""}>
       <div className={styles.slidesContainer}>
         {images.map((img, index) => (
           <m.div
             animate={{ opacity: 1 }}
             exit={{ opacity: 1 }}
-            transition={1}
+            transition={3}
             className={styles.slides}
             key={isLoadingHero}
           >
@@ -25,9 +25,7 @@ function Coursel() {
               className={styles.bgImage}
               fill="true"
               onLoad={() => {
-                setTimeout(() => {
-                  setIsLoadingHero(false);
-                });
+                setIsLoadingHero(false);
                 console.log("hero image loading: " + isLoadingHero);
               }}
             />

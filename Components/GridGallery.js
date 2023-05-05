@@ -56,7 +56,6 @@ function GridGallery() {
                 onClick={(e) => {
                   toggleModal(e);
                 }}
-                key={isLoading}
                 className={styles.gridItem}
               >
                 <>
@@ -64,10 +63,8 @@ function GridGallery() {
                     loading="lazy"
                     src={project.src}
                     onLoad={() => {
-                      setTimeout(() => {
-                        setIsLoading((prevLoading) => (prevLoading = false));
-                        //console.log("loading..." + isLoading);
-                      }, [3000]);
+                      setIsLoading((prevLoading) => (prevLoading = false));
+                      //console.log("loading..." + isLoading);
                     }}
                   />
                   ;
