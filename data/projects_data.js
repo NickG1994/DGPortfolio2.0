@@ -1,14 +1,14 @@
 export const projects = [
   {
     id: 0,
-    src: require("../public/img/react_netflix.png"),
+    src: require("../public/img/react_netflix.webp"),
     alt: "image",
     Header: "Netfix Clone",
     project_url: "https://grand-figolla-d2bbb2.netlify.app/",
   },
   {
     id: 1,
-    src: require("../public/img/memories.png"),
+    src: require("../public/img/memories.webp"),
     alt: "Mern Stack Development",
     Header: "Memories ",
     project_url: "https://zen-archimedes-8bb25b.netlify.app/",

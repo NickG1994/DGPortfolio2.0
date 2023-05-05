@@ -51,7 +51,7 @@ function GridGallery() {
                 whileInView={{
                   opacity: 1,
                   y: 0,
-                  transition: { duration: 2, delay: 0.09 * index },
+                  transition: { duration: 1, delay: 0.09 * index },
                 }}
                 onClick={(e) => {
                   toggleModal(e);
@@ -61,7 +61,7 @@ function GridGallery() {
               >
                 <>
                   <Image
-                    loading="eager"
+                    loading="lazy"
                     src={project.src}
                     onLoad={() => {
                       setIsLoading((prevLoading) => (prevLoading = false));
