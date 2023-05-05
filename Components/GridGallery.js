@@ -51,7 +51,7 @@ function GridGallery() {
                 whileInView={{
                   opacity: 1,
                   y: 0,
-                  transition: { duration: 3 },
+                  transition: { duration: 3, delay: 0.09 * index },
                 }}
                 onClick={(e) => {
                   toggleModal(e);
