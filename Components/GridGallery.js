@@ -67,8 +67,7 @@ function GridGallery() {
                       setTimeout(() => {
                         setIsLoading((prevLoading) => (prevLoading = false));
                         //console.log("loading..." + isLoading);
-                      },[3000])
-=
+                      }, [3000]);
                     }}
                   />
                   ;
