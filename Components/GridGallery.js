@@ -61,6 +61,7 @@ function GridGallery() {
               >
                 <>
                   <Image
+                    loading="eager"
                     src={project.src}
                     onLoad={() => {
                       setIsLoading((prevLoading) => (prevLoading = false));
