@@ -50,8 +50,11 @@ const Transition = ({ children }) => {
           }}
           exit={{
             opacity: 0,
+            transition: {
+              duration: 2,
+            },
           }}
-          transition={{ duration: 3 }}
+          transition={{ duration: 2 }}
           key={route}
         >
           {loading ? (
