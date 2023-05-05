@@ -51,10 +51,13 @@ const Transition = ({ children }) => {
             <motion.span
               exit={{
                 opacity: 0,
+                zIndex: -1,
               }}
-              transition={{ duration: 0 }}
+              transition={{ duration: 1 }}
               style={{ display: "flex", alignItems: "center" }}
-            ></motion.span>
+            >
+              children
+            </motion.span>
           ) : (
             children
           )}
