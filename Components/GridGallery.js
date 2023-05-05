@@ -44,7 +44,7 @@ function GridGallery() {
               </motion.div>
               <motion.div
                 id={`image-${index}`}
-                initial={{ opacity: 0, y: 50 }}
+                initial={{ y: 50 }}
                 viewport={{
                   once: true,
                 }}
