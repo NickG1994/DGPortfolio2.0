@@ -9,7 +9,7 @@ function Coursel() {
   const [isLoadingHero, setIsLoadingHero] = useState(true);
 
   return (
-    <div className={isLoadingHero ? styles.courselContainer : ""}>
+    <div className={styles.courselContainer}>
       <div className={styles.slidesContainer}>
         {images.map((img, index) => (
           <m.div
