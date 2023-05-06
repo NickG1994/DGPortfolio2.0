@@ -32,7 +32,7 @@ function GridGallery() {
             >
               <motion.div
                 className={isLoading ? styles.loadingContainer : ""}
-                initial={{ opacity: 1 }}
+                initial={{ opacity: 0 }}
                 animate={{ opacity: 1, background: "#ECB365", zIndex: 100 }}
                 exit={{ opacity: 0, backgroundColor: "transparent" }}
                 transition={1}
@@ -44,7 +44,7 @@ function GridGallery() {
               </motion.div>
               <motion.div
                 id={`image-${index}`}
-                initial={{ y: 50 }}
+                initial={{ opacity: 0, y: 50 }}
                 viewport={{
                   once: true,
                 }}
