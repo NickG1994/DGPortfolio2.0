@@ -61,6 +61,7 @@ function GridGallery() {
                 <>
                   <Image
                     loading="lazy"
+                    layout="responsive"
                     src={project.src}
                     onLoad={() => {
                       setIsLoading((prevLoading) => (prevLoading = false));

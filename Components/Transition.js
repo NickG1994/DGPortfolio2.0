@@ -38,7 +38,7 @@ const Transition = ({ children }) => {
   }, []);
 
   return (
-    <div style={{ overflow: "hidden" }}>
+    <div style={{ overflow: "hidden", width: "100%" }}>
       {/*Animate the children component/pages*/}
       <AnimatePresence mode="popLayout" initial="true">
         <motion.div
