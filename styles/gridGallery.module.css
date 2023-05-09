@@ -1,6 +1,6 @@
 .galleryGrid{
     display: grid;
-    /*grid-template-columns: repeat(auto-fill, minmax(470px, 1fr));*/
+    grid-template-columns: repeat(auto-fill, minmax(470px, 1fr));
 }
 .gridItem {
     cursor: pointer;
