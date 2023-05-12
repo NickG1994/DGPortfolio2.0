@@ -14,7 +14,6 @@ import GridGallery from "../Components/GridGallery";
 /* Import SVG */
 import { SVG } from "../data/SVG.js";
 import { SvgHobbies } from "../data/SvgHobbies";
-import HTMLSVG from "../Components/HTMLSVG";
 // import Data
 import { projects } from "../data/projects_data";
 
@@ -51,6 +50,27 @@ export default function Home() {
               <h1>
                 Hello,
                 <br /> My name is <br /> Dominic Gaona
+                <motion.svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  id="Filled"
+                  viewBox="0 0 24 24"
+                  width="32"
+                  height="32"
+                >
+                  <motion.path
+                    d="M19,4H17.9A5.009,5.009,0,0,0,13,0H11A5.009,5.009,0,0,0,6.1,4H5A5.006,5.006,0,0,0,0,9v3H24V9A5.006,5.006,0,0,0,19,4ZM8.184,4A3,3,0,0,1,11,2h2a3,3,0,0,1,2.816,2Z"
+                    initial={{ pathLength: 0 }}
+                    animate={{ pathLength: 1 }}
+                    exit={{ pathLength: 0, pathOffset: 0 }}
+                    transition={{
+                      duration: 3,
+                      ease: "easeOut",
+                      repeat: Infinity,
+                      repeatDelay: 2,
+                    }}
+                  />
+                  <motion.path d="M13,15a1,1,0,0,1-2,0V14H0v5a5.006,5.006,0,0,0,5,5H19a5.006,5.006,0,0,0,5-5V14H13Z" />
+                </motion.svg>
               </h1>
               <h4>Front-end | Back-end Developer</h4>
               <Button

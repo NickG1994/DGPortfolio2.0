@@ -65,9 +65,7 @@ const Transition = ({ children }) => {
               }}
               transition={{ duration: 1 }}
               style={{ display: "flex", alignItems: "center" }}
-            >
-              children
-            </motion.span>
+            ></motion.span>
           ) : (
             children
           )}

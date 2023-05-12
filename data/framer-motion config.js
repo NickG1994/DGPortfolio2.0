@@ -116,3 +116,16 @@ export const modal = {
     },
   },
 };
+
+export const svgAnimation = {
+  initial: { pathLength: 0 },
+  animate: { pathLength: 1, stroke: "#ECB365" },
+  exit: { pathLength: 0 },
+  transition: {
+    duration: 2,
+    ease: "easeInOut",
+    delay: 1.5,
+  },
+  strokeWidth: 1,
+  fill: "none",
+};

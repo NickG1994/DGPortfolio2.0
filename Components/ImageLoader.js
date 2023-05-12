@@ -5,15 +5,15 @@ import { SyncLoader } from "react-spinners";
 import { useEffect } from "react";
 import Image from "next/image";
 
-function ImageLoader({ imgSrc, imgKey }) {
+function ImageLoader({ imgSrc, imgKey, layOut }) {
   const [imgLoaded, setimgLoaded] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
-  console.log(imgSrc, "-", imgKey);
+  console.log(imgSrc, "-", imgKey + " " + layOut);
 
   return (
-    <div>
-      <div className={styles.galleryGrid}>
-        <motion.div className={styles.front}>
+    <>
+      <div>
+        <motion.div className={styles.front} style={{ position: "relative" }}>
           <motion.div
             className={isLoading ? styles.loadingContainer : ""}
             initial={{ opacity: 0 }}
@@ -45,7 +45,7 @@ function ImageLoader({ imgSrc, imgKey }) {
           </motion.div>
         </motion.div>
       </div>
-    </div>
+    </>
   );
 }
 

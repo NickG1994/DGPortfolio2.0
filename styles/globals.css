@@ -30,6 +30,7 @@ body {
 
 body {
   background-color: var(--backGround);
+  position: relative
 }
 
 body::before {

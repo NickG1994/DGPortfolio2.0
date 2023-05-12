@@ -11,6 +11,7 @@ function MyApp({ Component }) {
       <Navigation />
       <Transition>
         <Component />
+        <Footer />
       </Transition>
     </div>
   );
