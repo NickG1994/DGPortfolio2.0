@@ -4,6 +4,7 @@
   --fontColor:#064663;
   --headerColor: #ECB365;
   --borderColor:#ECB365;
+  --mainPadding:2em;
 }
 
 @font-face {

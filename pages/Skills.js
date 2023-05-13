@@ -37,9 +37,8 @@ function Skills() {
         </div>
         <div className={Skillstyle.right}>
           <Image
-            layout="responsive"
-            src={require("/public/img/skills/Layer 1.png")}
-            loading="eager"
+            src={require("../public/img/skills/Layer 1.png")}
+            loading="loading"
             className={Skillstyle.image}
             alt="skill image "
           />

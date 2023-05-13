@@ -19,7 +19,7 @@ function ImageLoader({ imgSrc, imgKey, layOut }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, background: "#ECB365", zIndex: 100 }}
             exit={{ opacity: 0, backgroundColor: "transparent" }}
-            transition={1}
+            transition={2}
           >
             <SyncLoader
               color="#064663"

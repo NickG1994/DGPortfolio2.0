@@ -89,27 +89,35 @@ export default function Home() {
             <div className={indexStyles.about__left}>
               <h2>About Me</h2>
               <p className={indexStyles.about__content}>
-                Lorem ipsum dolor sit amet consectetur. Orci viverra risus nisi
-                auctor dictum pharetra. Vitae in dui cursus aliquam aliquet vel.
-                Sapien aliquet molestie in massa ornare. Tellus parturient ut in
-                blandit eget odio. At dui ornare quam senectus non sed eget.
-                Egestas at in consectetur massa massa pulvinar molestie vel
-                iaculis. Purus cursus sit netus sagittis ultricies neque tempus
-                quam proin. Nibh sit sit eu urna. Nisl viverra potenti dui
-                vivamus tellus venenatis sagittis volutpat egestas. At porttitor
-                fringilla at faucibus in aliquam fringilla quisque. Urna diam
-                vel pellentesque dui aliquet.
+                Allow me to introduce myself, your dedicated and highly skilled
+                web developer. I am passionate about crafting exceptional online
+                experiences and proficient in technologies such as WordPress,
+                React.js, CSS, JavaScript, HTML, APIs, Node.js, Express.js,
+                Vue.js, troubleshooting, and server management. With a
+                comprehensive approach to front-end and back-end development, I
+                am committed to delivering outstanding results for your web
+                projects.
               </p>
               <br />
               <p className={indexStyles.about__content}>
-                having a natural curiosty for the world. Along with the passion
-                for learning. Is my core of me. From my work Ethics, lifestyle,
-                and carrer. To my passion, hardwork, and determination. With
-                having a curious mind i have always been hard on myself. When i
-                failed to understand questions/topics/ect. Which is both a
-                weakness and strength. While having a passion for learning with
-                an inquisitive mind. Can be a useful or helpful to have in my
-                field.
+                In front-end development, I bring creativity and meticulous
+                attention to detail to create visually stunning and
+                user-friendly interfaces. Through my expertise in HTML, CSS, and
+                JavaScript, I ensure a seamless browsing experience across
+                various devices. On the back-end, I harness the power of
+                Node.js, Express.js, and API integration to build robust and
+                scalable server-side applications. I prioritize optimization and
+                clean code, guaranteeing fast and efficient websites that exceed
+                expectations.
+              </p>
+              <br />
+              <p className={indexStyles.about__content}>
+                As your dedicated web developer, I am devoted to understanding
+                your unique requirements and going above and beyond to meet your
+                needs. With a professional and enthusiastic approach, I will
+                collaborate closely with you throughout the development process,
+                ensuring that your vision is brought to life and delivering a
+                remarkable online presence for your business.
               </p>
               <Button
                 string={"learn more"}

@@ -120,7 +120,6 @@
   align-items:center;
   height: inherit;
 }
-
 /* hero courasel layout style */
 /* next.js automatically adds span tags. need to style all span! */
 .courselContentContainer {
@@ -130,7 +129,6 @@
   z-index: 100;
   width: 100%;
 }
-
 /* end hero coursel layout style */
 /* end hero layout style */
 /* ###################################################### */
@@ -172,7 +170,8 @@ flex: 0.4;
 .about__right {
   background: url('../public/img/vector art 1.png') center no-repeat ;
   background-size: contain;
-flex: 0.6;
+  background-position-y: top;
+  flex: 0.6;
 }
 .about__content { max-width: 90%; }
 
@@ -285,16 +284,12 @@ opacity: 0.2;
   margin-right: 1rem;
 }
 /* endContact Me layout style */
-
-
 #about, #skills, #contactMe, .recentWorkTextContainer, 
 .courselContentContainer
 , .portfolioTop {
-  padding: 0 2em;
+  padding: 0 var(--mainPadding);
   margin-bottom: 4em;
 }
-
-
 /* End layout */
 
 /* For 960 pixel screen size or more */

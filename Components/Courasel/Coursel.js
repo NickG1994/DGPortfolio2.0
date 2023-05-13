@@ -20,18 +20,7 @@ function Coursel() {
             className={styles.slides}
             key={isLoadingHero}
           >
-            <ImageLoader imgSrc={img.src} imgKey={`courselImg-${index}`}>
-              {/*<Image
-                loading="eager"
-                src={img.src}
-                className={styles.bgImage}
-                fill="true"
-                onLoad={() => {
-                  setIsLoadingHero(false);
-                  console.log("hero image loading: " + isLoadingHero);
-                }}
-              />*/}
-            </ImageLoader>
+            <ImageLoader imgSrc={img.src} imgKey={`courselImg-${index}`} />
           </m.div>
         ))}
       </div>

@@ -1,7 +1,7 @@
 .skills_container_inner  {
     display: flex;
     justify-content: space-between;
-    padding:0 3rem;
+    padding:0 var(--mainPadding);
     height: 100vh;
     align-items: center;
     -webkit-box-align: center;
@@ -27,7 +27,7 @@
 }
 
 .left {
-    flex: .4;
+    flex: .5;
 }
 
 .left h2{
@@ -39,7 +39,7 @@
 }
 
 .right{
-    flex: .4;
+    flex:.5;
     width: 100%;
 }
 
