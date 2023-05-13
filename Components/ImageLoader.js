@@ -5,7 +5,7 @@ import { SyncLoader } from "react-spinners";
 import { useEffect } from "react";
 import Image from "next/image";
 
-function ImageLoader({ imgSrc, imgKey, layOut }) {
+function ImageLoader({ imgSrc, imgKey, layOut = null }) {
   const [imgLoaded, setimgLoaded] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   console.log(imgSrc, "-", imgKey + " " + layOut);

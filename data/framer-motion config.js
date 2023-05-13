@@ -1,54 +1,29 @@
-export const textMovingDown = {
+export const animateSlideDown = {
   initial: { opacity: 0, y: -50 },
   animate: {
     opacity: 1,
     y: 0,
-    transition: {
-      duration: 2,
-      delay: 0.5,
-    },
   },
   exit: {
     opacity: 0,
-    transition: {
-      delay: 0.5,
-    },
+  },
+  transition: {
+    duration: 2,
+    delay: 0.5,
   },
 };
-
-export const textMovingDownDelayOne = {
-  initial: { opacity: 0, y: -50 },
+export const animateSlideSide = {
+  initial: { opacity: 0, x: -50 },
   animate: {
     opacity: 1,
-    y: 0,
-    transition: {
-      duration: 2,
-      delay: 1.5,
-    },
+    x: 0,
   },
   exit: {
     opacity: 0,
-    transition: {
-      delay: 1.5,
-    },
   },
-};
-
-export const textMovingDownDelayTwo = {
-  initial: { opacity: 0, y: -50 },
-  animate: {
-    opacity: 1,
-    y: 50,
-    transition: {
-      duration: 2,
-      delay: 3,
-    },
-  },
-  exit: {
-    opacity: 0,
-    transition: {
-      delay: 3,
-    },
+  transition: {
+    duration: 2,
+    delay: 0.5,
   },
 };
 
