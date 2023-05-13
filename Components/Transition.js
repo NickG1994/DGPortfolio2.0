@@ -10,14 +10,6 @@ const Transition = ({ children }) => {
   const Router = useRouter();
   const [loading, setLoading] = useState(false);
   const [route, setRoute] = useState(null);
-  let prevRoute = Router.route;
-  function changedRoute() {
-    if (prevRoute === Router.route) {
-      setRoute(Router.route);
-    }
-    return;
-  }
-  console.log(prevRoute);
 
   useEffect(() => {
     // Used for page transition
@@ -55,20 +47,9 @@ const Transition = ({ children }) => {
             },
           }}
           transition={{ duration: 2 }}
-          key={route}
+          key={loading}
         >
-          {loading ? (
-            <motion.span
-              exit={{
-                opacity: 0,
-                zIndex: -1,
-              }}
-              transition={{ duration: 1 }}
-              style={{ display: "flex", alignItems: "center" }}
-            ></motion.span>
-          ) : (
-            children
-          )}
+          {children}
         </motion.div>
       </AnimatePresence>
     </div>
