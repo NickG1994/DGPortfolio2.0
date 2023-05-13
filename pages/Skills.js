@@ -38,7 +38,7 @@ function Skills() {
         <div className={Skillstyle.right}>
           <Image
             src={require("../public/img/skills/Layer 1.png")}
-            loading="loading"
+            loading="lazy"
             className={Skillstyle.image}
             alt="skill image "
           />
