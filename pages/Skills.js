@@ -31,7 +31,7 @@ function Skills() {
             <p className={Skillstyle.paragraph}>
               When it comes to the back-end, I excel in building robust
               server-side applications using Node.js and Express.js. Whether
-              it's developing a store-front or an e-commerce solution,
+              it&apos;s developing a store-front or an e-commerce solution,
               integrating payment gateways, or managing product catalogs, I have
               the skills to deliver scalable solutions. I also have experience
               in working with relational and non-relational databases, such as
