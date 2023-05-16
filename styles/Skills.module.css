@@ -52,6 +52,15 @@
     vertical-align:middle;
 }
 
+.imageContainer {
+    position: relative;
+    border: .1rem solid red;
+}
+
+.gears {
+    position: absolute !important;
+}
+
 @media only screen and (min-width: 960px) {
     .skills_container {
 

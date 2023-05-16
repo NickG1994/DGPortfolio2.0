@@ -6,6 +6,8 @@ import Modal from "./Modal";
 import { motion, AnimatePresence } from "framer-motion";
 import { SyncLoader } from "react-spinners";
 import { useEffect } from "react";
+//import framer anmimation object
+import { animateSlideDown } from "../data/framer-motion config";
 
 function GridGallery() {
   const [modalIndex, setModalIndex] = useState(0);

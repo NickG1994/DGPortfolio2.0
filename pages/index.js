@@ -21,22 +21,13 @@ import { m, LazyMotion, domAnimation } from "framer-motion";
 import {
   animateSlideDown,
   animateSlideSide,
+  animateSlideLeft,
 } from "../data/framer-motion config.js";
 
 const GoogleMaps = dynamic(() => import("../Components/GoogleMaps.js"), {
   ssr: false,
 });
 
-/*
-import {
-  textMovingDown,
-  textMovingDownDelayOne,
-  textMovingRight,
-  textMovingUp,
-  loadingVariant,
-  variantsOne,
-} from "../data/framer-motion config.js";
-*/
 export default function Home() {
   return (
     <main>
@@ -115,7 +106,15 @@ export default function Home() {
             <div className={indexStyles.portfolioBottom}>
               <div className={indexStyles.gallery}>
                 {/* The gridGallery is causing the issue with further inspection. */}
-                <GridGallery />
+                <m.div
+                  variants={animateSlideDown}
+                  initial={animateSlideDown.initial}
+                  viewport={{ once: true }}
+                  whileInView={animateSlideDown.animate}
+                  transition={{ ...animateSlideDown.transition, delay: 2 }}
+                >
+                  <GridGallery />
+                </m.div>
               </div>
             </div>
           </section>
@@ -123,8 +122,23 @@ export default function Home() {
           <section id={indexStyles.about}>
             <div className={indexStyles.about__container}>
               <div className={indexStyles.about__left}>
-                <h2>About Me</h2>
-                <p className={indexStyles.about__content}>
+                <m.h2
+                  variants={animateSlideSide}
+                  viewport={{ once: true }}
+                  initial={animateSlideSide.initial}
+                  whileInView={animateSlideSide.animate}
+                  transition={animateSlideSide.transition}
+                >
+                  About Me
+                </m.h2>
+                <m.p
+                  variants={animateSlideSide}
+                  viewport={{ once: true }}
+                  initial={animateSlideSide.initial}
+                  whileInView={animateSlideSide.animate}
+                  transition={{ ...animateSlideSide.transition, delay: 1.5 }}
+                  className={indexStyles.about__content}
+                >
                   Allow me to introduce myself, your dedicated and highly
                   skilled web developer. I am passionate about crafting
                   exceptional online experiences and proficient in technologies
@@ -133,9 +147,16 @@ export default function Home() {
                   management. With a comprehensive approach to front-end and
                   back-end development, I am committed to delivering outstanding
                   results for your web projects.
-                </p>
+                </m.p>
                 <br />
-                <p className={indexStyles.about__content}>
+                <m.p
+                  variants={animateSlideSide}
+                  viewport={{ once: true }}
+                  initial={animateSlideSide.initial}
+                  whileInView={animateSlideSide.animate}
+                  transition={{ ...animateSlideSide.transition, delay: 2 }}
+                  className={indexStyles.about__content}
+                >
                   In front-end development, I bring creativity and meticulous
                   attention to detail to create visually stunning and
                   user-friendly interfaces. Through my expertise in HTML, CSS,
@@ -145,23 +166,37 @@ export default function Home() {
                   scalable server-side applications. I prioritize optimization
                   and clean code, guaranteeing fast and efficient websites that
                   exceed expectations.
-                </p>
+                </m.p>
                 <br />
-                <p className={indexStyles.about__content}>
+                <m.p
+                  variants={animateSlideSide}
+                  viewport={{ once: true }}
+                  initial={animateSlideSide.initial}
+                  whileInView={animateSlideSide.animate}
+                  transition={{ ...animateSlideSide.transition, delay: 2 }}
+                  className={indexStyles.about__content}
+                >
                   As your dedicated web developer, I am devoted to understanding
                   your unique requirements and going above and beyond to meet
                   your needs. With a professional and enthusiastic approach, I
                   will collaborate closely with you throughout the development
                   process, ensuring that your vision is brought to life and
                   delivering a remarkable online presence for your business.
-                </p>
+                </m.p>
                 <Button
                   string={"learn more"}
                   layout={{ marginTop: "4rem" }}
                   location={"/Projects"}
                 />
               </div>
-              <div className={indexStyles.about__right}></div>
+              <m.div
+                variants={animateSlideLeft}
+                viewport={{ once: true }}
+                whileInView={animateSlideLeft.animate}
+                initial={animateSlideLeft.initial}
+                transition={animateSlideLeft.transition}
+                className={indexStyles.about__right}
+              ></m.div>
             </div>
           </section>
 
@@ -204,6 +239,7 @@ export default function Home() {
               </div>
               <div className={indexStyles.skills__left}>
                 <Image
+                  className={indexStyles.hobbiesImg}
                   layout="responsive"
                   src={require("/public/img/hobbies.png")}
                   alt="hobbies image"

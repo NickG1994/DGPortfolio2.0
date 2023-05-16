@@ -17,7 +17,6 @@ const Transition = ({ children }) => {
     }
     return;
   }
-  //console.log(prevRoute);
 
   useEffect(() => {
     // Used for page transition
@@ -40,7 +39,7 @@ const Transition = ({ children }) => {
   return (
     <div style={{ overflow: "hidden", width: "100%" }}>
       {/*Animate the children component/pages*/}
-      <AnimatePresence mode="popLayout" initial={false}>
+      <AnimatePresence mode="popLayout" initial={true}>
         <motion.div
           className={style.mainContainer}
           variants={loadingVariant}
@@ -57,21 +56,7 @@ const Transition = ({ children }) => {
           transition={{ duration: 2 }}
           key={route}
         >
-          {loading ? (
-            <motion.span
-              exit={{
-                opacity: 0,
-                zIndex: -1,
-                transition: {
-                  duration: 3,
-                },
-              }}
-              transition={{ duration: 2 }}
-              style={{ display: "flex", alignItems: "center" }}
-            ></motion.span>
-          ) : (
-            children
-          )}
+          {children}
         </motion.div>
       </AnimatePresence>
     </div>

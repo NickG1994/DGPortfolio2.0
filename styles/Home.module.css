@@ -168,7 +168,7 @@
 flex: 0.4;
 }
 .about__right {
-  background: url('../public/img/vector art 1.png') center no-repeat ;
+  background: url('../assets/img/bg-web.png') center no-repeat ;
   background-size: contain;
   background-position-y: top;
   flex: 0.6;
@@ -185,12 +185,16 @@ flex: 0.4;
 
 .skills__right {
 flex: .4;
+margin-left: 3rem;
 }
 .skills__left {
   flex: .6;
+  margin-right: 3rem;
 }
-.skills__left span > img{
+.skills__left hobbiesImg{
   object-fit:fill;
+  width: 40% !important;
+  height: 50% !important;
 }
 /* end skills layout style*/
 /*#####################################################*/
