@@ -60,15 +60,10 @@ function Skills() {
           <div className={Skillstyle.right}>
             <div className={Skillstyle.imageContainer}>
               <Image
-                className={Skillstyle.gears}
-                layout="intrinsic"
-                src={require("../public/img/skills/Layer 1 copy.png")}
-              />
-              <Image
                 src={require("../public/img/skills/Layer 1.png")}
                 loading="lazy"
                 className={Skillstyle.image}
-                alt="skill image "
+                alt="skill image"
               />
             </div>
           </div>
