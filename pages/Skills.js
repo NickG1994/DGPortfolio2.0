@@ -61,6 +61,7 @@ function Skills() {
             <div className={Skillstyle.imageContainer}>
               <Image
                 className={Skillstyle.gears}
+                layout="intrinsic"
                 src={require("../public/img/skills/Layer 1 copy.png")}
               />
               <Image

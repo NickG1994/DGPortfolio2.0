@@ -56,7 +56,21 @@ const Transition = ({ children }) => {
           transition={{ duration: 2 }}
           key={route}
         >
-          {children}
+          {loading ? (
+            <motion.span
+              exit={{
+                opacity: 0,
+                zIndex: -1,
+                transition: {
+                  duration: 3,
+                },
+              }}
+              transition={{ duration: 2 }}
+              style={{ display: "flex", alignItems: "center" }}
+            ></motion.span>
+          ) : (
+            children
+          )}
         </motion.div>
       </AnimatePresence>
     </div>
