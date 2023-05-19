@@ -8,11 +8,38 @@ import Footer from "../Components/Footer.js";
 
 const Transition = ({ children }) => {
   const Router = useRouter();
+  const [loading, setLoading] = useState(false);
+  const [route, setRoute] = useState(null);
+  let prevRoute = Router.route;
+  function changedRoute() {
+    if (prevRoute === Router.route) {
+      setRoute(Router.route);
+    }
+    return;
+  }
+
+  useEffect(() => {
+    // Used for page transition
+    const start = () => {
+      setLoading(true);
+    };
+    const end = () => {
+      setLoading(false);
+    };
+    Router.events.on("routeChangeStart", start);
+    Router.events.on("routeChangeComplete", end);
+    Router.events.on("routeChangeError", end);
+    return () => {
+      Router.events.off("routeChangeStart", start);
+      Router.events.off("routeChangeComplete", end);
+      Router.events.off("routeChangeError", end);
+    };
+  }, []);
 
   return (
     <div style={{ overflow: "hidden", width: "100%" }}>
       {/*Animate the children component/pages*/}
-      <AnimatePresence mode="popLayout" initial={false}>
+      <AnimatePresence mode="popLayout" initial={true}>
         <motion.div
           className={style.mainContainer}
           variants={loadingVariant}
@@ -26,10 +53,24 @@ const Transition = ({ children }) => {
               duration: 2,
             },
           }}
-          transition={{ duration: 1 }}
-          key={Router.route}
+          transition={{ duration: 2 }}
+          key={route}
         >
-          {children}
+          {loading ? (
+            <motion.span
+              exit={{
+                opacity: 0,
+                zIndex: -1,
+                transition: {
+                  duration: 3,
+                },
+              }}
+              transition={{ duration: 2 }}
+              style={{ display: "flex", alignItems: "center" }}
+            ></motion.span>
+          ) : (
+            children
+          )}
         </motion.div>
       </AnimatePresence>
     </div>
