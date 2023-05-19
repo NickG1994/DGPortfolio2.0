@@ -15,7 +15,14 @@ function Skills() {
         <link rel="icon" href="/img/DominicGaonaTabLogo.ico" />
       </Head>
       <LazyMotion features={domAnimation}>
-        <div className={Skillstyle.skills_container_inner}>
+        <m.div
+          className={Skillstyle.skills_container_inner}
+          variants={animateOpacity}
+          initial={animateOpacity.initial}
+          animate={animateOpacity.animate}
+          exit={animateOpacity.exit}
+          transition={{ ...animateOpacity.transition, delay: 0.2 }}
+        >
           <div className={Skillstyle.left}>
             <m.h2
               variants={animateOpacity}
@@ -103,7 +110,7 @@ function Skills() {
               />
             </div>
           </div>
-        </div>
+        </m.div>
       </LazyMotion>
     </main>
   );
