@@ -333,7 +333,7 @@ export default function Home() {
                 {/* <Form /> */}
                 <Form />
               </div>
-              <div
+              <m.div
                 className={indexStyles.contactMeContainerRight}
                 variants={animateOpacity}
                 viewport={{ once: true }}
@@ -342,7 +342,7 @@ export default function Home() {
                 transition={animateOpacity.transition}
               >
                 <GoogleMaps />
-              </div>
+              </m.div>
             </div>
           </section>
         </LazyMotion>
