@@ -46,6 +46,7 @@
     display:block;
     padding: 1rem 2rem;
     border: 5px solid var(--foreGround);
+    width:-moz-fit-content;
     width: fit-content;
     border-radius: 5%;
 }
@@ -112,13 +113,17 @@
 
 .form h1{
     color: var(--headerColor);
+    font-weight: 600;
     font-size: 3rem;
     font-weight: 600;
     text-transform: uppercase;
-    margin-bottom: 4rem;
 }
 
-
+.form h3 {
+    color: var(--headerColor);
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+}
 .error {
     font-style: normal;
     color:rgb(177, 6, 6);

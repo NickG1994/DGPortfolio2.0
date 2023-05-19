@@ -8,33 +8,6 @@ import Footer from "../Components/Footer.js";
 
 const Transition = ({ children }) => {
   const Router = useRouter();
-  const [loading, setLoading] = useState(false);
-  const [route, setRoute] = useState(null);
-  let prevRoute = Router.route;
-  function changedRoute() {
-    if (prevRoute === Router.route) {
-      setRoute(Router.route);
-    }
-    return;
-  }
-
-  useEffect(() => {
-    // Used for page transition
-    const start = () => {
-      setLoading(true);
-    };
-    const end = () => {
-      setLoading(false);
-    };
-    Router.events.on("routeChangeStart", start);
-    Router.events.on("routeChangeComplete", end);
-    Router.events.on("routeChangeError", end);
-    return () => {
-      Router.events.off("routeChangeStart", start);
-      Router.events.off("routeChangeComplete", end);
-      Router.events.off("routeChangeError", end);
-    };
-  }, []);
 
   return (
     <div style={{ overflow: "hidden", width: "100%" }}>
@@ -53,8 +26,8 @@ const Transition = ({ children }) => {
               duration: 2,
             },
           }}
-          transition={{ duration: 2 }}
-          key={route}
+          transition={{ duration: 1 }}
+          key={Router.route}
         >
           {children}
         </motion.div>

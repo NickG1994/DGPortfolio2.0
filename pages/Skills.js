@@ -98,7 +98,7 @@ function Skills() {
           <div className={Skillstyle.right}>
             <div className={Skillstyle.imageContainer}>
               <ImageLoader
-                imgSrc={require("../public/img/skills/Layer 1.png")}
+                imgSrc={require("../assets/img/skills/bg-light.png")}
                 alt="skill image"
               />
             </div>
