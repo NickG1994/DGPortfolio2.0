@@ -50,10 +50,12 @@ function Form() {
   function formDataValidation(formData) {
     const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
     const errorsPush = { name: [], email: [], subject: [], message: [] };
-
+    //checking if formdata has no data or is null.
+    //push keyname to errors array.
     for (let keys in formData) {
       if (formData[keys] === null || formData[keys] === "") {
         errorsPush[keys].push(`${keys} require`);
+        console.log(errorsPush[keys]);
       }
     }
 

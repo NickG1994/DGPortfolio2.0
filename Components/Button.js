@@ -11,13 +11,13 @@ function Button({ string, location, layout }) {
       <m.div
         variants={animateSlideDown}
         initial={animateSlideDown.initial}
-        animate={animateSlideDown.animate}
-        exit={animateSlideDown.exit}
+        whileInView={animateSlideDown.animate}
+        viewport={{ once: true }}
         transition={{ ...animateSlideDown.transition, delay: 2.5 }}
         style={layout}
       >
         <Link className={styles.button} href={location ? location : "#"}>
-          <div className={styles.button__content}>
+          <div className={styles.button__content} style={layout && null}>
             <span></span> <span className={styles.buttonText}>{string}</span>
           </div>
         </Link>

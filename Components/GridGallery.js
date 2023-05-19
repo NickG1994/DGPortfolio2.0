@@ -3,7 +3,7 @@ import styles from "../styles/gridGallery.module.css";
 import { projects } from "../data/projects_data";
 import Image from "next/image";
 import Modal from "./Modal";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, LazyMotion, domAnimation } from "framer-motion";
 import { SyncLoader } from "react-spinners";
 import { useEffect } from "react";
 //import framer anmimation object
@@ -23,15 +23,15 @@ function GridGallery() {
   }
 
   return (
-    <>
+    <LazyMotion features={domAnimation}>
       <div className={styles.galleryGrid}>
         {projects.map((project, index) => (
-          <motion.div
+          <m.div
             className={styles.front}
             style={{ position: "relative" }}
             key={index}
           >
-            <motion.div
+            <m.div
               className={isLoading ? styles.loadingContainer : ""}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1, background: "#ECB365", zIndex: 100 }}
@@ -42,18 +42,18 @@ function GridGallery() {
                 color="#064663"
                 style={isLoading ? { display: "block" } : { display: "none" }}
               />
-            </motion.div>
-            <motion.div
+            </m.div>
+            <m.div
               id={`image-${index}`}
-              initial={{ opacity: 0, y: 50 }}
-              exit={{ opacity: 0, y: 0 }}
+              variants={animateSlideDown}
+              initial={animateSlideDown.initial}
               viewport={{
                 once: true,
               }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-                transition: { duration: 3, delay: 0.09 * index },
+              whileInView={animateSlideDown.animate}
+              transition={{
+                ...animateSlideDown.transition,
+                delay: 0.15 * index,
               }}
               onClick={(e) => {
                 toggleModal(e);
@@ -74,8 +74,8 @@ function GridGallery() {
                   <p className={styles.overlayText}>{project.Header}</p>
                 </div>
               </div>
-            </motion.div>
-          </motion.div>
+            </m.div>
+          </m.div>
         ))}
       </div>
       <div
@@ -85,7 +85,7 @@ function GridGallery() {
       >
         {state && <Modal id={modalIndex} />}
       </div>
-    </>
+    </LazyMotion>
   );
 }
 

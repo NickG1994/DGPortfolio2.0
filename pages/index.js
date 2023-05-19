@@ -1,6 +1,7 @@
 import React from "react";
 // import styles
 import indexStyles from "../styles/Home.module.css";
+//import next components
 import dynamic from "next/dynamic";
 import Head from "next/head";
 import Image from "next/image";
@@ -11,6 +12,8 @@ import Button from "../Components/Button";
 import Modal from "../Components/Modal.js";
 import { animate, motion } from "framer-motion";
 import GridGallery from "../Components/GridGallery";
+// Import component for loading images.
+import ImageLoader from "../Components/ImageLoader.js";
 /* Import SVG */
 import { SVG } from "../data/SVG.js";
 import { SvgHobbies } from "../data/SvgHobbies";
@@ -22,6 +25,8 @@ import {
   animateSlideDown,
   animateSlideSide,
   animateSlideLeft,
+  animateSlideRight,
+  animateOpacity,
 } from "../data/framer-motion config.js";
 
 const GoogleMaps = dynamic(() => import("../Components/GoogleMaps.js"), {
@@ -106,15 +111,8 @@ export default function Home() {
             <div className={indexStyles.portfolioBottom}>
               <div className={indexStyles.gallery}>
                 {/* The gridGallery is causing the issue with further inspection. */}
-                <m.div
-                  variants={animateSlideDown}
-                  initial={animateSlideDown.initial}
-                  viewport={{ once: true }}
-                  whileInView={animateSlideDown.animate}
-                  transition={{ ...animateSlideDown.transition, delay: 2 }}
-                >
-                  <GridGallery />
-                </m.div>
+
+                <GridGallery />
               </div>
             </div>
           </section>
@@ -203,8 +201,24 @@ export default function Home() {
           <section id={indexStyles.skills}>
             <content className={indexStyles.skills_container}>
               <div className={indexStyles.skills__right}>
-                <h2 className={indexStyles.skills__right__content}>Hobbies</h2>
-                <p className={indexStyles.skills__right__content}>
+                <m.h2
+                  className={indexStyles.skills__right__content}
+                  variants={animateSlideRight}
+                  viewport={{ once: true }}
+                  whileInView={animateSlideRight.animate}
+                  initial={animateSlideRight.initial}
+                  transition={animateSlideRight.transition}
+                >
+                  Hobbies
+                </m.h2>
+                <m.p
+                  className={indexStyles.skills__right__content}
+                  variants={animateSlideRight}
+                  viewport={{ once: true }}
+                  whileInView={animateSlideRight.animate}
+                  initial={animateSlideRight.initial}
+                  transition={{ ...animateSlideRight.transition, delay: 1.5 }}
+                >
                   Lorem ipsum dolor sit amet consectetur. Aliquet enim viverra
                   elementum justo sed etiam etiam. Enim morbi massa eu non
                   tempor nascetur. Rhoncus tellus a volutpat interdum dui
@@ -215,22 +229,36 @@ export default function Home() {
                   mauris viverra tortor sit facilisis vitae. Amet at ante ut
                   facilisis facilisis vitae varius. Tincidunt feugiat orci nec
                   augue ut.
-                </p>
+                </m.p>
                 <br />
-                <p className={indexStyles.skills__right__content}>
+                <m.p
+                  className={indexStyles.skills__right__content}
+                  variants={animateSlideRight}
+                  viewport={{ once: true }}
+                  whileInView={animateSlideRight.animate}
+                  initial={animateSlideRight.initial}
+                  transition={{ ...animateSlideRight.transition, delay: 1.8 }}
+                >
                   Vel ultrices magna ullamcorper libero adipiscing. Massa in
                   consequat congue scelerisque. Nibh dictum sed mi ullamcorper
                   eget. Lectus vitae velit tellus sit turpis nulla nunc.
                   Habitant libero purus at egestas. Proin ipsum eros fermentum
                   volutpat. Dolor risus scelerisque aliquet velit sed et. Elit
                   id condimentum et habitant volutpat aenean.
-                </p>
+                </m.p>
                 <br />
-                <p className={indexStyles.skills__right__content}>
+                <m.p
+                  className={indexStyles.skills__right__content}
+                  variants={animateSlideRight}
+                  viewport={{ once: true }}
+                  whileInView={animateSlideRight.animate}
+                  initial={animateSlideRight.initial}
+                  transition={{ ...animateSlideRight.transition, delay: 1.8 }}
+                >
                   Porttitor sagittis ullamcorper pulvinar odio nec aliquet
                   magnis. Enim dapibus vestibulum ullamcorper pharetra lectus
                   tortor vitae in elit. Turpis nec id faucibus non donec etiam.
-                </p>
+                </m.p>
                 <Button
                   location={"/skills"}
                   string={"Skills"}
@@ -238,11 +266,9 @@ export default function Home() {
                 />
               </div>
               <div className={indexStyles.skills__left}>
-                <Image
-                  className={indexStyles.hobbiesImg}
-                  layout="responsive"
-                  src={require("/public/img/hobbies.png")}
-                  alt="hobbies image"
+                <ImageLoader
+                  imgSrc={require("../public/img/hobbies.png")}
+                  alt={"hobbies image"}
                 />
               </div>
             </content>
@@ -251,18 +277,41 @@ export default function Home() {
           <section id={indexStyles.recentWork}>
             <div className={indexStyles.recentWorkContainer}>
               <div className={indexStyles.recentWorkTextContainer}>
-                <h2 className={indexStyles.recentWorkHeader}>Recent Work</h2>
-                <p className="recentSubheader">
+                <m.h2
+                  className={indexStyles.recentWorkHeader}
+                  variants={animateSlideRight}
+                  viewport={{ once: true }}
+                  whileInView={animateSlideRight.animate}
+                  initial={animateSlideRight.initial}
+                  transition={animateSlideRight.transition}
+                >
+                  Recent Work
+                </m.h2>
+                <m.p
+                  variants={animateSlideRight}
+                  viewport={{ once: true }}
+                  whileInView={animateSlideRight.animate}
+                  initial={animateSlideRight.initial}
+                  transition={{ ...animateSlideRight.transition, delay: 1.5 }}
+                  className="recentSubheader"
+                >
                   Lorem ipsum dolor sit amet consectetur. Orci viverra risus
                   nisi auctor dictum pharetra. Vitae in dui cursus aliquam
                   aliquet vel. Sapien aliquet molestie in massa ornare. Tellus
                   parturient ut in blandit eget odio. At dui ornare quam
                   senectus non sed eget. Egestas at in consectetur massa massa
                   pulvinar molestie vel iaculis.
-                </p>
+                </m.p>
               </div>
 
-              <div className={indexStyles.recentWorkGalleryContainer}>
+              <m.div
+                className={indexStyles.recentWorkGalleryContainer}
+                variants={animateOpacity}
+                viewport={{ once: true }}
+                whileInView={animateOpacity.animate}
+                initial={animateOpacity.initial}
+                transition={{ ...animateOpacity.transition, delay: 2 }}
+              >
                 {projects.map((project, index) => {
                   if (index < 3) {
                     return (
@@ -274,7 +323,7 @@ export default function Home() {
                     );
                   }
                 })}
-              </div>
+              </m.div>
             </div>
           </section>
           {/* Contact Me Section */}
@@ -284,7 +333,14 @@ export default function Home() {
                 {/* <Form /> */}
                 <Form />
               </div>
-              <div className={indexStyles.contactMeContainerRight}>
+              <div
+                className={indexStyles.contactMeContainerRight}
+                variants={animateOpacity}
+                viewport={{ once: true }}
+                whileInView={animateOpacity.animate}
+                initial={animateOpacity.initial}
+                transition={animateOpacity.transition}
+              >
                 <GoogleMaps />
               </div>
             </div>

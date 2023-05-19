@@ -40,7 +40,33 @@ export const animateSlideLeft = {
     delay: 0.5,
   },
 };
-
+export const animateSlideRight = {
+  initial: { opacity: 0, x: 50 },
+  animate: {
+    opacity: 1,
+    x: 0,
+  },
+  exit: {
+    opacity: 0,
+  },
+  transition: {
+    duration: 2,
+    delay: 0.5,
+  },
+};
+export const animateOpacity = {
+  initial: { opacity: 0 },
+  animate: {
+    opacity: 1,
+  },
+  exit: {
+    opacity: 0,
+  },
+  transition: {
+    duration: 2,
+    delay: 0.5,
+  },
+};
 export const loadingVariant = {
   initial: {
     opacity: 0,

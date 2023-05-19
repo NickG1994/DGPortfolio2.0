@@ -4,14 +4,10 @@
     z-index: 1000;
     display:block;
     padding: 1em;
-    border: 5px solid var(--foreGround);
+    border: 5px solid var(--headerColor);
     width:-moz-fit-content;
     width: fit-content;
     border-radius: 5%;
-}
-
-.button {
-    border: 5px solid var(--foreGround);
 }
 
 .button__content > span:nth-child(1) {

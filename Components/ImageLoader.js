@@ -5,10 +5,16 @@ import { SyncLoader } from "react-spinners";
 import { useEffect } from "react";
 import Image from "next/image";
 
-function ImageLoader({ imgSrc, imgKey, layOut = null }) {
+function ImageLoader({
+  imgSrc = null,
+  imgKey = null,
+  alt = null,
+  layOut = null,
+}) {
   const [imgLoaded, setimgLoaded] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   console.log(imgSrc, "-", imgKey + " " + layOut);
+  console.log("layout: " + layOut);
 
   return (
     <>
@@ -33,7 +39,7 @@ function ImageLoader({ imgSrc, imgKey, layOut = null }) {
             }}
             whileInView={{
               opacity: 1,
-              transition: { duration: 1.5 },
+              transition: { duration: 3 },
             }}
             transition="2"
             onClick={(e) => {
@@ -41,7 +47,7 @@ function ImageLoader({ imgSrc, imgKey, layOut = null }) {
             }}
             className={styles.gridItem}
           >
-            <Image src={imgSrc} />
+            <Image src={imgSrc} alt={alt} />
           </motion.div>
         </motion.div>
       </div>

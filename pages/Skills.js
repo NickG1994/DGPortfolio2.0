@@ -2,7 +2,9 @@ import React from "react";
 import Head from "next/head";
 import Skillstyle from "../styles/Skills.module.css";
 import Image from "next/image";
-import { m, LazyMotion, domAnimation } from "framer-motion";
+import { m, LazyMotion, domAnimation, animate } from "framer-motion";
+import { animateOpacity } from "../data/framer-motion config";
+import ImageLoader from "../Components/ImageLoader.js";
 
 function Skills() {
   return (
@@ -15,8 +17,23 @@ function Skills() {
       <LazyMotion features={domAnimation}>
         <div className={Skillstyle.skills_container_inner}>
           <div className={Skillstyle.left}>
-            <h2>My Skills</h2>
-            <p className={Skillstyle.paragraph}>
+            <m.h2
+              variants={animateOpacity}
+              initial={animateOpacity.initial}
+              animate={animateOpacity.animate}
+              exit={animateOpacity.exit}
+              transition={{ ...animateOpacity.transition, delay: 0.2 }}
+            >
+              My Skills
+            </m.h2>
+            <m.p
+              className={Skillstyle.paragraph}
+              variants={animateOpacity}
+              initial={animateOpacity.initial}
+              animate={animateOpacity.animate}
+              exit={animateOpacity.exit}
+              transition={{ ...animateOpacity.transition, delay: 0.4 }}
+            >
               As a versatile developer proficient in front-end and back-end
               technologies, I bring a comprehensive skill set to the table. With
               expertise in Vue.js, React.js, Node.js, Express.js, JavaScript,
@@ -26,9 +43,16 @@ function Skills() {
               pixel-perfect designs and responsive layouts using HTML and CSS.
               JavaScript adds dynamic functionalities and enhances user
               experiences.
-            </p>
+            </m.p>
             <br />
-            <p className={Skillstyle.paragraph}>
+            <m.p
+              className={Skillstyle.paragraph}
+              variants={animateOpacity}
+              initial={animateOpacity.initial}
+              animate={animateOpacity.animate}
+              exit={animateOpacity.exit}
+              transition={{ ...animateOpacity.transition, delay: 0.8 }}
+            >
               When it comes to the back-end, I excel in building robust
               server-side applications using Node.js and Express.js. Whether
               it&apos;s developing a store-front or an e-commerce solution,
@@ -40,29 +64,41 @@ function Skills() {
               databases, while also leveraging the flexibility and scalability
               of non-relational databases for handling unstructured or
               semi-structured data.
-            </p>
+            </m.p>
             <br />
-            <p className={Skillstyle.paragraph}>
+            <m.p
+              className={Skillstyle.paragraph}
+              variants={animateOpacity}
+              initial={animateOpacity.initial}
+              animate={animateOpacity.animate}
+              exit={animateOpacity.exit}
+              transition={{ ...animateOpacity.transition, delay: 1 }}
+            >
               Additionally, I have a knack for developing visually appealing and
               functional portfolio websites, showcasing your skills and
               projects. By blending my front-end expertise with back-end
               functionalities, I ensure a seamless user experience. Furthermore,
               I can integrate APIs, enabling features like social media
               authentication, data retrieval, and third-party integrations.
-            </p>
+            </m.p>
             <br />
-            <p className={Skillstyle.paragraph}>
+            <m.p
+              className={Skillstyle.paragraph}
+              variants={animateOpacity}
+              initial={animateOpacity.initial}
+              animate={animateOpacity.animate}
+              exit={animateOpacity.exit}
+              transition={{ ...animateOpacity.transition, delay: 1 }}
+            >
               With my comprehensive knowledge and experience across these
               technologies, I am well-equipped to deliver high-quality,
               scalable, and customized solutions for your specific needs.
-            </p>
+            </m.p>
           </div>
           <div className={Skillstyle.right}>
             <div className={Skillstyle.imageContainer}>
-              <Image
-                src={require("../public/img/skills/Layer 1.png")}
-                loading="lazy"
-                className={Skillstyle.image}
+              <ImageLoader
+                imgSrc={require("../public/img/skills/Layer 1.png")}
                 alt="skill image"
               />
             </div>
