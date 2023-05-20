@@ -43,7 +43,7 @@ const Transition = ({ children }) => {
       <AnimatePresence mode="popLayout" initial={false}>
         <motion.div
           className={style.mainContainer}
-          variants={loadingVariant}
+          variants={animateOpacity}
           initial={animateOpacity.initial}
           animate={animateOpacity.animate}
           exit={animateOpacity.exit}
