@@ -10,10 +10,12 @@ import { animateOpacity } from "../data/framer-motion config";
 
 function MyApp({ Component }) {
   const Router = useRouter();
+  console.log("Exit", { ...animateOpacity.exit });
+  console.log("transition", { ...animateOpacity.transition });
+  console.log(Router.route);
   return (
-    <div style={{ display: "flex" }}>
+    <div style={{ display: "flex", overflow: "hidden", width: "100%" }}>
       {/* Navigation Component */}
-
       <Navigation />
       <AnimatePresence mode={"popLayout"} initial="true">
         {/*Animate the children component/pages*/}

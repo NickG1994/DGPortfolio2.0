@@ -13,8 +13,8 @@ function ImageLoader({
 }) {
   const [imgLoaded, setimgLoaded] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
-  console.log(imgSrc, "-", imgKey + " " + layOut);
-  console.log("layout: " + layOut);
+  //console.log(imgSrc, "-", imgKey + " " + layOut);
+  //console.log("layout: " + layOut);
 
   return (
     <>

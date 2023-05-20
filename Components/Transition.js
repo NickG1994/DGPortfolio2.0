@@ -7,8 +7,6 @@ import Footer from "../Components/Footer.js";
 
 import { animateOpacity } from "../data/framer-motion config";
 
-import indexStyles from "../styles/Home.module.css";
-
 const Transition = ({ children }) => {
   const Router = useRouter();
 
