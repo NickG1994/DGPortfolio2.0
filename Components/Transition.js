@@ -5,6 +5,8 @@ import style from "../styles/Transition.module.css";
 import { loadingVariant } from "../data/framer-motion config";
 import Footer from "../Components/Footer.js";
 
+import { animateOpacity } from "../data/framer-motion config";
+
 const Transition = ({ children }) => {
   const Router = useRouter();
 
@@ -14,18 +16,11 @@ const Transition = ({ children }) => {
       <AnimatePresence mode="popLayout" initial={true}>
         <motion.div
           className={style.mainContainer}
-          variants={loadingVariant}
-          initial={{ opacity: 0 }}
-          animate={{
-            opacity: 1,
-          }}
-          exit={{
-            opacity: 0,
-            transition: {
-              duration: 2,
-            },
-          }}
-          transition={{ duration: 2 }}
+          variants={animateOpacity}
+          initial={animateOpacity.initial}
+          animate={animateOpacity.animate}
+          exit={animateOpacity.exit}
+          transition={animateOpacity.transition}
           key={Router.route}
         >
           {children}
