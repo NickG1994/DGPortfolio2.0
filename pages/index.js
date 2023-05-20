@@ -219,16 +219,14 @@ export default function Home() {
                   initial={animateSlideRight.initial}
                   transition={{ ...animateSlideRight.transition, delay: 1.5 }}
                 >
-                  Lorem ipsum dolor sit amet consectetur. Aliquet enim viverra
-                  elementum justo sed etiam etiam. Enim morbi massa eu non
-                  tempor nascetur. Rhoncus tellus a volutpat interdum dui
-                  elementum. Nibh purus nulla faucibus nisi nunc arcu urna
-                  felis. Porta pretium dolor etiam vel tellus sit vestibulum
-                  scelerisque est. Fermentum lorem nibh libero urna id. Augue
-                  placerat in in faucibus in fames ac. Magna augue at dignissim
-                  mauris viverra tortor sit facilisis vitae. Amet at ante ut
-                  facilisis facilisis vitae varius. Tincidunt feugiat orci nec
-                  augue ut.
+                  I am deeply passionate about several hobbies and interests
+                  that enrich my life. Shrimp keeping, particularly focusing on
+                  neocaridinia species, captivates my attention as I
+                  meticulously create and maintain ideal aquatic environments
+                  for these fascinating creatures. Additionally, I find great
+                  fulfillment in exploring aquaponics, a sustainable method of
+                  growing plants in a symbiotic relationship with aquatic
+                  animals.
                 </m.p>
                 <br />
                 <m.p
@@ -239,12 +237,13 @@ export default function Home() {
                   initial={animateSlideRight.initial}
                   transition={{ ...animateSlideRight.transition, delay: 1.8 }}
                 >
-                  Vel ultrices magna ullamcorper libero adipiscing. Massa in
-                  consequat congue scelerisque. Nibh dictum sed mi ullamcorper
-                  eget. Lectus vitae velit tellus sit turpis nulla nunc.
-                  Habitant libero purus at egestas. Proin ipsum eros fermentum
-                  volutpat. Dolor risus scelerisque aliquet velit sed et. Elit
-                  id condimentum et habitant volutpat aenean.
+                  Beyond aquatics, music holds a special place in my heart,
+                  allowing me to express myself and find inner peace. Whether
+                  I'm strumming a guitar or playing melodies on a keyboard, the
+                  creative process brings me immense joy. Furthermore, as a
+                  video game enthusiast, I engage in immersive virtual worlds,
+                  relishing challenging narratives, puzzles, and multiplayer
+                  competitions.
                 </m.p>
                 <br />
                 <m.p
@@ -255,9 +254,13 @@ export default function Home() {
                   initial={animateSlideRight.initial}
                   transition={{ ...animateSlideRight.transition, delay: 1.8 }}
                 >
-                  Porttitor sagittis ullamcorper pulvinar odio nec aliquet
-                  magnis. Enim dapibus vestibulum ullamcorper pharetra lectus
-                  tortor vitae in elit. Turpis nec id faucibus non donec etiam.
+                  Moreover, I have a strong affinity for programming and
+                  problem-solving. I am continually motivated by the intricacies
+                  of coding and the satisfaction of finding innovative solutions
+                  to complex challenges. These diverse hobbies and interests
+                  reflect my curiosity, creativity, and dedication to personal
+                  growth, offering me fulfillment and constant intellectual
+                  stimulation.
                 </m.p>
                 <Button
                   location={"/skills"}
