@@ -47,7 +47,7 @@ export default function Home() {
         <content className={indexStyles.mainContainer}>
           {/* Hero Section */}
           <section id={indexStyles.hero}>
-            <div className={indexStyles.heroContainer}>
+            <div className={`${indexStyles.heroContainer}`}>
               <Coursel />
               <div className={indexStyles.courselContentContainer}>
                 <m.h1

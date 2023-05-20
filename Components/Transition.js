@@ -24,7 +24,7 @@ const Transition = ({ children }) => {
             transition={animateOpacity.transition}
             key={Router.route}
           >
-            {children}
+            <>{children}</>
           </motion.div>
         </AnimatePresence>
       </div>
