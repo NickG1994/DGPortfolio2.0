@@ -14,17 +14,20 @@ const Transition = ({ children }) => {
     <>
       {" "}
       <AnimatePresence>
-        {/*Animate the children component/pages*/}
-        <motion.div
-          variants={animateOpacity}
-          initial={animateOpacity.initial}
-          animate={animateOpacity.animate}
-          exit={animateOpacity.exit}
-          transition={animateOpacity.transition}
-          key={Router.route}
-        >
-          {children}
-        </motion.div>
+        <div style={{ overflow: "hidden", width: "100%" }}>
+          {/*Animate the children component/pages*/}
+          <motion.div
+            className={style.mainContainer}
+            variants={animateOpacity}
+            initial={animateOpacity.initial}
+            animate={animateOpacity.animate}
+            exit={animateOpacity.exit}
+            transition={animateOpacity.transition}
+            key={Router.route}
+          >
+            {children}
+          </motion.div>
+        </div>
       </AnimatePresence>
     </>
   );
