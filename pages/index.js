@@ -43,8 +43,8 @@ export default function Home() {
         <link rel="stylsheet" href="/styles/Home.module.css"></link>
       </Head>
       {/* Main content */}
-      <content className={indexStyles.mainContainer}>
-        <LazyMotion features={domAnimation}>
+      <LazyMotion features={domAnimation}>
+        <content className={indexStyles.mainContainer}>
           {/* Hero Section */}
           <section id={indexStyles.hero}>
             <div className={indexStyles.heroContainer}>
@@ -348,8 +348,8 @@ export default function Home() {
               </m.div>
             </div>
           </section>
-        </LazyMotion>
-      </content>
+        </content>
+      </LazyMotion>
     </main>
   );
 }

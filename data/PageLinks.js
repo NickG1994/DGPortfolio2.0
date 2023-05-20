@@ -86,7 +86,7 @@ export const PageLink = [
         />
       </motion.svg>
     ),
-  } /*,
+  },
   {
     id: 2,
     title: "Skills",
@@ -174,7 +174,7 @@ export const PageLink = [
     path: "/testing",
     icon: <ContactPageIcon />,
   },
-  */,
+  ,
 ];
 
 export const socialLinks = [{}];
