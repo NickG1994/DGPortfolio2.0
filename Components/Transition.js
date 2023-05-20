@@ -11,22 +11,19 @@ const Transition = ({ children }) => {
   const Router = useRouter();
 
   return (
-    <AnimatePresence mode="popLayout" initial={false}>
-      <div style={{ overflow: "hidden", width: "100%" }}>
+    <AnimatePresence mode="popLayout" initial={true}>
+      <motion.div
+        style={{ overflow: "hidden", width: "100%" }}
+        variants={animateOpacity}
+        initial={animateOpacity.initial}
+        animate={animateOpacity.animate}
+        exit={animateOpacity.exit}
+        transition={animateOpacity.transition}
+        key={Router.route}
+      >
         {/*Animate the children component/pages*/}
-
-        <motion.div
-          className={style.mainContainer}
-          variants={animateOpacity}
-          initial={animateOpacity.initial}
-          animate={animateOpacity.animate}
-          exit={animateOpacity.exit}
-          transition={animateOpacity.transition}
-          key={Router.route}
-        >
-          {children}
-        </motion.div>
-      </div>
+        <div className={style.mainContainer}>{children}</div>
+      </motion.div>
     </AnimatePresence>
   );
 };
