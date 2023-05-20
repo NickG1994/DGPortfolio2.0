@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
-import { AnimatePresence, motion, useIsPresent } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import style from "../styles/Transition.module.css";
 import { loadingVariant } from "../data/framer-motion config";
 import Footer from "../Components/Footer.js";
@@ -14,19 +14,17 @@ const Transition = ({ children }) => {
     <>
       {" "}
       <AnimatePresence>
-        <div>
-          {/*Animate the children component/pages*/}
-          <motion.div
-            variants={animateOpacity}
-            initial={animateOpacity.initial}
-            animate={animateOpacity.animate}
-            exit={animateOpacity.exit}
-            transition={animateOpacity.transition}
-            key={Router.route}
-          >
-            {children}
-          </motion.div>
-        </div>
+        {/*Animate the children component/pages*/}
+        <motion.div
+          variants={animateOpacity}
+          initial={animateOpacity.initial}
+          animate={animateOpacity.animate}
+          exit={animateOpacity.exit}
+          transition={animateOpacity.transition}
+          key={Router.route}
+        >
+          {children}
+        </motion.div>
       </AnimatePresence>
     </>
   );
