@@ -3,13 +3,10 @@ import { useRouter } from "next/router";
 import { AnimatePresence, motion, useIsPresent } from "framer-motion";
 import style from "../styles/Transition.module.css";
 import { loadingVariant } from "../data/framer-motion config";
-import { SyncLoader } from "react-spinners";
 import Footer from "../Components/Footer.js";
 
 const Transition = ({ children }) => {
   const Router = useRouter();
-  const [loading, setLoading] = useState(false);
-  const [route, setRoute] = useState(null);
 
   return (
     <div style={{ overflow: "hidden", width: "100%" }}>

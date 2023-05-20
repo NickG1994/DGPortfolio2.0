@@ -4,10 +4,6 @@
     z-index: 10;
 }
 
-.form h3 {
-    color:red
-}
-
 .contact__content__container::after {
     content: "";
     position: absolute;
