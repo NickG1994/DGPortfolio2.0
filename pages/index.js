@@ -239,8 +239,8 @@ export default function Home() {
                 >
                   Beyond aquatics, music holds a special place in my heart,
                   allowing me to express myself and find inner peace. Whether
-                  I'm strumming a guitar or playing melodies on a keyboard, the
-                  creative process brings me immense joy. Furthermore, as a
+                  I&apos;m strumming a guitar or playing melodies on a keyboard,
+                  the creative process brings me immense joy. Furthermore, as a
                   video game enthusiast, I engage in immersive virtual worlds,
                   relishing challenging narratives, puzzles, and multiplayer
                   competitions.
