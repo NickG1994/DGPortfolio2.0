@@ -9,14 +9,14 @@ import Footer from "../Components/Footer.js";
 import { AnimatePresence, motion } from "framer-motion";
 import { animateOpacity } from "../data/framer-motion config";
 
-export const Transition = ({ children }) => {
+const Transition = ({ children }) => {
   const Router = useRouter();
-  console.log(Router.route)
+
   return (
     <div style={{ display: "flex", overflow: "hidden", width: "100%" }}>
       {/* Navigation Component */}
       <Navigation />
-
+      <AnimatePresence mode={"popLayout"} initial={true}>
         {/*Animate the children component/pages*/}
         <motion.div
           className={style.mainContainer}
@@ -29,7 +29,7 @@ export const Transition = ({ children }) => {
         >
           {children}
         </motion.div>
-
+      </AnimatePresence>
     </div>
   );
 };

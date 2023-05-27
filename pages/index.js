@@ -45,14 +45,14 @@ export default function Home() {
         <link rel="stylsheet" href="/styles/Home.module.css"></link>
       </Head>
       {/* Main content */}
-      <LazyMotion features={domAnimation}>
+      {/*LazyMotion features={domAnimation} initial={}>*/}
         <content className={indexStyles.mainContainer}>
           {/* Hero Section */}
           <section id={indexStyles.hero}>
             <div className={`${indexStyles.heroContainer}`}>
               <Coursel />
               <div className={indexStyles.courselContentContainer}>
-                <m.h1
+                <motion.h1
                   variants={animateSlideDown}
                   initial={animateSlideDown.initial}
                   animate={animateSlideDown.animate}
@@ -61,8 +61,8 @@ export default function Home() {
                 >
                   Hello,
                   <br /> My name is <br /> Dominic Gaona
-                </m.h1>
-                <m.h4
+                </motion.h1>
+                <motion.h4
                   variants={animateSlideDown}
                   initial={animateSlideDown.initial}
                   animate={animateSlideDown.animate}
@@ -70,7 +70,7 @@ export default function Home() {
                   transition={{ ...animateSlideDown.transition, delay: 1.5 }}
                 >
                   Front-end | Back-end Developer
-                </m.h4>
+                </motion.h4>
                 <Button
                   string={"Contact Me"}
                   location="/contact"
@@ -83,7 +83,7 @@ export default function Home() {
           {/* This is where a problem was occurring. Fix this section.  */}
           <section id={indexStyles.portfolio}>
             <div className={indexStyles.portfolioTop}>
-              <m.h2
+              <motion.h2
                 variants={animateSlideSide}
                 initial={animateSlideSide.initial}
                 viewport={{ once: true }}
@@ -91,8 +91,8 @@ export default function Home() {
                 transition={{ ...animateSlideSide.transition, delay: 0.5 }}
               >
                 Portfolio
-              </m.h2>
-              <m.p
+              </motion.h2>
+              <motion.p
                 variants={animateSlideSide}
                 initial={animateSlideSide.initial}
                 viewport={{ once: true }}
@@ -108,7 +108,7 @@ export default function Home() {
                 ability to work in a collaborative team environment while
                 demonstrating excellent communication and problem-solving
                 skills.
-              </m.p>
+              </motion.p>
             </div>
             <div className={indexStyles.portfolioBottom}>
               <div className={indexStyles.gallery}>
@@ -122,7 +122,7 @@ export default function Home() {
           <section id={indexStyles.about}>
             <div className={indexStyles.about__container}>
               <div className={indexStyles.about__left}>
-                <m.h2
+                <motion.h2
                   variants={animateSlideSide}
                   viewport={{ once: true }}
                   initial={animateSlideSide.initial}
@@ -130,8 +130,8 @@ export default function Home() {
                   transition={animateSlideSide.transition}
                 >
                   About Me
-                </m.h2>
-                <m.p
+                </motion.h2>
+                <motion.p
                   variants={animateSlideSide}
                   viewport={{ once: true }}
                   initial={animateSlideSide.initial}
@@ -147,9 +147,9 @@ export default function Home() {
                   management. With a comprehensive approach to front-end and
                   back-end development, I am committed to delivering outstanding
                   results for your web projects.
-                </m.p>
+                </motion.p>
                 <br />
-                <m.p
+                <motion.p
                   variants={animateSlideSide}
                   viewport={{ once: true }}
                   initial={animateSlideSide.initial}
@@ -166,9 +166,9 @@ export default function Home() {
                   scalable server-side applications. I prioritize optimization
                   and clean code, guaranteeing fast and efficient websites that
                   exceed expectations.
-                </m.p>
+                </motion.p>
                 <br />
-                <m.p
+                <motion.p
                   variants={animateSlideSide}
                   viewport={{ once: true }}
                   initial={animateSlideSide.initial}
@@ -182,28 +182,28 @@ export default function Home() {
                   will collaborate closely with you throughout the development
                   process, ensuring that your vision is brought to life and
                   delivering a remarkable online presence for your business.
-                </m.p>
+                </motion.p>
                 <Button
                   string={"learn more"}
                   layout={{ marginTop: "4rem" }}
                   location={"/Projects"}
                 />
               </div>
-              <m.div
+              <motion.div
                 variants={animateSlideLeft}
                 viewport={{ once: true }}
                 whileInView={animateSlideLeft.animate}
                 initial={animateSlideLeft.initial}
                 transition={animateSlideLeft.transition}
                 className={indexStyles.about__right}
-              ></m.div>
+              ></motion.div>
             </div>
           </section>
 
           <section id={indexStyles.skills}>
             <content className={indexStyles.skills_container}>
               <div className={indexStyles.skills__right}>
-                <m.h2
+                <motion.h2
                   className={indexStyles.skills__right__content}
                   variants={animateSlideRight}
                   viewport={{ once: true }}
@@ -212,8 +212,8 @@ export default function Home() {
                   transition={animateSlideRight.transition}
                 >
                   Hobbies
-                </m.h2>
-                <m.p
+                </motion.h2>
+                <motion.p
                   className={indexStyles.skills__right__content}
                   variants={animateSlideRight}
                   viewport={{ once: true }}
@@ -229,9 +229,9 @@ export default function Home() {
                   fulfillment in exploring aquaponics, a sustainable method of
                   growing plants in a symbiotic relationship with aquatic
                   animals.
-                </m.p>
+                </motion.p>
                 <br />
-                <m.p
+                <motion.p
                   className={indexStyles.skills__right__content}
                   variants={animateSlideRight}
                   viewport={{ once: true }}
@@ -246,9 +246,9 @@ export default function Home() {
                   video game enthusiast, I engage in immersive virtual worlds,
                   relishing challenging narratives, puzzles, and multiplayer
                   competitions.
-                </m.p>
+                </motion.p>
                 <br />
-                <m.p
+                <motion.p
                   className={indexStyles.skills__right__content}
                   variants={animateSlideRight}
                   viewport={{ once: true }}
@@ -263,7 +263,7 @@ export default function Home() {
                   reflect my curiosity, creativity, and dedication to personal
                   growth, offering me fulfillment and constant intellectual
                   stimulation.
-                </m.p>
+                </motion.p>
                 <Button
                   location={"/skills"}
                   string={"Skills"}
@@ -282,7 +282,7 @@ export default function Home() {
           <section id={indexStyles.recentWork}>
             <div className={indexStyles.recentWorkContainer}>
               <div className={indexStyles.recentWorkTextContainer}>
-                <m.h2
+                <motion.h2
                   className={indexStyles.recentWorkHeader}
                   variants={animateSlideRight}
                   viewport={{ once: true }}
@@ -291,8 +291,8 @@ export default function Home() {
                   transition={animateSlideRight.transition}
                 >
                   Recent Work
-                </m.h2>
-                <m.p
+                </motion.h2>
+                <motion.p
                   variants={animateSlideRight}
                   viewport={{ once: true }}
                   whileInView={animateSlideRight.animate}
@@ -306,10 +306,10 @@ export default function Home() {
                   parturient ut in blandit eget odio. At dui ornare quam
                   senectus non sed eget. Egestas at in consectetur massa massa
                   pulvinar molestie vel iaculis.
-                </m.p>
+                </motion.p>
               </div>
 
-              <m.div
+              <motion.div
                 className={indexStyles.recentWorkGalleryContainer}
                 variants={animateOpacity}
                 viewport={{ once: true }}
@@ -328,7 +328,7 @@ export default function Home() {
                     );
                   }
                 })}
-              </m.div>
+              </motion.div>
             </div>
           </section>
           {/* Contact Me Section */}
@@ -338,7 +338,7 @@ export default function Home() {
                 {/* <Form /> */}
                 <Form />
               </div>
-              <m.div
+              <motion.div
                 className={indexStyles.contactMeContainerRight}
                 variants={animateOpacity}
                 viewport={{ once: true }}
@@ -347,11 +347,11 @@ export default function Home() {
                 transition={animateOpacity.transition}
               >
                 <GoogleMaps />
-              </m.div>
+              </motion.div>
             </div>
           </section>
         </content>
-      </LazyMotion>
+      {/* </LazyMotion> */}
     </main>
   );
 }
