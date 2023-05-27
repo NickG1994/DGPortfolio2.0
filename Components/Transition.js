@@ -1,23 +1,22 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
-import { AnimatePresence, motion } from "framer-motion";
 import style from "../styles/Transition.module.css";
 import indexStyle from '../styles/Home.module.css'
-import { loadingVariant } from "../data/framer-motion config";
-
+//footer and navigation component. 
 import Navigation from "../Components/Navigation/Navigation";
 import Footer from "../Components/Footer.js";
-
+// Framer motion config files and component.
+import { AnimatePresence, motion } from "framer-motion";
 import { animateOpacity } from "../data/framer-motion config";
 
-const Transition = ({ children }) => {
+export const Transition = ({ children }) => {
   const Router = useRouter();
-
+  console.log(Router.route)
   return (
     <div style={{ display: "flex", overflow: "hidden", width: "100%" }}>
       {/* Navigation Component */}
       <Navigation />
-      <AnimatePresence mode={"popLayout"} initial={true}>
+
         {/*Animate the children component/pages*/}
         <motion.div
           className={style.mainContainer}
@@ -28,12 +27,9 @@ const Transition = ({ children }) => {
           transition={animateOpacity.transition}
           key={Router.route}
         >
-          <>
           {children}
-          </>
-
         </motion.div>
-      </AnimatePresence>
+
     </div>
   );
 };
