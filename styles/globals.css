@@ -42,3 +42,96 @@ body::before {
   opacity: 0.5;
   background: url('../public/img/SVG/bg.svg');
 }
+
+
+.skills_container_inner  {
+    display: flex;
+    justify-content: space-between;
+    padding:0 var(--mainPadding);
+    height: 100vh;
+    align-items: center;
+    -webkit-box-align: center;
+    justify-content: center;
+}
+.skills_container_inner::before {
+    content: "";
+    position: relative;
+    z-index: 10000;
+    opacity: 1;
+    background-color: black;
+    background: url("../public/img/skills/Project_76-01.png") no-repeat;
+    background-size: cover;
+}
+.skills_container::after {
+    content: "";
+    position: absolute;
+    background-size: cover;
+    inset: 0;
+    background-color: var(--backGround);
+    opacity: 0.2;
+    z-index: -1;
+}
+
+.left {
+    flex: .5;
+}
+
+.left h2{
+ color: var(--headerColor);
+ font-size: 4rem;
+ font-weight: 600;
+ text-transform: uppercase;
+ margin-bottom: 1rem;
+}
+
+.right{
+    flex:.5;
+    width: 100%;
+}
+
+.paragraph {
+    font-size: 1rem;
+    color: whitesmoke;
+}
+
+.image {
+    vertical-align:middle;
+}
+
+.imageContainer {
+    position: relative;
+    border: .1rem solid red;
+}
+
+.gears {
+    position: absolute !important;
+}
+
+@media only screen and (min-width: 960px) {
+    .skills_container {
+
+    } 
+}
+
+@media only screen and (min-width: 1440px) {
+    .skills_container {
+    } 
+}
+
+@media only screen and (min-width: 2000px) {
+    .SkillsContainer {
+
+    } 
+}
+
+@media only screen and (max-width: 580px), (max-width: 960px) {
+    .SkillsContainer {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width:960px) {
+    .SkillsContainer {
+        flex-direction: column;
+    }  
+}
