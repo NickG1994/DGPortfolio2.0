@@ -6,13 +6,6 @@
  --media queries
 */
 
-/* Testing styling  */
-.testing {
-  color: red;
-  font-size: 21px;
-  text-align: center;
-}
-
 /* Desktop Styling */
 /* font styling */
 .mainContainer * > h2 {
@@ -127,7 +120,6 @@
   align-items:center;
   height: inherit;
 }
-
 /* hero courasel layout style */
 /* next.js automatically adds span tags. need to style all span! */
 .courselContentContainer {
@@ -137,7 +129,6 @@
   z-index: 100;
   width: 100%;
 }
-
 /* end hero coursel layout style */
 /* end hero layout style */
 /* ###################################################### */
@@ -177,9 +168,10 @@
 flex: 0.4;
 }
 .about__right {
-  background: url('../public/img/vector art 1.png') center no-repeat ;
+  background: url('../assets/img/bg-web.png') center no-repeat ;
   background-size: contain;
-flex: 0.6;
+  background-position-y: top;
+  flex: 0.6;
 }
 .about__content { max-width: 90%; }
 
@@ -188,13 +180,21 @@ flex: 0.6;
 /* skills layout style*/
 .skills_container {
   display: flex;
+  flex-direction: row-reverse;
 }
 
 .skills__right {
 flex: .4;
+margin-left: 3rem;
 }
 .skills__left {
   flex: .6;
+  margin-right: 3rem;
+}
+.skills__left hobbiesImg{
+  object-fit:fill;
+  width: 40% !important;
+  height: 50% !important;
 }
 /* end skills layout style*/
 /*#####################################################*/
@@ -288,16 +288,12 @@ opacity: 0.2;
   margin-right: 1rem;
 }
 /* endContact Me layout style */
-
-
 #about, #skills, #contactMe, .recentWorkTextContainer, 
 .courselContentContainer
 , .portfolioTop {
-  padding: 0 2em;
+  padding: 0 var(--mainPadding);
   margin-bottom: 4em;
 }
-
-
 /* End layout */
 
 /* For 960 pixel screen size or more */
@@ -528,6 +524,7 @@ opacity: 0.2;
     letter-spacing: 0.01rem;
     color:whitesmoke;
     line-height: 1.4rem;
+    max-width:-moz-fit-content;
     max-width: fit-content;
   }
 

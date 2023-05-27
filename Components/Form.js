@@ -1,8 +1,11 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import styles from "../styles/Form.module.css";
-import { getNativeSelectUtilityClasses } from "@mui/material";
 import ClipLoader from "react-spinners/ClipLoader";
+
+//import framer motion and config animations
+import { m, LazyMotion, domAnimation } from "framer-motion";
+import { animateOpacity } from "../data/framer-motion config";
 
 function Form() {
   let formFields = {
@@ -20,11 +23,13 @@ function Form() {
     subject: [],
     message: [],
   });
-
+  //this useEffect will update formdata to reflect validation and format.
   useEffect(() => {
     formDataValidation(formData);
   }, [formData]);
-
+  //This useAffect will check if errors object length is greater then 0
+  // Then it will setTimout for 3seconds to clear the form and set the isSubmit to false
+  // else
   useEffect(() => {
     if (
       (isSubmitted && errors.name.length === 0,
@@ -46,20 +51,25 @@ function Form() {
   function clearForm() {
     getFormData(formFields);
   }
-
+  //This function will pass formdata as paremeter
+  //check the inputfield variable for any validation and format.
+  //sets the error object with errors. that will return
   function formDataValidation(formData) {
     const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
     const errorsPush = { name: [], email: [], subject: [], message: [] };
-
+    //checking if formdata has no data or is null.
+    //push keyname to errors array.
     for (let keys in formData) {
       if (formData[keys] === null || formData[keys] === "") {
         errorsPush[keys].push(`${keys} require`);
+        console.log(errorsPush[keys]);
       }
     }
-
+    //test the input from form for email format.
     if (regex.test(formData.email) === false) {
       errorsPush.email.push("please enter email format");
     }
+    //sets the errors inside the arrays object
     setErrors({
       ...errors,
       name: errorsPush.name,
@@ -96,11 +106,25 @@ function Form() {
   }
 
   return (
-    <>
+    <LazyMotion features={domAnimation}>
       <form className={styles.form}>
-        <h1> Contact Me </h1>
+        <m.h1
+          variants={animateOpacity}
+          viewport={{ once: true }}
+          whileInView={animateOpacity.animate}
+          initial={animateOpacity.initial}
+          transition={{ ...animateOpacity.transition, delay: 0.2 }}
+        >
+          Contact Me
+        </m.h1>
+        <h3>I love to hear from you. Send me a message!</h3>
         <fieldset className={styles.field}>
-          <input
+          <m.input
+            variants={animateOpacity}
+            viewport={{ once: true }}
+            whileInView={animateOpacity.animate}
+            initial={animateOpacity.initial}
+            transition={{ ...animateOpacity.transition, delay: 0.4 }}
             className={
               styles.name +
               " " +
@@ -124,7 +148,7 @@ function Form() {
           </label>
         </fieldset>
         <fieldset className={styles.field}>
-          <input
+          <m.input
             onChange={(e) => {
               getFormData({ ...formData, email: e.target.value });
             }}
@@ -139,6 +163,11 @@ function Form() {
             type="email"
             required
             name="txtEmail"
+            variants={animateOpacity}
+            viewport={{ once: true }}
+            whileInView={animateOpacity.animate}
+            initial={animateOpacity.initial}
+            transition={{ ...animateOpacity.transition, delay: 0.4 }}
           />
           <label className={styles.placeholder} htmlFor="txtEmail">
             Email:
@@ -148,7 +177,7 @@ function Form() {
           </label>
         </fieldset>
         <fieldset className={styles.field}>
-          <input
+          <m.input
             name="txtSubject"
             className={
               styles.subject +
@@ -161,6 +190,11 @@ function Form() {
             onChange={(e) => {
               getFormData({ ...formData, subject: e.target.value });
             }}
+            variants={animateOpacity}
+            viewport={{ once: true }}
+            whileInView={animateOpacity.animate}
+            initial={animateOpacity.initial}
+            transition={{ ...animateOpacity.transition, delay: 0.4 }}
           />
           <label className={styles.placeholder} htmlFor="txtSubject">
             subject:{" "}
@@ -188,11 +222,16 @@ function Form() {
             Optional:
           </label>
         </fieldset>
-        <button
+        <m.button
           className={styles.button}
           onClick={(e) => {
             handleSubmit(e);
           }}
+          variants={animateOpacity}
+          viewport={{ once: true }}
+          whileInView={animateOpacity.animate}
+          initial={animateOpacity.initial}
+          transition={{ ...animateOpacity.transition, delay: 0.4 }}
         >
           <span></span>
           <span className={styles.buttonText}>
@@ -206,9 +245,9 @@ function Form() {
               />
             )}
           </span>
-        </button>
+        </m.button>
       </form>
-    </>
+    </LazyMotion>
   );
 }
 

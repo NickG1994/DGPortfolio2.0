@@ -1,12 +1,8 @@
 .galleryGrid{
     display: grid;
-    grid-template-rows: auto;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(470px, 1fr));
 }
 .gridItem {
-    position: relative;
-    width: 100%;
-    height: auto;
     cursor: pointer;
   }
   .gridItem > span {
@@ -32,7 +28,16 @@
     opacity: 1;
     background:rgba(12, 12, 12, 0.5);
   }
-
+  .gridItem span {
+    width: 100% ;
+    height: 100%;
+    object-fit: fill;
+  }
+  .galleryImg {
+    object-fit:fill;
+    width: 100%;
+    height: 100%;
+  }
   
   .overlayContainer {
     transition: all 500ms ease;
@@ -47,10 +52,22 @@
     transform:translateY(-1rem);
   }
 
+  /* Grid gallery loading animation */
+  .loadingContainer{
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .close svg {
+    opacity: 0;
+  }
+
   @media only screen and (max-width:580px) {
     .galleryGrid{
-      display: grid;
-      grid-template-rows: auto;
       grid-template-columns: repeat(auto-fill, 50%);
-  }
+    }
   }

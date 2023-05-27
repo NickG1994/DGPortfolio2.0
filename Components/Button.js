@@ -1,25 +1,23 @@
 import React from "react";
 import Link from "next/link";
 import styles from "../styles/Button.module.css";
-
-import { LazyMotion, m } from "framer-motion";
-import {
-  textMovingUp,
-  textMovingDownDelayTwo,
-} from "../data/framer-motion config";
-import { domAnimation } from "framer-motion";
+//import framer motion components and animation files
+import { LazyMotion, m, domAnimation } from "framer-motion";
+import { animateSlideDown } from "../data/framer-motion config";
 
 function Button({ string, location, layout }) {
   return (
-    <LazyMotion features={domAnimation} strict>
+    <LazyMotion features={domAnimation}>
       <m.div
-        initial={textMovingDownDelayTwo.initial}
-        animate={{ ...textMovingDownDelayTwo.animate, delay: 1 }}
-        exit={textMovingDownDelayTwo.exit}
+        variants={animateSlideDown}
+        initial={animateSlideDown.initial}
+        whileInView={animateSlideDown.animate}
+        viewport={{ once: true }}
+        transition={{ ...animateSlideDown.transition, delay: 2.5 }}
         style={layout}
       >
         <Link className={styles.button} href={location ? location : "#"}>
-          <div className={styles.button__content}>
+          <div className={styles.button__content} style={layout && null}>
             <span></span> <span className={styles.buttonText}>{string}</span>
           </div>
         </Link>
