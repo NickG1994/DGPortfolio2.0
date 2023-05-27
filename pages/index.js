@@ -80,7 +80,7 @@ export default function Home() {
             </div>
           </section>
           {/* portfolio Section */}
-          {/* This is where a problem is accuring. Fix this section.  */}
+          {/* This is where a problem was occurring. Fix this section.  */}
           <section id={indexStyles.portfolio}>
             <div className={indexStyles.portfolioTop}>
               <m.h2
