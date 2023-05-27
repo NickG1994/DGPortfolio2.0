@@ -33,6 +33,8 @@ const GoogleMaps = dynamic(() => import("../Components/GoogleMaps.js"), {
   ssr: false,
 });
 
+console.log("home styles: " , {...indexStyles})
+
 export default function Home() {
   return (
     <main>
