@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
 import { AnimatePresence, motion } from "framer-motion";
 import style from "../styles/Transition.module.css";
+import indexStyle from '../styles/Home.module.css'
 import { loadingVariant } from "../data/framer-motion config";
 
 import Navigation from "../Components/Navigation/Navigation";
@@ -16,7 +17,7 @@ const Transition = ({ children }) => {
     <div style={{ display: "flex", overflow: "hidden", width: "100%" }}>
       {/* Navigation Component */}
       <Navigation />
-      <AnimatePresence mode={"popLayout"} initial="true">
+      <AnimatePresence mode={"popLayout"} initial={true}>
         {/*Animate the children component/pages*/}
         <motion.div
           className={style.mainContainer}
