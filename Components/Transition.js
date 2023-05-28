@@ -23,9 +23,9 @@ const Transition = ({ children }) => {
           variants={animateOpacity}
           initial={animateOpacity.initial}
           animate={animateOpacity.animate}
-          exit={animateOpacity.exit}
           transition={animateOpacity.transition}
           key={Router.route}
+          
         >
           {children}
         </motion.div>
