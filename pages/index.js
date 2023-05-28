@@ -10,7 +10,6 @@ import Form from "../Components/Form";
 import Coursel from "../Components/Courasel/Coursel";
 import Button from "../Components/Button";
 import Modal from "../Components/Modal.js";
-import { animate, motion } from "framer-motion";
 import GridGallery from "../Components/GridGallery";
 // Import component for loading images.
 import ImageLoader from "../Components/ImageLoader.js";
@@ -20,7 +19,7 @@ import { SvgHobbies } from "../data/SvgHobbies";
 // import Data
 import { projects } from "../data/projects_data";
 //import framer-motion (Animation) and Animation Files
-import { m, LazyMotion, domAnimation } from "framer-motion";
+import {  motion } from "framer-motion";
 import {
   animateSlideDown,
   animateSlideSide,
@@ -33,8 +32,6 @@ const GoogleMaps = dynamic(() => import("../Components/GoogleMaps.js"), {
   ssr: false,
 });
 
-console.log("home styles: " , {...indexStyles})
-
 export default function Home() {
   return (
     <main>
@@ -42,11 +39,11 @@ export default function Home() {
         <title>Nick - Home</title>
         <meta name="description" content="Dominic gaona's portoflio" />
         <link rel="icon" href="/img/DominicGaonaTabLogo.ico" />
-        <link rel="stylsheet" href="/styles/Home.module.css"></link>
+        <link rel="stylsheet" href="../styles/Home.module.css"></link>
       </Head>
       {/* Main content */}
       {/*LazyMotion features={domAnimation} initial={}>*/}
-        <content className={indexStyles.mainContainer}>
+        <motion.content className={indexStyles.mainContainer} initial={animateOpacity.initial} animate={animateOpacity.animate} exit={animateOpacity.exit} transition={animateOpacity.transition}>
           {/* Hero Section */}
           <section id={indexStyles.hero}>
             <div className={`${indexStyles.heroContainer}`}>
@@ -350,7 +347,7 @@ export default function Home() {
               </motion.div>
             </div>
           </section>
-        </content>
+        </motion.content>
       {/* </LazyMotion> */}
     </main>
   );

@@ -16,7 +16,7 @@ const Transition = ({ children }) => {
     <div style={{ display: "flex", overflow: "hidden", width: "100%" }}>
       {/* Navigation Component */}
       <Navigation />
-      <AnimatePresence mode={"wait"} initial={true} >
+      <AnimatePresence mode={"popLayout"} initial={true} >
         {/*Animate the children component/pages*/}
         <motion.div
           className={style.mainContainer}
@@ -24,8 +24,8 @@ const Transition = ({ children }) => {
           initial={animateOpacity.initial}
           animate={animateOpacity.animate}
           transition={animateOpacity.transition}
+          exit={animateOpacity.exit}
           key={Router.route}
-          
         >
           {children}
         </motion.div>
