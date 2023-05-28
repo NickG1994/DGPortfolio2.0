@@ -13,11 +13,12 @@ const Transition = ({ children }) => {
   const Router = useRouter();
 
   return (
-    <div style={{ display: "flex", overflow: "hidden", width: "100%" }}>
+    <div style={{ display: 'flex', overflow: 'hidden', width: '100%' }}>
       {/* Navigation Component */}
       <Navigation />
-      <AnimatePresence mode={"popLayout"} initial={true} >
-        {/*Animate the children component/pages*/}
+
+      <AnimatePresence mode='wait'>
+        {/* Animate the children component/pages */}
         <motion.div
           className={style.mainContainer}
           variants={animateOpacity}
