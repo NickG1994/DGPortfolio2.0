@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import Skillstyle from "../styles/Skills.module.css";
+import styles from "../styles/Skills.module.css";
 import Image from "next/image";
 import { m, LazyMotion, domAnimation, animate } from "framer-motion";
 import { animateOpacity } from "../data/framer-motion config";
@@ -10,7 +10,7 @@ function Skills() {
   return (
     <LazyMotion features={domAnimation}>
       <m.main
-        className={Skillstyle.skills_container}
+        className={styles.skills_container}
         variants={animateOpacity}
         initial={animateOpacity.initial}
         animate={animateOpacity.animate}
@@ -23,8 +23,8 @@ function Skills() {
           <link rel="icon" href="/img/DominicGaonaTabLogo.ico" />
         </Head>
 
-        <div className={Skillstyle.skills_container_inner}>
-          <div className={Skillstyle.left}>
+        <div className={styles.skills_container_inner}>
+          <div className={styles.left}>
             <m.h2
               variants={animateOpacity}
               initial={animateOpacity.initial}
@@ -35,7 +35,7 @@ function Skills() {
               My Skills
             </m.h2>
             <m.p
-              className={Skillstyle.paragraph}
+              className={styles.paragraph}
               variants={animateOpacity}
               initial={animateOpacity.initial}
               animate={animateOpacity.animate}
@@ -54,7 +54,7 @@ function Skills() {
             </m.p>
             <br />
             <m.p
-              className={Skillstyle.paragraph}
+              className={styles.paragraph}
               variants={animateOpacity}
               initial={animateOpacity.initial}
               animate={animateOpacity.animate}
@@ -75,7 +75,7 @@ function Skills() {
             </m.p>
             <br />
             <m.p
-              className={Skillstyle.paragraph}
+              className={styles.paragraph}
               variants={animateOpacity}
               initial={animateOpacity.initial}
               animate={animateOpacity.animate}
@@ -91,7 +91,7 @@ function Skills() {
             </m.p>
             <br />
             <m.p
-              className={Skillstyle.paragraph}
+              className={styles.paragraph}
               variants={animateOpacity}
               initial={animateOpacity.initial}
               animate={animateOpacity.animate}
@@ -103,8 +103,8 @@ function Skills() {
               scalable, and customized solutions for your specific needs.
             </m.p>
           </div>
-          <div className={Skillstyle.right}>
-            <div className={Skillstyle.imageContainer}>
+          <div className={styles.right}>
+            <div className={styles.imageContainer}>
               <ImageLoader
                 imgSrc={require("../assets/img/skills/bg-light.png")}
                 alt="skill image"

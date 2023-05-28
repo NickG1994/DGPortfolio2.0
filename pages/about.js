@@ -1,5 +1,5 @@
 import React from "react";
-import AboutStyle from "../styles/About.module.css";
+import styles from "../styles/About.module.css";
 import HTMLSVG from "../Components/HTMLSVG";
 import { dataSVG } from "../data/SVG.js";
 
@@ -10,9 +10,9 @@ import { animateOpacity } from "../data/framer-motion config";
 export default function about() {
   return (
     <LazyMotion features={domAnimation}>
-      <div className={AboutStyle.about__container}>
-        <div className={AboutStyle.about__content__container}>
-          <div className={AboutStyle.about__container__left}>
+      <div className={styles.about__container}>
+        <div className={styles.about__content__container}>
+          <div className={styles.about__container__left}>
             <m.h1
               variants={animateOpacity}
               initial={animateOpacity.initial}
@@ -70,9 +70,9 @@ export default function about() {
               proin in elit ante neque lorem purus aliquet est.
             </m.p>
           </div>
-          <div className={AboutStyle.about__container__right}>
+          <div className={styles.about__container__right}>
             {dataSVG.map((svgImage, index) => (
-              <m.span key={index} className={AboutStyle.svgWrapper}>
+              <m.span key={index} className={styles.svgWrapper}>
                 <h3>{svgImage.iconName}</h3>
                 <HTMLSVG key={index} svgString={svgImage.path} />
               </m.span>
