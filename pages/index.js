@@ -29,6 +29,7 @@ import {
 } from "../data/framer-motion config.js";
 
 import GoogleMaps from "../Components/GoogleMaps.js";
+import globalStyles from "../styles/globals.css";
 
 export default function Home() {
   return (
