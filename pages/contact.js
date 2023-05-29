@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../styles/Contact.module.css";
+import style from "../styles/Contact.module.css";
 import Form from "../Components/Form";
 
 //import component icons
@@ -24,20 +24,20 @@ export default function contact() {
         <link rel="icon" href="/img/DominicGaonaTabLogo.ico" />
       </Head>
       <LazyMotion features={domAnimation}>
-        <div className={styles.contact__container}>
+        <div className={style.contact__container}>
           <m.div
-            className={styles.contact__content__container}
+            className={style.contact__content__container}
             variants={animateOpacity}
             initial={animateOpacity.initial}
             animate={animateOpacity.animate}
             exit={animateOpacity.exit}
             transition={{ ...animateOpacity.exit, delay: 1 }}
           >
-            <div className={styles.contact__left}>
-              <ul className={styles.contact__cards}>
-                <li className={styles.contact__card}>
+            <div className={style.contact__left}>
+              <ul className={style.contact__cards}>
+                <li className={style.contact__card}>
                   <m.div
-                    className={styles.card__content}
+                    className={style.card__content}
                     variants={animateSlideLeft}
                     initial={animateSlideLeft.initial}
                     animate={animateSlideLeft.animate}
@@ -61,7 +61,7 @@ export default function contact() {
                     <MailIcon />
                   </m.span>
                 </li>
-                <li className={styles.contact__card}>
+                <li className={style.contact__card}>
                   <m.span
                     variants={animateSlideRight}
                     initial={animateSlideRight.initial}
@@ -73,7 +73,7 @@ export default function contact() {
                   </m.span>
 
                   <m.div
-                    className={styles.card__content}
+                    className={style.card__content}
                     variants={animateSlideRight}
                     initial={animateSlideRight.initial}
                     animate={animateSlideRight.animate}
@@ -88,9 +88,9 @@ export default function contact() {
                     </p>
                   </m.div>
                 </li>
-                <li className={styles.contact__card}>
+                <li className={style.contact__card}>
                   <m.div
-                    className={styles.card__content}
+                    className={style.card__content}
                     variants={animateSlideLeft}
                     initial={animateSlideLeft.initial}
                     animate={animateSlideLeft.animate}
@@ -116,7 +116,7 @@ export default function contact() {
                 </li>
               </ul>
             </div>
-            <div className={styles.contact__right}>
+            <div className={style.contact__right}>
               <Form />
             </div>
           </m.div>

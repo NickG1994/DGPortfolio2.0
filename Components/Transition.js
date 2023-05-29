@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
-import styles from "../styles/Transition.module.css";
+import style from "../styles/Transition.module.css";
 //footer and navigation component. 
 import Navigation from "../Components/Navigation/Navigation";
 import Footer from "../Components/Footer.js";
@@ -12,14 +12,14 @@ const Transition = ({ children }) => {
   const Router = useRouter();
 
   return (
-    <div styles={{ display: 'flex', overflow: 'hidden', width: '100%' }}>
+    <div style={{ display: 'flex', overflow: 'hidden', width: '100%' }}>
       {/* Navigation Component */}
       <Navigation />
 
       <AnimatePresence mode='wait'>
         {/* Animate the children component/pages */}
         <motion.div
-          className={styles.mainContainer}
+          className={style.mainContainer}
           variants={animateOpacity}
           initial={animateOpacity.initial}
           animate={animateOpacity.animate}

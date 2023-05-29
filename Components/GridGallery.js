@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from "react";
-import styles from "../styles/gridGallery.module.css";
+import style from "../styles/gridGallery.module.css";
 import { projects } from "../data/projects_data";
 import Image from "next/image";
 import Modal from "./Modal";
@@ -24,15 +24,15 @@ function GridGallery() {
 
   return (
     <LazyMotion features={domAnimation}>
-      <div className={styles.galleryGrid}>
+      <div className={style.galleryGrid}>
         {projects.map((project, index) => (
           <m.div
-            className={styles.front}
+            className={style.front}
             style={{ position: "relative" }}
             key={index}
           >
             <m.div
-              className={isLoading ? styles.loadingContainer : ""}
+              className={isLoading ? style.loadingContainer : ""}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1, background: "#ECB365", zIndex: 100 }}
               exit={{ opacity: 0, backgroundColor: "transparent" }}
@@ -58,20 +58,20 @@ function GridGallery() {
               onClick={(e) => {
                 toggleModal(e);
               }}
-              className={styles.gridItem}
+              className={style.gridItem}
             >
               <Image
                 loading="lazy"
-                className={styles.galleryImg}
+                className={style.galleryImg}
                 src={project.src}
                 onLoad={() => {
                   setIsLoading((prevLoading) => (prevLoading = false));
                 }}
               />
 
-              <div className={styles.overlay}>
-                <div id={index} className={styles.overlayContainer}>
-                  <p className={styles.overlayText}>{project.Header}</p>
+              <div className={style.overlay}>
+                <div id={index} className={style.overlayContainer}>
+                  <p className={style.overlayText}>{project.Header}</p>
                 </div>
               </div>
             </m.div>

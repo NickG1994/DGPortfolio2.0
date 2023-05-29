@@ -1,6 +1,6 @@
 import React from "react";
-// import styles
-import styles from "../styles/Home.module.css";
+// import style
+import style from "../styles/Home.module.css";
 //import next components
 import dynamic from "next/dynamic";
 import Head from "next/head";
@@ -28,9 +28,7 @@ import {
   animateOpacity,
 } from "../data/framer-motion config.js";
 
-const GoogleMaps = dynamic(() => import("../Components/GoogleMaps.js"), {
-  ssr: false,
-});
+import GoogleMaps from "../Components/GoogleMaps.js";
 
 export default function Home() {
   return (
@@ -39,16 +37,16 @@ export default function Home() {
         <title>Nick - Home</title>
         <meta name="description" content="Dominic gaona's portoflio" />
         <link rel="icon" href="/img/DominicGaonaTabLogo.ico" />
-        <link rel="stylsheet" href="../styles/Home.css"></link>
+        <link rel="stylsheet" href="../style/Home.css"></link>
       </Head>
       {/* Main content */}
       {/*LazyMotion features={domAnimation} initial={}>*/}
-        <motion.content className={styles.mainContainer} initial={animateOpacity.initial} animate={animateOpacity.animate} exit={animateOpacity.exit} transition={animateOpacity.transition}>
+        <motion.content className={style.mainContainer} initial={animateOpacity.initial} animate={animateOpacity.animate} exit={animateOpacity.exit} transition={animateOpacity.transition}>
           {/* Hero Section */}
-          <section id={styles.hero}>
-            <div className={`${styles.heroContainer}`}>
+          <section id={style.hero}>
+            <div className={`${style.heroContainer}`}>
               <Coursel />
-              <div className={styles.courselContentContainer}>
+              <div className={style.courselContentContainer}>
                 <motion.h1
                   variants={animateSlideDown}
                   initial={animateSlideDown.initial}
@@ -78,8 +76,8 @@ export default function Home() {
           </section>
           {/* portfolio Section */}
           {/* This is where a problem was occurring. Fix this section.  */}
-          <section id={styles.portfolio}>
-            <div className={styles.portfolioTop}>
+          <section id={style.portfolio}>
+            <div className={style.portfolioTop}>
               <motion.h2
                 variants={animateSlideSide}
                 initial={animateSlideSide.initial}
@@ -107,8 +105,8 @@ export default function Home() {
                 skills.
               </motion.p>
             </div>
-            <div className={styles.portfolioBottom}>
-              <div className={styles.gallery}>
+            <div className={style.portfolioBottom}>
+              <div className={style.gallery}>
                 {/* The gridGallery is causing the issue with further inspection. */}
 
                 <GridGallery />
@@ -116,9 +114,9 @@ export default function Home() {
             </div>
           </section>
           {/* About Me section skills and hobbies */}
-          <section id={styles.about}>
-            <div className={styles.about__container}>
-              <div className={styles.about__left}>
+          <section id={style.about}>
+            <div className={style.about__container}>
+              <div className={style.about__left}>
                 <motion.h2
                   variants={animateSlideSide}
                   viewport={{ once: true }}
@@ -134,7 +132,7 @@ export default function Home() {
                   initial={animateSlideSide.initial}
                   whileInView={animateSlideSide.animate}
                   transition={{ ...animateSlideSide.transition, delay: 1.5 }}
-                  className={styles.about__content}
+                  className={style.about__content}
                 >
                   Allow me to introduce myself, your dedicated and highly
                   skilled web developer. I am passionate about crafting
@@ -152,7 +150,7 @@ export default function Home() {
                   initial={animateSlideSide.initial}
                   whileInView={animateSlideSide.animate}
                   transition={{ ...animateSlideSide.transition, delay: 2 }}
-                  className={styles.about__content}
+                  className={style.about__content}
                 >
                   In front-end development, I bring creativity and meticulous
                   attention to detail to create visually stunning and
@@ -171,7 +169,7 @@ export default function Home() {
                   initial={animateSlideSide.initial}
                   whileInView={animateSlideSide.animate}
                   transition={{ ...animateSlideSide.transition, delay: 2 }}
-                  className={styles.about__content}
+                  className={style.about__content}
                 >
                   As your dedicated web developer, I am devoted to understanding
                   your unique requirements and going above and beyond to meet
@@ -192,15 +190,15 @@ export default function Home() {
                 whileInView={animateSlideLeft.animate}
                 initial={animateSlideLeft.initial}
                 transition={animateSlideLeft.transition}
-                className={styles.about__right}
+                className={style.about__right}
               ></motion.div>
             </div>
           </section>
-          <section id={styles.skills}>
-            <content className={styles.skills_container}>
-              <div className={styles.skills__right}>
+          <section id={style.skills}>
+            <content className={style.skills_container}>
+              <div className={style.skills__right}>
                 <motion.h2
-                  className={styles.skills__right__content}
+                  className={style.skills__right__content}
                   variants={animateSlideRight}
                   viewport={{ once: true }}
                   whileInView={animateSlideRight.animate}
@@ -210,7 +208,7 @@ export default function Home() {
                   Hobbies
                 </motion.h2>
                 <motion.p
-                  className={styles.skills__right__content}
+                  className={style.skills__right__content}
                   variants={animateSlideRight}
                   viewport={{ once: true }}
                   whileInView={animateSlideRight.animate}
@@ -228,7 +226,7 @@ export default function Home() {
                 </motion.p>
                 <br />
                 <motion.p
-                  className={styles.skills__right__content}
+                  className={style.skills__right__content}
                   variants={animateSlideRight}
                   viewport={{ once: true }}
                   whileInView={animateSlideRight.animate}
@@ -245,7 +243,7 @@ export default function Home() {
                 </motion.p>
                 <br />
                 <motion.p
-                  className={styles.skills__right__content}
+                  className={style.skills__right__content}
                   variants={animateSlideRight}
                   viewport={{ once: true }}
                   whileInView={animateSlideRight.animate}
@@ -266,7 +264,7 @@ export default function Home() {
                   layout={{ marginTop: "4rem" }}
                 />
               </div>
-              <div className={styles.skills__left}>
+              <div className={style.skills__left}>
                 <ImageLoader
                   imgSrc={require("../public/img/hobbies.png")}
                   alt={"hobbies image"}
@@ -275,11 +273,11 @@ export default function Home() {
             </content>
           </section>
           {/* Recent Work Section */}
-          <section id={styles.recentWork}>
-            <div className={styles.recentWorkContainer}>
-              <div className={styles.recentWorkTextContainer}>
+          <section id={style.recentWork}>
+            <div className={style.recentWorkContainer}>
+              <div className={style.recentWorkTextContainer}>
                 <motion.h2
-                  className={styles.recentWorkHeader}
+                  className={style.recentWorkHeader}
                   variants={animateSlideRight}
                   viewport={{ once: true }}
                   whileInView={animateSlideRight.animate}
@@ -306,7 +304,7 @@ export default function Home() {
               </div>
 
               <motion.div
-                className={styles.recentWorkGalleryContainer}
+                className={style.recentWorkGalleryContainer}
                 variants={animateOpacity}
                 viewport={{ once: true }}
                 whileInView={animateOpacity.animate}
@@ -318,7 +316,7 @@ export default function Home() {
                     return (
                       <Image
                         key={index}
-                        className={styles.recentItems}
+                        className={style.recentItems}
                         src={project.src}
                       />
                     );
@@ -328,14 +326,14 @@ export default function Home() {
             </div>
           </section>
           {/* Contact Me Section */}
-          <section id={styles.contactMe}>
-            <div className={styles.contactMeContainer}>
-              <div className={styles.contactMeContainerLeft}>
+          <section id={style.contactMe}>
+            <div className={style.contactMeContainer}>
+              <div className={style.contactMeContainerLeft}>
                 {/* <Form /> */}
                 <Form />
               </div>
               <motion.div
-                className={styles.contactMeContainerRight}
+                className={style.contactMeContainerRight}
                 variants={animateOpacity}
                 viewport={{ once: true }}
                 whileInView={animateOpacity.animate}
