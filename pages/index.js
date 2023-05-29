@@ -29,7 +29,6 @@ import {
 } from "../data/framer-motion config.js";
 
 import GoogleMaps from "../Components/GoogleMaps.js";
-import globalStyles from "../styles/globals.css";
 
 export default function Home() {
   return (
@@ -38,7 +37,7 @@ export default function Home() {
         <title>Nick - Home</title>
         <meta name="description" content="Dominic gaona's portoflio" />
         <link rel="icon" href="/img/DominicGaonaTabLogo.ico" />
-        <link rel="stylsheet" href="../style/Home.css"></link>
+        <link rel="stylsheet" href="../styles/Home.css"></link>
       </Head>
       {/* Main content */}
       {/*LazyMotion features={domAnimation} initial={}>*/}
