@@ -8,8 +8,7 @@ export const animateSlideDown = {
     opacity: 0,
   },
   transition: {
-    duration: 2,
-    delay: 0.5,
+    duration: 2
   },
 };
 export const animateSlideSide = {

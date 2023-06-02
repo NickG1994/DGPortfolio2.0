@@ -12,19 +12,24 @@ const Transition = ({ children }) => {
   const Router = useRouter();
 
   return (
-    <motion.div style={{ display: 'flex', overflow: 'hidden', width: '100%' }}           
-    className={style.mainContainer}
-    variants={animateOpacity}
-    initial={animateOpacity.initial}
-    animate={animateOpacity.animate}
-    transition={animateOpacity.transition}
-    exit={animateOpacity.exit}
-    key={Router.route}>
-      {/* Navigation Component */}
-      <Navigation />
+    <div style={{display:"flex"}}>
+        {/* Navigation Component */}
+        <Navigation />
+        <AnimatePresence mode='popLayout' initial={"true"} onExitComplete={() => {window.scrollTo(0,0)}}>
+        <motion.div style={{overflow: 'hidden', width: '100%' }}           
+          className={style.mainContainer}
+          variants={animateOpacity}
+          initial={animateOpacity.initial}
+          animate={animateOpacity.animate}
+          transition={animateOpacity.transition}
+          exit={animateOpacity.exit}
+          key={Router.route}>
         {/* Animate the children component/pages */}
           {children}
     </motion.div>
+    </AnimatePresence>
+    </div>
+
   );
 };
 

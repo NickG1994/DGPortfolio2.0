@@ -1,6 +1,6 @@
 import Transition from "../Components/Transition";
 import globalStyles from "../styles/globals.css";
-import Footer from "../Components/Footer";
+
 import { useRouter } from "next/router";
 import { AnimatePresence, motion } from "framer-motion";
 import style from "../styles/Transition.module.css";
