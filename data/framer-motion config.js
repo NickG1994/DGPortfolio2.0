@@ -67,7 +67,7 @@ export const animateOpacity = {
     
   },
   transition: {
-    duration: 2,
+    duration:60,
     delay: 0.5,
   },
 };
@@ -94,7 +94,6 @@ export const loadingVariant = {
     },
   },
 };
-
 export const textMovingRight = {
   initial: {
     opacity: 0,
@@ -115,7 +114,6 @@ export const textMovingRight = {
     },
   },
 };
-
 export const modal = {
   initial: { opacity: 0, y: -50 },
   animate: {
@@ -135,7 +133,6 @@ export const modal = {
     },
   },
 };
-
 export const svgAnimation = {
   initial: { pathLength: 0 },
   animate: { pathLength: 1, stroke: "#ECB365" },
