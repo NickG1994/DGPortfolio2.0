@@ -32,7 +32,7 @@ import GoogleMaps from "../Components/GoogleMaps.js";
 
 export default function Home() {
   return (
-    <main>
+    <>
       <Head>
         <title>Nick - Home</title>
         <meta name="description" content="Dominic gaona's portoflio" />
@@ -346,6 +346,6 @@ export default function Home() {
           </section>
         </motion.content>
       {/* </LazyMotion> */}
-    </main>
+    </>
   );
 }

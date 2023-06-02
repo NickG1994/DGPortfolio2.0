@@ -11,10 +11,9 @@ function MyApp({ Component }) {
   const Router = useRouter();
 
   return (
-    <Transition>
-      <Component />
-    </Transition>
-
+    <AnimatePresence mode={"popLayout"} initial={true}>
+      <Component key={Router.route}/>
+    </AnimatePresence>
   );
 }
 
