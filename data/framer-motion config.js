@@ -67,8 +67,7 @@ export const animateOpacity = {
     
   },
   transition: {
-    duration:60,
-    delay: 0.5,
+    duration:2,
   },
 };
 export const loadingVariant = {

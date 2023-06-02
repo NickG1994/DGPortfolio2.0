@@ -16,7 +16,6 @@ const Transition = ({ children }) => {
       {/* Navigation Component */}
       <Navigation />
 
-      <AnimatePresence mode='wait' initial={"false"}>
         {/* Animate the children component/pages */}
         <motion.div
           className={style.mainContainer}
@@ -29,7 +28,6 @@ const Transition = ({ children }) => {
         >
           {children}
         </motion.div>
-      </AnimatePresence>
     </div>
   );
 };

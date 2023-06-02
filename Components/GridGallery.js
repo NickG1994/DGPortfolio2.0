@@ -6,7 +6,7 @@ import Modal from "./Modal";
 import { m, LazyMotion, domAnimation } from "framer-motion";
 import { SyncLoader } from "react-spinners";
 import { useEffect } from "react";
-//import framer anmimation object
+//import framer animation object
 import { animateSlideDown } from "../data/framer-motion config";
 
 function GridGallery() {

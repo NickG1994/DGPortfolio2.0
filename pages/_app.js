@@ -11,9 +11,11 @@ function MyApp({ Component }) {
   const Router = useRouter();
 
   return (
-    <Transition>
-      <Component />
-    </Transition>
+    <AnimatePresence mode='wait' initial={"false"}>
+      <Transition>
+        <Component />
+      </Transition>
+    </AnimatePresence>
   );
 }
 
