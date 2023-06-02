@@ -11,9 +11,11 @@ function MyApp({ Component }) {
   const Router = useRouter();
 
   return (
+    <AnimatePresence mode='popLayout' initial={"true"} onExitComplete={() => {window.scrollTo(0,0)}}>
       <Transition>
         <Component />
       </Transition>
+      </AnimatePresence>
   );
 }
 
