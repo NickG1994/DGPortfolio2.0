@@ -4,16 +4,16 @@ import HTMLSVG from "../Components/HTMLSVG";
 import { dataSVG } from "../data/SVG.js";
 
 //import framer motion and animation files
-import { m, LazyMotion, domAnimation } from "framer-motion";
+import { motion} from "framer-motion";
 import { animateOpacity } from "../data/framer-motion config";
 
 export default function about() {
   return (
-    <LazyMotion features={domAnimation}>
+    <>
       <div className={style.about__container}>
         <div className={style.about__content__container}>
           <div className={style.about__container__left}>
-            <m.h1
+            <motion.h1
               variants={animateOpacity}
               initial={animateOpacity.initial}
               animate={animateOpacity.animate}
@@ -21,8 +21,8 @@ export default function about() {
               transition={{ ...animateOpacity.transition, delay: 0.2 }}
             >
               ABOUT ME
-            </m.h1>
-            <m.p
+            </motion.h1>
+            <motion.p
               variants={animateOpacity}
               initial={animateOpacity.initial}
               animate={animateOpacity.animate}
@@ -39,9 +39,9 @@ export default function about() {
               Magna elementum nunc nunc volutpat a. Morbi amet amet ut iaculis
               hendrerit et. Dolor vitae proin in eget consequat interdum. Nunc
               rutrum donec dui ac diam amet sit tincidunt.
-            </m.p>
+            </motion.p>
             <br />
-            <m.p
+            <motion.p
               variants={animateOpacity}
               initial={animateOpacity.initial}
               animate={animateOpacity.animate}
@@ -55,9 +55,9 @@ export default function about() {
               ipsum hendrerit non sem semper. Quis consectetur at imperdiet
               ultricies id sed. Convallis proin in elit ante neque lorem purus
               aliquet est.
-            </m.p>
+            </motion.p>
             <br />
-            <m.p
+            <motion.p
               variants={animateOpacity}
               initial={animateOpacity.initial}
               animate={animateOpacity.animate}
@@ -68,18 +68,18 @@ export default function about() {
               nunc commodo sem. Viverra varius ornare arcu lacus facilisis
               amet.Quis consectetur at imperdiet ultricies id sed. Convallis
               proin in elit ante neque lorem purus aliquet est.
-            </m.p>
+            </motion.p>
           </div>
           <div className={style.about__container__right}>
             {dataSVG.map((svgImage, index) => (
-              <m.span key={index} className={style.svgWrapper}>
+              <motion.span key={index} className={style.svgWrapper}>
                 <h3>{svgImage.iconName}</h3>
-                <HTMLSVG key={index} svgString={svgImage.path} />
-              </m.span>
+                <HTMLSVG svgString={svgImage.path} />
+              </motion.span>
             ))}
           </div>
         </div>
       </div>
-    </LazyMotion>
+    </>
   );
 }

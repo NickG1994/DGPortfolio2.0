@@ -32,7 +32,12 @@ import GoogleMaps from "../Components/GoogleMaps.js";
 
 export default function Home() {
   return (
-    <>
+    <motion.div
+    variants={animateOpacity}
+    initial={animateOpacity.initial} 
+    animate={animateOpacity.animate} 
+    exit={animateOpacity.exit} 
+    transition={animateOpacity.transition}>
       <Head>
         <title>Nick - Home</title>
         <meta name="description" content="Dominic gaona's portoflio" />
@@ -40,13 +45,9 @@ export default function Home() {
       </Head>
       {/* Main content */}
       {/*LazyMotion features={domAnimation} initial={}>*/}
-        <motion.content 
+        <content 
           className={style.mainContainer} 
-          variants={animateOpacity}
-          initial={animateOpacity.initial} 
-          animate={animateOpacity.animate} 
-          exit={animateOpacity.exit} 
-          transition={animateOpacity.transition}>
+          >
           {/* Hero Section */}
           <section id={style.hero}>
             <div className={style.heroContainer}>
@@ -349,8 +350,8 @@ export default function Home() {
               </motion.div>
             </div>
           </section>
-        </motion.content>
+        </content>
       {/* </LazyMotion> */}
-    </>
+    </motion.div>
   );
 }
