@@ -37,7 +37,6 @@ export default function Home() {
         <title>Nick - Home</title>
         <meta name="description" content="Dominic gaona's portoflio" />
         <link rel="icon" href="/img/DominicGaonaTabLogo.ico" />
-        <link rel="stylesheet" href="../styles/Home.css"></link>
       </Head>
       {/* Main content */}
       {/*LazyMotion features={domAnimation} initial={}>*/}
