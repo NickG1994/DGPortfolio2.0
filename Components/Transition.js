@@ -15,8 +15,8 @@ const Transition = ({ children }) => {
     <div style={{display:"flex"}}>
         {/* Navigation Component */}
         <Navigation />
-        <AnimatePresence mode='popLayout' initial={"true"} onExitComplete={() => {window.scrollTo(0,0)}}>
-        <motion.div style={{overflow: 'hidden', width: '100%' }}           
+        <AnimatePresence mode='popLayout' initial={"false"} onExitComplete={() => {window.scrollTo(0,0)}}> 
+        <motion.div style={{width: '100%' }}           
           className={style.mainContainer}
           key={Router.route}>
         {/* Animate the children component/pages */}
@@ -24,7 +24,6 @@ const Transition = ({ children }) => {
     </motion.div>
     </AnimatePresence>
     </div>
-
   );
 };
 
