@@ -40,10 +40,16 @@ export default function Home() {
       </Head>
       {/* Main content */}
       {/*LazyMotion features={domAnimation} initial={}>*/}
-        <motion.content className={style.mainContainer} initial={animateOpacity.initial} animate={animateOpacity.animate} exit={animateOpacity.exit} transition={animateOpacity.transition}>
+        <motion.content 
+          className={style.mainContainer} 
+          variants={animateOpacity}
+          initial={animateOpacity.initial} 
+          animate={animateOpacity.animate} 
+          exit={animateOpacity.exit} 
+          transition={animateOpacity.transition}>
           {/* Hero Section */}
           <section id={style.hero}>
-            <div className={`${style.heroContainer}`}>
+            <div className={style.heroContainer}>
               <Coursel />
               <div className={style.courselContentContainer}>
                 <motion.h1
