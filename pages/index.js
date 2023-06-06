@@ -19,7 +19,7 @@ import { SvgHobbies } from "../data/SvgHobbies";
 // import Data
 import { projects } from "../data/projects_data";
 //import framer-motion (Animation) and Animation Files
-import {  motion } from "framer-motion";
+import { motion } from "framer-motion";
 import {
   animateSlideDown,
   animateSlideSide,
@@ -36,8 +36,7 @@ export default function Home() {
     variants={animateOpacity}
     initial={animateOpacity.initial} 
     animate={animateOpacity.animate} 
-    exit={animateOpacity.exit} 
-    transition={animateOpacity.transition}>
+    >
       <Head>
         <title>Nick - Home</title>
         <link rel="icon" href="/img/DominicGaonaTabLogo.ico" />
