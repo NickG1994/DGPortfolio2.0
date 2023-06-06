@@ -8,28 +8,28 @@ import Footer from "../Components/Footer.js";
 import { AnimatePresence, motion } from "framer-motion";
 import { animateOpacity } from "../data/framer-motion config";
 
-const Transition = ({ children, pageProps, css }) => {
+const Transition = ({ children }) => {
   const Router = useRouter();
-  console.log(css)
+  
   return (
     <div className={style.flex} style={{display:"flex"}}>
         {/* Navigation Component */}
         <Navigation />
-        <AnimatePresence mode='wait' initial={"true"} onExitComplete={() => {window.scrollTo(0,0);}}> 
-        <motion.div 
-          style={{width: '100%' }}      
-          variants={animateOpacity}
-          initial={animateOpacity.initial}
-          animate={animateOpacity.animate}
-          exit={animateOpacity.exit}
-          transition={{ ...animateOpacity.transition, delay: 0.2 }}     
-          className={style.mainContainer}
-          key={Router.route}
-        >
+    <AnimatePresence mode='wait' initial={"true"} onExitComplete={() => {window.scrollTo(0,0);}}> 
+      <motion.div 
+        style={{width: '100%' }}      
+        variants={animateOpacity}
+        initial={animateOpacity.initial}
+        animate={animateOpacity.animate}
+        exit={animateOpacity.exit}
+        transition={{ ...animateOpacity.transition, delay: 0.2 }}     
+        className={style.mainContainer}
+        key={Router.route}
+      >
         {/* Animate the children component/pages */}
-          {children}
-          <Footer />
-    </motion.div>
+        {children}
+        <Footer />
+      </motion.div>
     </AnimatePresence>
     </div>
   );

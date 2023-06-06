@@ -59,22 +59,18 @@ export default function Home() {
       {/* Main content */}
         <div 
           className={styles.mainContainer} 
-          >
+        >
           {/* Hero Section */}
           <section id={styles.hero} >
             <div className={styles.heroContainer}>
               {/*<Coursel />*/}
               <div className={styles.courselContentContainer}>
-                <motion.h1
-                  variants={animateSlideDown}
-                  initial={animateSlideDown.initial}
-                  animate={animateSlideDown.animate}
-                  exit={animateSlideDown.exit}
-                  transition={animateSlideDown.transition}
+                <h1
+
                 >
                   Hello,
                   <br /> My name is <br /> Dominic Gaona
-                </motion.h1>
+                </h1>
                 <motion.h4
                   variants={animateSlideDown}
                   initial={animateSlideDown.initial}
