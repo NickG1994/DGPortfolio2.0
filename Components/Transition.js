@@ -20,7 +20,6 @@ const Transition = ({ children }) => {
         style={{width: '100%', position:"relative" }}     
         layout 
         variants={animateOpacity}
-        initial={animateOpacity.initial}
         animate={animateOpacity.animate}
         exit={animateOpacity.exit}
         transition={animateOpacity.transition}     
