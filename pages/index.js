@@ -63,7 +63,7 @@ export default function Home() {
           {/* Hero Section */}
           <section id={styles.hero} >
             <div className={styles.heroContainer}>
-              <Coursel />
+              {/*<Coursel />*/}
               <div className={styles.courselContentContainer}>
                 <motion.h1
                   variants={animateSlideDown}
