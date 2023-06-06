@@ -57,9 +57,7 @@ export default function Home() {
         <meta property="twitter:image" content="/img/DominicGaonaTabLogo.ico" />
       </Head>
       {/* Main content */}
-        <div 
-          className={styles.mainContainer} 
-        >
+        <>
           {/* Hero Section */}
           <section id={styles.hero} >
             <div className={styles.heroContainer}>
@@ -361,7 +359,7 @@ export default function Home() {
               </motion.div>
             </div>
           </section>
-        </div>
+        </>
     </>
   );
 }
