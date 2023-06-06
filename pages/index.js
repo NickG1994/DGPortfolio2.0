@@ -32,14 +32,7 @@ import GoogleMaps from "../Components/GoogleMaps.js";
 
 export default function Home() {
   return (
-    <motion.div
-    layout
-    variants={animateOpacity}
-    initial={animateOpacity.initial} 
-    animate={animateOpacity.animate} 
-    exit={animateOpacity.exit}
-    transition={animateOpacity.transition}
-    >
+    <div>
       <Head>
         <title>Nick - Home</title>
         <link rel="icon" href="/img/DominicGaonaTabLogo.ico" />
@@ -376,6 +369,6 @@ export default function Home() {
             </div>
           </section>
         </div>
-    </motion.div>
+    </div>
   );
 }

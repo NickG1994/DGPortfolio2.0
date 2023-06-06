@@ -15,7 +15,7 @@ const Transition = ({ children, pageProps }) => {
     <div className={style.flex} style={{display:"flex"}}>
         {/* Navigation Component */}
         <Navigation />
-        <AnimatePresence mode='wait' initial={"false"} onExitComplete={() => {window.scrollTo(0,0);}}> 
+        <AnimatePresence mode='wait' initial={"true"} onExitComplete={() => {window.scrollTo(0,0);}}> 
         <motion.div style={{width: '100%' }}           
           className={style.mainContainer}
           key={Router.route}>

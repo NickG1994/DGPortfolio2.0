@@ -54,13 +54,12 @@ export const animateSlideRight = {
   },
 };
 export const animateOpacity = {
-  initial: { opacity: 0, zIndex:-1 },
+  initial: { opacity: 0 },
   animate: {
-    opacity: 1,
+    opacity: 1
   },
   exit: {
-    opacity: 0,
-    zIndex: -1
+    opacity: 0
   },
   transition: {
     duration:2,
