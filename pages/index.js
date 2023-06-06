@@ -49,7 +49,13 @@ export default function Home() {
           className={style.mainContainer} 
           >
           {/* Hero Section */}
-          <section id={style.hero}>
+          <motion.section 
+            id={style.hero} 
+            variants={animateSlideDown}
+            initial={animateSlideDown.initial}
+            animate={animateSlideDown.animate}
+            exit={animateSlideDown.exit}
+            transition={animateSlideDown.transition}>
             <div className={style.heroContainer}>
               <Coursel />
               <div className={style.courselContentContainer}>
@@ -79,7 +85,7 @@ export default function Home() {
                 />
               </div>
             </div>
-          </section>
+          </motion.section>
           {/* portfolio Section */}
           {/* This is where a problem was occurring. Fix this section.  */}
           <section id={style.portfolio}>
