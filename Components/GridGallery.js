@@ -3,7 +3,7 @@ import style from "../styles/gridGallery.module.css";
 import { projects } from "../data/projects_data";
 import Image from "next/image";
 import Modal from "./Modal";
-import { m, LazyMotion, domAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 import { SyncLoader } from "react-spinners";
 import { useEffect } from "react";
 //import framer animation object
@@ -23,15 +23,15 @@ function GridGallery() {
   }
 
   return (
-    <LazyMotion features={domAnimation}>
+    <>
       <div className={style.galleryGrid}>
         {projects.map((project, index) => (
-          <m.div
+          <motion.div
             className={style.front}
             style={{ position: "relative" }}
             key={index}
           >
-            <m.div
+            <motion.div
               className={isLoading ? style.loadingContainer : ""}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1, background: "#ECB365", zIndex: 100 }}
@@ -42,8 +42,8 @@ function GridGallery() {
                 color="#064663"
                 style={isLoading ? { display: "block" } : { display: "none" }}
               />
-            </m.div>
-            <m.div
+            </motion.div>
+            <motion.div
               id={`image-${index}`}
               variants={animateSlideDown}
               initial={animateSlideDown.initial}
@@ -74,8 +74,8 @@ function GridGallery() {
                   <p className={style.overlayText}>{project.Header}</p>
                 </div>
               </div>
-            </m.div>
-          </m.div>
+            </motion.div>
+          </motion.div>
         ))}
       </div>
       <div
@@ -85,7 +85,7 @@ function GridGallery() {
       >
         {state && <Modal id={modalIndex} />}
       </div>
-    </LazyMotion>
+    </>
   );
 }
 

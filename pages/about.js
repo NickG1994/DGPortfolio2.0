@@ -9,7 +9,12 @@ import { animateOpacity } from "../data/framer-motion config";
 
 export default function about() {
   return (
-    <>
+    <motion.div 
+    variants={animateOpacity}
+    initial={animateOpacity.initial}
+    animate={animateOpacity.animate}
+    exit={animateOpacity.exit}
+    transition={animateOpacity.transition}>
       <div className={style.about__container}>
         <div className={style.about__content__container}>
           <div className={style.about__container__left}>
@@ -72,14 +77,17 @@ export default function about() {
           </div>
           <div className={style.about__container__right}>
             {dataSVG.map((svgImage, index) => (
-              <motion.span key={index} className={style.svgWrapper}>
+          <span
+          className={style.svgWrapper} 
+          key={index}
+           >
                 <h3>{svgImage.iconName}</h3>
                 <HTMLSVG svgString={svgImage.path} />
-              </motion.span>
+              </span>
             ))}
           </div>
         </div>
       </div>
-    </>
+    </motion.div>
   );
 }
