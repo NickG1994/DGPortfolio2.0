@@ -8,7 +8,7 @@ import Footer from "../Components/Footer.js";
 import { AnimatePresence, motion } from "framer-motion";
 import { animateOpacity } from "../data/framer-motion config";
 
-const Transition = ({ children }) => {
+const Transition = ({ children, styles }) => {
   const Router = useRouter();
 
   return (
