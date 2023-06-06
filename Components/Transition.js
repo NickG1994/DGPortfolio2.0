@@ -8,9 +8,9 @@ import Footer from "../Components/Footer.js";
 import { AnimatePresence, motion } from "framer-motion";
 import { animateOpacity } from "../data/framer-motion config";
 
-const Transition = ({ children, pageProps }) => {
+const Transition = ({ children, pageProps, css }) => {
   const Router = useRouter();
-
+  console.log(css)
   return (
     <div className={style.flex} style={{display:"flex"}}>
         {/* Navigation Component */}

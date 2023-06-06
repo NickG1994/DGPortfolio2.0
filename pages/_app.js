@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps  }) {
   const Router = useRouter();
 
   return (
-      <Transition styles={styles}>
+      <Transition css={styles}>
         <Component {...pageProps}  />
       </Transition>
   );
