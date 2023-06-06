@@ -14,8 +14,8 @@ const Transition = ({ children }) => {
   return (
     <div className={style.flex} style={{display:"flex"}}>
         {/* Navigation Component */}
-        <Navigation />
-    <AnimatePresence mode='sync' initial={"true"} onExitComplete={() => {window.scrollTo(0,0);}}> 
+    <Navigation />
+    <AnimatePresence mode='wait' initial={"true"} onExitComplete={() => {window.scrollTo(0,0);}}> 
       <motion.div 
         style={{width: '100%', position:"relative" }}      
         variants={animateOpacity}

@@ -62,7 +62,8 @@ export const animateOpacity = {
     opacity: 0
   },
   transition: {
-    duration:20,
+    duration:1,
+    type:'linear'
   },
 };
 export const loadingVariant = {
