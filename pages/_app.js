@@ -7,12 +7,12 @@ import styles from "../styles/Transition.module.css";
 //import the animation configurations.
 import { animateOpacity } from "../data/framer-motion config";
 
-function MyApp({ Component }) {
+function MyApp({ Component, pageProps  }) {
   const Router = useRouter();
 
   return (
       <Transition styles={styles}>
-        <Component  />
+        <Component {...pageProps}  />
       </Transition>
   );
 }
