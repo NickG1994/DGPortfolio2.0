@@ -23,7 +23,6 @@ const Transition = ({ children }) => {
         animate={animateOpacity.animate}
         exit={animateOpacity.exit}
         transition={animateOpacity.transition}     
-        className={style.mainContainer}
         key={Router.route}
       >
         {/* Animate the children component/pages */}
