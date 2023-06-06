@@ -12,10 +12,10 @@ const Transition = ({ children }) => {
   const Router = useRouter();
 
   return (
-    <div style={{display:"flex"}}>
+    <div className={style.flex} style={{display:"flex"}}>
         {/* Navigation Component */}
         <Navigation />
-        <AnimatePresence mode='popLayout' initial={"false"} onExitComplete={() => {window.scrollTo(0,0);}}> 
+        <AnimatePresence mode='wait' initial={"false"} onExitComplete={() => {window.scrollTo(0,0);}}> 
         <motion.div style={{width: '100%' }}           
           className={style.mainContainer}
           key={Router.route}>
