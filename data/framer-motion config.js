@@ -9,7 +9,7 @@ export const animateSlideDown = {
     y: -50
   },
   transition: {
-    duration: 1
+    duration: 0.8
   },
 };
 export const animateSlideSide = {
@@ -36,8 +36,7 @@ export const animateSlideLeft = {
     opacity: 0,
   },
   transition: {
-    duration: 2,
-    delay: 0.5,
+    duration: 1
   },
 };
 export const animateSlideRight = {
@@ -63,7 +62,7 @@ export const animateOpacity = {
     opacity: 0
   },
   transition: {
-    duration:1,
+    duration:0.8,
   },
 };
 export const loadingVariant = {
@@ -96,16 +95,14 @@ export const textMovingRight = {
   animate: {
     opacity: 1,
     transition: {
-      duration: 0.65,
-      delay: 0.75,
+      duration: 0.65
     },
   },
 
   exit: {
     opacity: 0,
     transition: {
-      duration: 2,
-      delay: 1,
+      duration: 1
     },
   },
 };

@@ -16,9 +16,16 @@ const Transition = ({ children, pageProps, css }) => {
         {/* Navigation Component */}
         <Navigation />
         <AnimatePresence mode='wait' initial={"true"} onExitComplete={() => {window.scrollTo(0,0);}}> 
-        <motion.div style={{width: '100%' }}           
+        <motion.div 
+          style={{width: '100%' }}      
+          variants={animateOpacity}
+          initial={animateOpacity.initial}
+          animate={animateOpacity.animate}
+          exit={animateOpacity.exit}
+          transition={{ ...animateOpacity.transition, delay: 0.2 }}     
           className={style.mainContainer}
-          key={Router.route}>
+          key={Router.route}
+        >
         {/* Animate the children component/pages */}
           {children}
           <Footer />

@@ -32,7 +32,7 @@ import GoogleMaps from "../Components/GoogleMaps.js";
 
 export default function Home() {
   return (
-    <div>
+    <>
       <Head>
         <title>Nick - Home</title>
         <link rel="icon" href="/img/DominicGaonaTabLogo.ico" />
@@ -362,6 +362,6 @@ export default function Home() {
             </div>
           </section>
         </div>
-    </div>
+    </>
   );
 }
