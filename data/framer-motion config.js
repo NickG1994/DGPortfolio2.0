@@ -59,8 +59,7 @@ export const animateOpacity = {
     opacity: 1,
   },
   exit: {
-    opacity: 0,
-    position:"absolute"
+    opacity: 0
   },
   transition: {
     duration:20,
