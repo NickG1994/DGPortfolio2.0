@@ -1,6 +1,6 @@
 import React from "react";
 // import styles
-import styles from "../styles/Home.module.css";
+import styles from "/styles/Home.module.css";
 //import next components
 import dynamic from "next/dynamic";
 import Head from "next/head";
@@ -65,12 +65,16 @@ export default function Home() {
             <div className={styles.heroContainer}>
               {/*<Coursel />*/}
               <div className={styles.courselContentContainer}>
-                <h1
-
+                <motion.h1
+                  variants={animateSlideDown}
+                  initial={animateSlideDown.initial}
+                  animate={animateSlideDown.animate}
+                  exit={animateSlideDown.exit}
+                  transition={animateSlideDown.transition}
                 >
                   Hello,
                   <br /> My name is <br /> Dominic Gaona
-                </h1>
+                </motion.h1>
                 <motion.h4
                   variants={animateSlideDown}
                   initial={animateSlideDown.initial}
