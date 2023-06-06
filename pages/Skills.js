@@ -2,14 +2,14 @@ import React from "react";
 import Head from "next/head";
 import style from "../styles/Skills.module.css";
 import Image from "next/image";
-import { m, LazyMotion, domAnimation, animate } from "framer-motion";
+import { motion } from "framer-motion";
 import { animateOpacity } from "../data/framer-motion config";
 import ImageLoader from "../Components/ImageLoader.js";
 
 function Skills() {
   return (
-    <LazyMotion features={domAnimation}>
-      <m.main
+    <>
+      <motion.main
         className={style.skills_container}
         variants={animateOpacity}
         initial={animateOpacity.initial}
@@ -25,7 +25,7 @@ function Skills() {
 
         <div className={style.skills_container_inner}>
           <div className={style.left}>
-            <m.h2
+            <motion.h2
               variants={animateOpacity}
               initial={animateOpacity.initial}
               animate={animateOpacity.animate}
@@ -33,8 +33,8 @@ function Skills() {
               transition={{ ...animateOpacity.transition, delay: 0.2 }}
             >
               My Skills
-            </m.h2>
-            <m.p
+            </motion.h2>
+            <motion.p
               className={style.paragraph}
               variants={animateOpacity}
               initial={animateOpacity.initial}
@@ -51,9 +51,9 @@ function Skills() {
               pixel-perfect designs and responsive layouts using HTML and CSS.
               JavaScript adds dynamic functionalities and enhances user
               experiences.
-            </m.p>
+            </motion.p>
             <br />
-            <m.p
+            <motion.p
               className={style.paragraph}
               variants={animateOpacity}
               initial={animateOpacity.initial}
@@ -72,9 +72,9 @@ function Skills() {
               databases, while also leveraging the flexibility and scalability
               of non-relational databases for handling unstructured or
               semi-structured data.
-            </m.p>
+            </motion.p>
             <br />
-            <m.p
+            <motion.p
               className={style.paragraph}
               variants={animateOpacity}
               initial={animateOpacity.initial}
@@ -88,9 +88,9 @@ function Skills() {
               functionalities, I ensure a seamless user experience. Furthermore,
               I can integrate APIs, enabling features like social media
               authentication, data retrieval, and third-party integrations.
-            </m.p>
+            </motion.p>
             <br />
-            <m.p
+            <motion.p
               className={style.paragraph}
               variants={animateOpacity}
               initial={animateOpacity.initial}
@@ -101,7 +101,7 @@ function Skills() {
               With my comprehensive knowledge and experience across these
               technologies, I am well-equipped to deliver high-quality,
               scalable, and customized solutions for your specific needs.
-            </m.p>
+            </motion.p>
           </div>
           <div className={style.right}>
             <div className={style.imageContainer}>
@@ -112,8 +112,8 @@ function Skills() {
             </div>
           </div>
         </div>
-      </m.main>
-    </LazyMotion>
+      </motion.main>
+    </>
   );
 }
 
