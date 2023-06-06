@@ -37,6 +37,8 @@ export default function Home() {
     variants={animateOpacity}
     initial={animateOpacity.initial} 
     animate={animateOpacity.animate} 
+    exit={animateOpacity.exit}
+    transition={animateOpacity.transition}
     >
       <Head>
         <title>Nick - Home</title>
@@ -62,7 +64,7 @@ export default function Home() {
         <meta property="twitter:image" content="/img/DominicGaonaTabLogo.ico" />
       </Head>
       {/* Main content */}
-        <content 
+        <div 
           className={styles.mainContainer} 
           >
           {/* Hero Section */}
@@ -373,7 +375,7 @@ export default function Home() {
               </motion.div>
             </div>
           </section>
-        </content>
+        </div>
     </motion.div>
   );
 }
