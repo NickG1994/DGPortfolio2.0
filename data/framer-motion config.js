@@ -56,10 +56,11 @@ export const animateSlideRight = {
 export const animateOpacity = {
   initial: { opacity: 0 },
   animate: {
-    opacity: 1
+    opacity: 1,
   },
   exit: {
-    opacity: 0
+    opacity: 0,
+    position:"absolute"
   },
   transition: {
     duration:0.8,

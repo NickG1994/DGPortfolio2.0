@@ -17,7 +17,7 @@ const Transition = ({ children }) => {
         <Navigation />
     <AnimatePresence mode='sync' initial={"true"} onExitComplete={() => {window.scrollTo(0,0);}}> 
       <motion.div 
-        style={{width: '100%' }}      
+        style={{width: '100%', position:"relative" }}      
         variants={animateOpacity}
         initial={animateOpacity.initial}
         animate={animateOpacity.animate}
