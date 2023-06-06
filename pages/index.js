@@ -33,6 +33,7 @@ import GoogleMaps from "../Components/GoogleMaps.js";
 export default function Home() {
   return (
     <motion.div
+    layout
     variants={animateOpacity}
     initial={animateOpacity.initial} 
     animate={animateOpacity.animate} 
