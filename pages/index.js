@@ -30,7 +30,8 @@ import {
 
 import GoogleMaps from "../Components/GoogleMaps.js";
 
-export default function Home() {
+export default function Home({Router}) {
+  console.log(Router)
   return (
     <>
       <Head>
@@ -72,6 +73,7 @@ export default function Home() {
                   animate={animateSlideDown.animate}
                   exit={animateSlideDown.exit}
                   transition={animateSlideDown.transition}
+                  key={Router.route}
                 >
                   Hello,
                   <br /> My name is <br /> Dominic Gaona
