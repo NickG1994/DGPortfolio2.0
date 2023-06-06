@@ -67,6 +67,7 @@ export default function Home() {
               <div className={styles.courselContentContainer}>
                 <motion.h1
                   variants={animateSlideDown}
+                  layout
                   initial={animateSlideDown.initial}
                   animate={animateSlideDown.animate}
                   exit={animateSlideDown.exit}
