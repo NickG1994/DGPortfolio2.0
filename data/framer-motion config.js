@@ -6,9 +6,10 @@ export const animateSlideDown = {
   },
   exit: {
     opacity: 0,
+    y: -50
   },
   transition: {
-    duration: 2
+    duration: 1
   },
 };
 export const animateSlideSide = {
@@ -62,7 +63,7 @@ export const animateOpacity = {
     opacity: 0
   },
   transition: {
-    duration:2,
+    duration:1,
   },
 };
 export const loadingVariant = {

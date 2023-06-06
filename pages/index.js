@@ -61,13 +61,7 @@ export default function Home() {
           className={styles.mainContainer} 
           >
           {/* Hero Section */}
-          <motion.section 
-            id={styles.hero} 
-            variants={animateSlideDown}
-            initial={animateSlideDown.initial}
-            animate={animateSlideDown.animate}
-            exit={animateSlideDown.exit}
-            transition={animateSlideDown.transition}>
+          <section id={styles.hero} >
             <div className={styles.heroContainer}>
               <Coursel />
               <div className={styles.courselContentContainer}>
@@ -86,7 +80,7 @@ export default function Home() {
                   initial={animateSlideDown.initial}
                   animate={animateSlideDown.animate}
                   exit={animateSlideDown.exit}
-                  transition={{ ...animateSlideDown.transition, delay: 1.5 }}
+                  transition={animateSlideDown.transition}
                 >
                   Front-end | Back-end Developer
                 </motion.h4>
@@ -97,7 +91,7 @@ export default function Home() {
                 />
               </div>
             </div>
-          </motion.section>
+          </section>
           {/* portfolio Section */}
           {/* This is where a problem was occurring. Fix this section.  */}
           <section id={styles.portfolio}>
@@ -107,7 +101,7 @@ export default function Home() {
                 initial={animateSlideSide.initial}
                 viewport={{ once: true }}
                 whileInView={animateSlideSide.animate}
-                transition={{ ...animateSlideSide.transition, delay: 0.5 }}
+                transition={animateSlideSide.transition}
               >
                 Portfolio
               </motion.h2>
@@ -116,7 +110,7 @@ export default function Home() {
                 initial={animateSlideSide.initial}
                 viewport={{ once: true }}
                 whileInView={animateSlideSide.animate}
-                transition={{ ...animateSlideSide.transition, delay: 1.5 }}
+                transition={animateSlideSide.transition}
               >
                 Proficient in developing projects using Vue.js, React.js, and
                 WordPress, with experience in building, testing, and deploying.
@@ -132,7 +126,6 @@ export default function Home() {
             <div className={styles.portfolioBottom}>
               <div className={styles.gallery}>
                 {/* The gridGallery is causing the issue with further inspection. */}
-
                 <GridGallery />
               </div>
             </div>
