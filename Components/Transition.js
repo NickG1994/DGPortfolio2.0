@@ -21,6 +21,7 @@ const Transition = ({ children }) => {
           key={Router.route}>
         {/* Animate the children component/pages */}
           {children}
+          <Footer />
     </motion.div>
     </AnimatePresence>
     </div>
