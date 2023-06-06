@@ -40,8 +40,19 @@ export default function Home() {
     transition={animateOpacity.transition}>
       <Head>
         <title>Nick - Home</title>
-        <meta name="description" content="Dominic gaona's portoflio" />
         <link rel="icon" href="/img/DominicGaonaTabLogo.ico" />
+        <meta name="description" content="I am a dedicated and highly skilled web developer specializing in WordPress, 
+        React.js, CSS, JavaScript, HTML, APIs, Node.js, Express.js, Vue.js, troubleshooting, and server management. 
+        Contact me for outstanding web development results." />
+        <meta name="keywords" content="web developer, WordPress, React.js, CSS, JavaScript, HTML, APIs, Node.js, Express.js, Vue.js, troubleshooting, server management" />
+        <meta name="author" content="Dominic Gaona" />
+
+        <meta property="og:title" content="Dominic Gaona | Web Developer" />
+        <meta property="og:description" content="I am a dedicated and highly skilled web developer specializing in WordPress, 
+        React.js, CSS, JavaScript, HTML, APIs, Node.js, Express.js, Vue.js, troubleshooting, and server management. 
+        With a comprehensive approach to front-end and back-end development, I am committed to delivering outstanding results for your web projects." />
+        <meta property="og:image" content="/DominicGaonaTabLogo.ico" />
+        <meta property="og:url" content="https://spiffy-mermaid-40ea97.netlify.app/" />
       </Head>
       {/* Main content */}
       {/*LazyMotion features={domAnimation} initial={}>*/}
