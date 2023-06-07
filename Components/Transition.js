@@ -21,7 +21,6 @@ const Transition = ({ children }) => {
           style={{width: '100%', position:"relative" }}     
           layout 
           variants={animateOpacity}
-          animate={animateOpacity.animate}
           exit={animateOpacity.exit}
           transition={animateOpacity.transition}     
           key={Router.route}
