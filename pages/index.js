@@ -33,7 +33,7 @@ import GoogleMaps from "../Components/GoogleMaps.js";
 export default function Home({Router}) {
   console.log(Router)
   return (
-    <>
+    <motion.div key={Router.route} >
       <Head>
         <title>Nick - Home</title>
         <link rel="icon" href="/img/DominicGaonaTabLogo.ico" />
@@ -73,7 +73,6 @@ export default function Home({Router}) {
                   animate={animateSlideDown.animate}
                   exit={animateSlideDown.exit}
                   transition={animateSlideDown.transition}
-                  key={Router.route}
                 >
                   Hello,
                   <br /> My name is <br /> Dominic Gaona
@@ -365,6 +364,6 @@ export default function Home({Router}) {
             </div>
           </section>
         </div>
-    </>
+    </motion.div>
   );
 }
