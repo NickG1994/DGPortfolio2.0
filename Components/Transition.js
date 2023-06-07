@@ -16,11 +16,19 @@ const Transition = ({ children }) => {
     {/* Navigation Component */}
     <Navigation />
     <AnimatePresence mode='wait' initial={"true"} onExitComplete={() => {window.scrollTo(0,0);}}> 
-      <div>
+      <motion.div 
+        style={{width: '100%', position:"relative" }}     
+        layout 
+        variants={animateOpacity}
+
+        exit={animateOpacity.exit}
+        transition={animateOpacity.transition}     
+        key={Router.route}
+      >
         {/* Animate the children component/pages */}
         {children}
         <Footer />
-      </div>
+      </motion.div>
     </AnimatePresence>
     </div>
   );
