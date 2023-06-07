@@ -2,7 +2,6 @@ import React from "react";
 // import styles
 import styles from "/styles/Home.module.css";
 //import next components
-import dynamic from "next/dynamic";
 import Head from "next/head";
 import Image from "next/image";
 /* Components */
@@ -27,7 +26,6 @@ import {
   animateSlideRight,
   animateOpacity,
 } from "../data/framer-motion config.js";
-
 import GoogleMaps from "../Components/GoogleMaps.js";
 
 export default function Home({Router}) {
@@ -68,7 +66,6 @@ export default function Home({Router}) {
               <div className={styles.courselContentContainer}>
                 <motion.h1
                   variants={animateSlideDown}
-                  layout
                   initial={animateSlideDown.initial}
                   animate={animateSlideDown.animate}
                   exit={animateSlideDown.exit}
