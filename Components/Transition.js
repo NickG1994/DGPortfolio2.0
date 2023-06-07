@@ -12,25 +12,28 @@ const Transition = ({ children }) => {
   const Router = useRouter();
 
   return (
-    <div className={style.flex} style={{display:"flex"}}>
-        {/* Navigation Component */}
+    <>
+    {/* Navigation Component */}
     <Navigation />
-    <AnimatePresence mode='wait' initial={"true"} onExitComplete={() => {window.scrollTo(0,0);}}> 
-      <motion.div 
-        style={{width: '100%', position:"relative" }}     
-        layout 
-        variants={animateOpacity}
-        animate={animateOpacity.animate}
-        exit={animateOpacity.exit}
-        transition={animateOpacity.transition}     
-        key={Router.route}
-      >
-        {/* Animate the children component/pages */}
-        {children}
-        <Footer />
-      </motion.div>
-    </AnimatePresence>
-    </div>
+      <AnimatePresence mode='wait' initial={"true"} onExitComplete={() => {window.scrollTo(0,0);}}> 
+      <div className={style.flex} style={{display:"flex"}}>
+        <motion.div 
+          style={{width: '100%', position:"relative" }}     
+          layout 
+          variants={animateOpacity}
+          animate={animateOpacity.animate}
+          exit={animateOpacity.exit}
+          transition={animateOpacity.transition}     
+          key={Router.route}
+        >
+          {/* Animate the children component/pages */}
+          {children}
+          <Footer />
+        </motion.div>
+        </div>
+      </AnimatePresence>
+    </>
+
   );
 };
 
