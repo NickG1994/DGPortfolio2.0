@@ -1,5 +1,5 @@
 import Transition from "../Components/Transition";
-import globalStyles from "../styles/globals.css";
+import "../styles/globals.css";
 //import the animation configurations.
 import { animateOpacity } from "../data/framer-motion config";
 
