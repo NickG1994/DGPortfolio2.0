@@ -16,9 +16,9 @@ function Transition({ children }) {
     <div className={style.flex} style={{display:"flex"}}>
     {/* Navigation Component */}
     <Navigation />
-    <AnimatePresence> 
+    <AnimatePresence mode="wait"> 
       <motion.div 
-        style={{width: '100%'}}     
+        style={{width: '100%', position:"relative"}}     
         variants={animateOpacity}
         initial={animateOpacity.initial}
         animate={animateOpacity.animate}

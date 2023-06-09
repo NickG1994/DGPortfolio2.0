@@ -62,12 +62,15 @@ function Home({Router}) {
             <div className={styles.heroContainer}>
               {/*<Coursel />*/}
               <div className={styles.courselContentContainer}>
-                <h1
-
+                <motion.h1
+                variants={animateSlideDown}
+                initial={animateSlideDown.initial}
+                animate={animateSlideDown.animate}
+                exit={animateSlideDown.exit}
                 >
                   Hello,
                   <br /> My name is <br /> Dominic Gaona
-                </h1>
+                </motion.h1>
                 <h4
 
                 >
