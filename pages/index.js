@@ -109,7 +109,7 @@ export default function Home({Router}) {
             <div className={styles.portfolioBottom}>
               <div className={styles.gallery}>
                 {/* The gridGallery is causing the issue with further inspection. */}
-                <GridGallery />
+                {/*<GridGallery />*/}
               </div>
             </div>
           </section>
