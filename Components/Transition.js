@@ -20,7 +20,9 @@ function Transition({ children }) {
       <motion.div 
         style={{width: '100%'}}     
         variants={animateOpacity}
+        initial={animateOpacity.initial}
         animate={animateOpacity.animate}
+        exit={animateOpacity.exit}
         transition={animateOpacity.transition}     
         key={Router.route}
       >
