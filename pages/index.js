@@ -1,6 +1,6 @@
 import React from "react";
 // import styles
-import styles from "/styles/Home.module.css";
+import styles from "../styles/Home.module.css";
 //import next components
 import Head from "next/head";
 import Image from "next/image";
