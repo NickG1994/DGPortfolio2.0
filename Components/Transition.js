@@ -8,8 +8,9 @@ import Footer from "../Components/Footer.js";
 import { AnimatePresence, motion } from "framer-motion";
 import { animateOpacity } from "../data/framer-motion config";
 
-const Transition = ({ children }) => {
+function Transition({ children }) {
   const Router = useRouter();
+  console.log(children)
 
   return (
     <div className={style.flex} style={{display:"flex"}}>
@@ -17,10 +18,9 @@ const Transition = ({ children }) => {
     <Navigation />
     <AnimatePresence> 
       <motion.div 
-        style={{width: '100%', position:"relative" }}     
+        style={{width: '100%'}}     
         variants={animateOpacity}
         animate={animateOpacity.animate}
-        exit={animateOpacity.exit}
         transition={animateOpacity.transition}     
         key={Router.route}
       >

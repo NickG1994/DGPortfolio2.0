@@ -28,7 +28,7 @@ import {
 } from "../data/framer-motion config.js";
 import GoogleMaps from "../Components/GoogleMaps.js";
 
-export default function Home({Router}) {
+function Home({Router}) {
   console.log(Router)
   return (
     <div>
@@ -86,3 +86,5 @@ export default function Home({Router}) {
     </div>
   );
 }
+
+export default Home;
