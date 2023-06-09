@@ -16,7 +16,8 @@ const Transition = ({ children }) => {
     {/* Navigation Component */}
     <Navigation />
     <AnimatePresence> 
-      <motion.div   
+      <motion.div 
+        style={{width: '100%', position:"relative" }}     
         variants={animateOpacity}
         animate={animateOpacity.animate}
         exit={animateOpacity.exit}
