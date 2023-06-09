@@ -6,7 +6,6 @@ import Footer from "../Components/Footer.js";
 // Framer motion config files and component.
 import { AnimatePresence, motion } from "framer-motion";
 import { animateOpacity } from "../data/framer-motion config";
-import styles from "../styles/Home.module.css";
 
 function Transition({ children }) {
   const Router = useRouter();

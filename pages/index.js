@@ -56,7 +56,7 @@ function Home({Router}) {
         <meta property="twitter:image" content="/img/DominicGaonaTabLogo.ico" />
       </Head>
       {/* Main content */}
-        <div className={styles.mainContainer} >
+        <div className={styles.mainContainer}>
           {/* Hero Section */}
           <section id={styles.hero} >
             <div className={styles.heroContainer}>
