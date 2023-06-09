@@ -22,7 +22,6 @@ function Transition({ children }) {
         initial={animateOpacity.initial}
         animate={animateOpacity.animate}
         exit={animateOpacity.exit}
-        transition={animateOpacity.transition}     
         key={Router.route}
       >
         {/* Animate the children component/pages */}
