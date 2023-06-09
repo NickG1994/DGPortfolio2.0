@@ -31,7 +31,7 @@ import GoogleMaps from "../Components/GoogleMaps.js";
 export default function Home({Router}) {
   console.log(Router)
   return (
-    <motion.div>
+    <div>
       <Head>
         <title>Nick - Home</title>
         <link rel="icon" href="/img/DominicGaonaTabLogo.ico" />
@@ -64,25 +64,17 @@ export default function Home({Router}) {
             <div className={styles.heroContainer}>
               {/*<Coursel />*/}
               <div className={styles.courselContentContainer}>
-                <motion.h1
-                  variants={animateSlideDown}
-                  initial={animateSlideDown.initial}
-                  animate={animateSlideDown.animate}
-                  exit={animateSlideDown.exit}
-                  transition={animateSlideDown.transition}
+                <h1
+
                 >
                   Hello,
                   <br /> My name is <br /> Dominic Gaona
-                </motion.h1>
-                <motion.h4
-                  variants={animateSlideDown}
-                  initial={animateSlideDown.initial}
-                  animate={animateSlideDown.animate}
-                  exit={animateSlideDown.exit}
-                  transition={animateSlideDown.transition}
+                </h1>
+                <h4
+
                 >
                   Front-end | Back-end Developer
-                </motion.h4>
+                </h4>
                 <Button
                   string={"Contact Me"}
                   location="/contact"
@@ -95,21 +87,13 @@ export default function Home({Router}) {
           {/* This is where a problem was occurring. Fix this section.  */}
           <section id={styles.portfolio}>
             <div className={styles.portfolioTop}>
-              <motion.h2
-                variants={animateSlideSide}
-                initial={animateSlideSide.initial}
-                viewport={{ once: true }}
-                whileInView={animateSlideSide.animate}
-                transition={animateSlideSide.transition}
+              <h2
+
               >
                 Portfolio
-              </motion.h2>
-              <motion.p
-                variants={animateSlideSide}
-                initial={animateSlideSide.initial}
-                viewport={{ once: true }}
-                whileInView={animateSlideSide.animate}
-                transition={animateSlideSide.transition}
+              </h2>
+              <p
+
               >
                 Proficient in developing projects using Vue.js, React.js, and
                 WordPress, with experience in building, testing, and deploying.
@@ -120,7 +104,7 @@ export default function Home({Router}) {
                 ability to work in a collaborative team environment while
                 demonstrating excellent communication and problem-solving
                 skills.
-              </motion.p>
+              </p>
             </div>
             <div className={styles.portfolioBottom}>
               <div className={styles.gallery}>
@@ -133,21 +117,13 @@ export default function Home({Router}) {
           <section id={styles.about}>
             <div className={styles.about__container}>
               <div className={styles.about__left}>
-                <motion.h2
-                  variants={animateSlideSide}
-                  viewport={{ once: true }}
-                  initial={animateSlideSide.initial}
-                  whileInView={animateSlideSide.animate}
-                  transition={animateSlideSide.transition}
+                <h2
+
                 >
                   About Me
-                </motion.h2>
-                <motion.p
-                  variants={animateSlideSide}
-                  viewport={{ once: true }}
-                  initial={animateSlideSide.initial}
-                  whileInView={animateSlideSide.animate}
-                  transition={{ ...animateSlideSide.transition, delay: 1.5 }}
+                </h2>
+                <p
+
                   className={styles.about__content}
                 >
                   Allow me to introduce myself, your dedicated and highly
@@ -158,14 +134,10 @@ export default function Home({Router}) {
                   management. With a comprehensive approach to front-end and
                   back-end development, I am committed to delivering outstanding
                   results for your web projects.
-                </motion.p>
+                </p>
                 <br />
-                <motion.p
-                  variants={animateSlideSide}
-                  viewport={{ once: true }}
-                  initial={animateSlideSide.initial}
-                  whileInView={animateSlideSide.animate}
-                  transition={{ ...animateSlideSide.transition, delay: 2 }}
+                <p
+
                   className={styles.about__content}
                 >
                   In front-end development, I bring creativity and meticulous
@@ -177,14 +149,10 @@ export default function Home({Router}) {
                   scalable server-side applications. I prioritize optimization
                   and clean code, guaranteeing fast and efficient websites that
                   exceed expectations.
-                </motion.p>
+                </p>
                 <br />
-                <motion.p
-                  variants={animateSlideSide}
-                  viewport={{ once: true }}
-                  initial={animateSlideSide.initial}
-                  whileInView={animateSlideSide.animate}
-                  transition={{ ...animateSlideSide.transition, delay: 2 }}
+                <p
+
                   className={styles.about__content}
                 >
                   As your dedicated web developer, I am devoted to understanding
@@ -193,43 +161,31 @@ export default function Home({Router}) {
                   will collaborate closely with you throughout the development
                   process, ensuring that your vision is brought to life and
                   delivering a remarkable online presence for your business.
-                </motion.p>
+                </p>
                 <Button
                   string={"learn more"}
                   layout={{ marginTop: "4rem" }}
                   location={"/Projects"}
                 />
               </div>
-              <motion.div
-                variants={animateSlideLeft}
-                viewport={{ once: true }}
-                whileInView={animateSlideLeft.animate}
-                initial={animateSlideLeft.initial}
-                transition={animateSlideLeft.transition}
+              <div
+
                 className={styles.about__right}
-              ></motion.div>
+              ></div>
             </div>
           </section>
           <section id={styles.skills}>
             <content className={styles.skills_container}>
               <div className={styles.skills__right}>
-                <motion.h2
+                <h2
                   className={styles.skills__right__content}
-                  variants={animateSlideRight}
-                  viewport={{ once: true }}
-                  whileInView={animateSlideRight.animate}
-                  initial={animateSlideRight.initial}
-                  transition={animateSlideRight.transition}
+
                 >
                   Hobbies
-                </motion.h2>
-                <motion.p
+                </h2>
+                <p
                   className={styles.skills__right__content}
-                  variants={animateSlideRight}
-                  viewport={{ once: true }}
-                  whileInView={animateSlideRight.animate}
-                  initial={animateSlideRight.initial}
-                  transition={{ ...animateSlideRight.transition, delay: 1.5 }}
+
                 >
                   I am deeply passionate about several hobbies and interests
                   that enrich my life. Shrimp keeping, particularly focusing on
@@ -239,15 +195,11 @@ export default function Home({Router}) {
                   fulfillment in exploring aquaponics, a sustainable method of
                   growing plants in a symbiotic relationship with aquatic
                   animals.
-                </motion.p>
+                </p>
                 <br />
-                <motion.p
+                <p
                   className={styles.skills__right__content}
-                  variants={animateSlideRight}
-                  viewport={{ once: true }}
-                  whileInView={animateSlideRight.animate}
-                  initial={animateSlideRight.initial}
-                  transition={{ ...animateSlideRight.transition, delay: 1.8 }}
+
                 >
                   Beyond aquatics, music holds a special place in my heart,
                   allowing me to express myself and find inner peace. Whether
@@ -256,15 +208,11 @@ export default function Home({Router}) {
                   video game enthusiast, I engage in immersive virtual worlds,
                   relishing challenging narratives, puzzles, and multiplayer
                   competitions.
-                </motion.p>
+                </p>
                 <br />
-                <motion.p
+                <p
                   className={styles.skills__right__content}
-                  variants={animateSlideRight}
-                  viewport={{ once: true }}
-                  whileInView={animateSlideRight.animate}
-                  initial={animateSlideRight.initial}
-                  transition={{ ...animateSlideRight.transition, delay: 1.8 }}
+
                 >
                   Moreover, I have a strong affinity for programming and
                   problem-solving. I am continually motivated by the intricacies
@@ -273,7 +221,7 @@ export default function Home({Router}) {
                   reflect my curiosity, creativity, and dedication to personal
                   growth, offering me fulfillment and constant intellectual
                   stimulation.
-                </motion.p>
+                </p>
                 <Button
                   location={"/skills"}
                   string={"Skills"}
@@ -292,22 +240,13 @@ export default function Home({Router}) {
           <section id={styles.recentWork}>
             <div className={styles.recentWorkContainer}>
               <div className={styles.recentWorkTextContainer}>
-                <motion.h2
+                <h2
                   className={styles.recentWorkHeader}
-                  variants={animateSlideRight}
-                  viewport={{ once: true }}
-                  whileInView={animateSlideRight.animate}
-                  initial={animateSlideRight.initial}
-                  transition={animateSlideRight.transition}
+
                 >
                   Recent Work
-                </motion.h2>
-                <motion.p
-                  variants={animateSlideRight}
-                  viewport={{ once: true }}
-                  whileInView={animateSlideRight.animate}
-                  initial={animateSlideRight.initial}
-                  transition={{ ...animateSlideRight.transition, delay: 1.5 }}
+                </h2>
+                <p
                   className="recentSubheader"
                 >
                   Lorem ipsum dolor sit amet consectetur. Orci viverra risus
@@ -316,16 +255,12 @@ export default function Home({Router}) {
                   parturient ut in blandit eget odio. At dui ornare quam
                   senectus non sed eget. Egestas at in consectetur massa massa
                   pulvinar molestie vel iaculis.
-                </motion.p>
+                </p>
               </div>
 
-              <motion.div
+              <div
                 className={styles.recentWorkGalleryContainer}
-                variants={animateOpacity}
-                viewport={{ once: true }}
-                whileInView={animateOpacity.animate}
-                initial={animateOpacity.initial}
-                transition={{ ...animateOpacity.transition, delay: 2 }}
+
               >
                 {projects.map((project, index) => {
                   if (index < 3) {
@@ -338,7 +273,7 @@ export default function Home({Router}) {
                     );
                   }
                 })}
-              </motion.div>
+              </div>
             </div>
           </section>
           {/* Contact Me Section */}
@@ -348,19 +283,15 @@ export default function Home({Router}) {
                 {/* <Form /> */}
                 <Form />
               </div>
-              <motion.div
+              <div
                 className={styles.contactMeContainerRight}
-                variants={animateOpacity}
-                viewport={{ once: true }}
-                whileInView={animateOpacity.animate}
-                initial={animateOpacity.initial}
-                transition={animateOpacity.transition}
+
               >
                 <GoogleMaps />
-              </motion.div>
+              </div>
             </div>
           </section>
         </div>
-    </motion.div>
+    </div>
   );
 }
