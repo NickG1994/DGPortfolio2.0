@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
-import style from "../styles/Transition.module.css";
 //footer and navigation component. 
 import Navigation from "../Components/Navigation/Navigation";
 import Footer from "../Components/Footer.js";
@@ -13,7 +12,7 @@ function Transition({ children }) {
   console.log(children)
 
   return (
-    <div className={style.flex} style={{display:"flex"}}>
+    <div style={{display:"flex"}}>
     {/* Navigation Component */}
     <Navigation />
     <AnimatePresence mode="popLayout" initial="false"> 
