@@ -31,7 +31,7 @@ import GoogleMaps from "../Components/GoogleMaps.js";
 export default function Home({Router}) {
   console.log(Router)
   return (
-    <motion.div key={Router.route} >
+    <motion.div>
       <Head>
         <title>Nick - Home</title>
         <link rel="icon" href="/img/DominicGaonaTabLogo.ico" />
