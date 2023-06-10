@@ -15,13 +15,14 @@ function Transition({ children }) {
     <div style={{display:"flex"}}>
     {/* Navigation Component */}
     <Navigation />
-    <AnimatePresence mode="popLayout" initial="false"> 
+    <AnimatePresence mode="wait" initial={true}> 
       <motion.div 
-        style={{width: '100%', position:"relative"}}     
+        style={{width: '100%'}}     
         variants={animateOpacity}
         initial={animateOpacity.initial}
         animate={animateOpacity.animate}
         exit={animateOpacity.exit}
+        transition={animateOpacity.transition}     
         key={Router.route}
       >
         {/* Animate the children component/pages */}
