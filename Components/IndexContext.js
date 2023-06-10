@@ -2,7 +2,6 @@ import React from 'react'
 // import styles
 import styles from "../styles/Home.module.css";
 //import next components
-import Head from "next/head";
 import Image from "next/image";
 /* Components */
 import Form from "../Components/Form";
@@ -30,7 +29,14 @@ import GoogleMaps from "../Components/GoogleMaps.js";
 
 function IndexContext() {
   return (
-    <div>          {/* Hero Section */}
+    <motion.div
+    variants={animateOpacity}
+    initial={animateOpacity.initial}
+    animate={animateOpacity.animate}
+    exit={animateOpacity.exit}
+    transition={animateOpacity.transition}     
+    >          
+    {/* Hero Section */}
     <section id={styles.hero} >
       <div className={styles.heroContainer}>
         {/*<Coursel />*/}
@@ -261,7 +267,8 @@ function IndexContext() {
           <GoogleMaps />
         </div>
       </div>
-    </section></div>
+    </section>
+    </motion.div>
   )
 }
 
