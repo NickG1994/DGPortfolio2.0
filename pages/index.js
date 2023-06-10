@@ -5,7 +5,7 @@ import IndexContext from "../Components/IndexContext";
 export default function Home({Router}) {
   console.log(Router)
   return (
-    <div>
+    <>
       <Head>
         <title>Nick - Home</title>
         <link rel="icon" href="/img/DominicGaonaTabLogo.ico" />
@@ -30,9 +30,8 @@ export default function Home({Router}) {
         <meta property="twitter:image" content="/img/DominicGaonaTabLogo.ico" />
       </Head>
       {/* Main content */}
-        <div  >
           <IndexContext /> 
-        </div>
-    </div>
+
+    </>
   );
 }
