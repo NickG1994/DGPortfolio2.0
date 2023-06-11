@@ -15,6 +15,7 @@ function Loader({ pathChange }) {
         <ClipLoader
           loading={true}
           size={150}
+          color="#ECB365"
           aria-label="Loading Spinner"
           data-testid="loader"
         />

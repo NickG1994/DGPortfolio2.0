@@ -38,18 +38,7 @@ function Transition({ children }) {
     {/* Navigation Component */}
     <Navigation />
     <AnimatePresence mode='wait' initial='false'> 
-    {pageLoading? (
-    <motion.div         
-      variants={animateOpacity} 
-      initial={{opacity:1}} 
-      animate={animateOpacity.animate}
-      exit={animateOpacity.exit}
-      transition={animateOpacity.transition}
-      key={Router.pathname} > <Loader/> 
-      </motion.div>
-      )
-       :
-      ( <motion.div 
+       <motion.div 
         style={{width: '100%'}}      
         variants={animateOpacity} 
         initial={{opacity:1}} 
@@ -58,10 +47,10 @@ function Transition({ children }) {
         key={Router.pathname} 
       >
         {/* Animate the children component/pages */}
-          {children}
+          {pageLoading ? <Loader/>  : children}
         <Footer />
       </motion.div>
-      )}
+
     </AnimatePresence>
     </div>
   );
