@@ -1,34 +1,58 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 //footer and navigation component. 
 import Navigation from "../Components/Navigation/Navigation";
 import Footer from "../Components/Footer.js";
 // Framer motion config files and component.
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence , motion } from "framer-motion";
 import { animateOpacity } from "../data/framer-motion config";
+import Loader from './Loader.js'
 
 function Transition({ children }) {
   const Router = useRouter();
-  console.log(children)
+  const [pageLoading, setPageLoading] = useState(false)
+  
+  useEffect(() => {
+
+    const start = () => {
+      setPageLoading(true)
+    }
+    const end = () => {
+      setPageLoading(false)
+    }
+
+
+    Router.events.on('routeChangeStart', start)
+    Router.events.on("routeChangeComplete", end)
+    Router.events.on("routeChangeError", end)
+
+    return() => {
+      Router.events.off('routeChangeStart', start)
+      Router.events.off("routeChangeComplete", end)
+      Router.events.off("routeChangeError", end)
+    }
+  }, [Router.events])
 
   return (
     <div style={{display:"flex"}}>
     {/* Navigation Component */}
     <Navigation />
-    <AnimatePresence mode="wait" initial={true}> 
-      <motion.div 
-        style={{width: '100%'}}     
-        variants={animateOpacity}
-        initial={animateOpacity.initial}
+    <AnimatePresence mode='wait' initial='true'> 
+    {pageLoading? (<div ><Loader/> </div>) :
+      ( <motion.div 
+        style={{width: '100%'}}      
+        variants={animateOpacity} 
+        initial={{opacity:1}} 
         animate={animateOpacity.animate}
-        exit={animateOpacity.exit}
+        exit={animateOpacity.exit} 
         transition={animateOpacity.transition}     
-        key={Router.route}
+        key={Router.pathname} 
       >
         {/* Animate the children component/pages */}
-        {children}
+          {children}
         <Footer />
       </motion.div>
+      )}
     </AnimatePresence>
     </div>
   );
