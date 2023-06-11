@@ -37,8 +37,13 @@ function Transition({ children }) {
     <div style={{display:"flex"}}>
     {/* Navigation Component */}
     <Navigation />
-    <AnimatePresence mode='wait' initial='false'> 
-    {pageLoading? (<div ><Loader/> </div>) :
+    <AnimatePresence mode='popLayout' initial='false'> 
+    {pageLoading? (<motion.div         
+      variants={animateOpacity} 
+      initial={{opacity:1}} 
+      animate={animateOpacity.animate}
+      exit={animateOpacity.exit}
+      transition={animateOpacity.transition}     ><Loader/> </motion.div>) :
       ( <motion.div 
         style={{width: '100%'}}      
         variants={animateOpacity} 
