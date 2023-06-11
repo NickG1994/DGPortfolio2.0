@@ -124,7 +124,7 @@ export default function Home() {
             <div className={styles.portfolioBottom}>
               <div className={styles.gallery}>
                 {/* The gridGallery is causing the issue with further inspection. */}
-                {/*<GridGallery /> */}
+                <GridGallery /> 
               </div>
             </div>
           </section>
