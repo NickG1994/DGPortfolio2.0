@@ -87,7 +87,9 @@
     .contact__container {
         padding: 10% 5%;
         height: calc(200% + 10%);
+        height: calc(100vh + 10%);
     }
+    
     .contact__content__container {
         padding: 10% 5%;
         height: calc(200% + 10%);

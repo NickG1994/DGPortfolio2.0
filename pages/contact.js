@@ -18,6 +18,7 @@ import {
 export default function contact() {
   return (
     <motion.main
+    className={style.Main_Container}
     variants={animateOpacity}
     initial={animateOpacity.initial}
     animate={animateOpacity.animate}

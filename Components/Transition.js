@@ -47,10 +47,21 @@ function Transition({ children }) {
         key={Router.pathname} 
       >
         {/* Animate the children component/pages */}
-          {pageLoading ? <Loader/>  : children}
-        <Footer />
+          {pageLoading ? <motion.div         
+              variants={animateOpacity} 
+              initial={{opacity:1}} 
+              animate={animateOpacity.animate}
+              exit={animateOpacity.exit}
+              transition={{...animateOpacity.transition, duration:3}}     
+              key={Router.pathname} 
+              >
+                <Loader/>
+                </motion.div>
+                  : 
+                  <>{children} <Footer /></>
+                  
+          }
       </motion.div>
-
     </AnimatePresence>
     </div>
   );

@@ -237,7 +237,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background-color: black;
+    background-color: var(--backGround);
     opacity: 0.8;
     border-radius: 2%;
     }
@@ -254,7 +254,7 @@
     .linkWrapper a:hover{ color: var(--accentColor); }
 
     .linkWrapper a{
-        color: var(--fontColor);
+        color: var(--headerColor);
         font-size: 0.8em;
         text-decoration: none;
     }

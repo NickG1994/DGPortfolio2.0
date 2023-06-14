@@ -55,13 +55,11 @@ export default function Home() {
         <meta property="twitter:image" content="/img/DominicGaonaTabLogo.ico" />
       </Head>
       {/* Main content */}
-        <div 
-          className={styles.mainContainer} 
-        >
+        <div className={styles.mainContainer} >
           {/* Hero Section */}
           <section id={styles.hero} >
             <div className={styles.heroContainer}>
-              {/*<Coursel />*/}
+              <Coursel />
               <div className={styles.courselContentContainer}>
                 <motion.h1
                   variants={animateSlideDown}
@@ -99,7 +97,7 @@ export default function Home() {
                 initial={animateSlideSide.initial}
                 viewport={{ once: true }}
                 whileInView={animateSlideSide.animate}
-                transition={animateSlideSide.transition}
+                transition={{...animateSlideSide.transition, duration:1}}
               >
                 Portfolio
               </motion.h2>
@@ -108,7 +106,7 @@ export default function Home() {
                 initial={animateSlideSide.initial}
                 viewport={{ once: true }}
                 whileInView={animateSlideSide.animate}
-                transition={animateSlideSide.transition}
+                transition={{...animateSlideSide.transition, duration:1.2}}
               >
                 Proficient in developing projects using Vue.js, React.js, and
                 WordPress, with experience in building, testing, and deploying.
